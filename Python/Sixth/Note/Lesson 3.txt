@@ -1,0 +1,76 @@
+'''
+list:
+    认识list：将list看成一个锅；
+                锅中的食物，我们看成 元素；
+    lst = []
+    在list中插入数据;
+认识索引；
+    index；
+    lst = ['小红',('小绿'),[7,8,9],{"name":'大雄','age':60,'score':0}]
+    index :   0   ,   1  ,    2   ,          3
+'''
+# 在list中插入数据;
+lst = ['小红', ('小绿'), [7, 8, 9], {"name": '大雄', 'age': 60, 'score': 0}]
+# print(lst)
+
+# 索引：
+lst_first = lst[0]
+# print(lst_first)
+
+'''
+列表的增删改查：
+'''
+# drink_mai = ['脉动', 5, '123456', '2020']
+# drink_cola = ['cola', 3, '654321', '2021']
+
+'''         列表增加的操作         '''
+# 自然顺序增加；
+# drink_mai.append('md123')
+# print(drink_mai)
+
+# 指定索引增加方式；
+# drink_mai.insert(2,'水蜜桃风味')
+# print(drink_mai)
+
+# 列表增加列表数据；
+# drink_mai.extend(drink_cola)
+# print(drink_mai)
+
+'''         列表的删除       '''
+# drink_mai.pop(2)  # 默认删除最后一条信息；
+# print(drink_mai)
+# drink_mai.remove('123456')  # 根据元素进行删除
+# print(drink_mai)
+# drink_mai.clear()   # 将整个列表清空；
+# print(drink_mai)
+
+'''            列表的修改操作         '''
+# 在列表中只能够根据 索引进行修改；
+# drink_mai[0] = '脉动-水蜜桃味'
+# print(drink_mai)
+
+'''            列表的查找操作           '''
+drink_mai = ['脉动', 5, '123456', '2020']
+drink_cola = ['cola', 3, '654321', '2021']
+
+# drinks_name = drink_mai[0]
+# print(drinks_name)
+#  这是查找索引的方式；
+# print(drink_mai.index('脉动'))   # index是根据 元素，去查找 索引值；
+# 列表的区域查找； 也叫做切片操作；
+'''切片的索引是以1开始而不是0'''
+# 取 这个数据：['脉动', 5]
+# print(drink_mai[:-2])
+# 取 这个数据 '123456', '2020'
+# print(drink_mai[2:])
+
+# 顺序的反响查询；
+# print(drink_mai[::-1])   # ['2020', '123456', 5, '脉动']
+'''二维查询，三维，四维查询'''
+lst = ['小红', ('小绿',), [7, 8, 9], {"name": '大雄', 'age': 60, 'score': 0}]
+#       0         1        2[0]       3['name']
+# 如果我想拿到 数字 7 ，
+# print(lst[2][0])
+
+# 如果我想拿 大雄；
+print(lst[3]['name'])
