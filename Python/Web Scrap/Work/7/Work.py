@@ -36,7 +36,7 @@ def getInfo(html, title):
     intro = html.xpath('//p[@class="intro"]/a/text()')
     read = html.xpath('//div[@class="BookData"]/p[1]/em/text()')[0]
     write = html.xpath('//div[@class="BookData"]/p[2]/em/text()')[0]
-    intro = "".join([i.replace("\n", "") for i in intro])
+    intro = "".join([i.replace("\n", "").replace("\t", "") for i in intro])
     writeInTXTfile(title=title, intro=intro, type=type, read=read, write=write)
 
 # 获取点击量，更新量以及推荐量的数据
