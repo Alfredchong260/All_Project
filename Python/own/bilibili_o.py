@@ -1,26 +1,5 @@
-import json
-import os
-import ffmpeg
-import requests
-from lxml import etree
- 
-# 防止因https证书问题报错
-requests.packages.urllib3.disable_warnings()
-
-headers = {
-    'User-Agent': 'Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; AcooBrowser; .NET CLR 1.1.4322; .NET CLR 2.0.50727)',
- 
-    'Refer'
- 
-    'er': 'https://www.bilibili.com/'
-}
-
-'''
-    获取bilibili视频的主要函数
-    @param url 视频页面url 结构为:url?参数
-    @param p 视频p数
-    @param bv 视频bv数
-'''
+import os 
+from you_get import common as you_get
 
 def main():
     # 输入bilibili视频的BV号
@@ -70,6 +49,7 @@ def getBiliBiliVideo(url,p,bv):
         os.makedirs(dirname)
         print('文件夹创建成功!')
  
+    print("Start to download video")
     # 获取每一集的名称
     name = bv + "-" + str(p)
  
@@ -77,13 +57,16 @@ def getBiliBiliVideo(url,p,bv):
  
     print('正在下载 "'+name+'" 的视频····')
  
+    print("File download function")
     fileDownload(homeurl=url,url=videoURL, name='blackpink/'+name + '_Video.mp4', session=session)
+    print("Video Downloaded")
  
     if flag == 0:
  
         print('正在下载 "'+name+'" 的音频····')
  
         fileDownload(homeurl=url,url=audioURl, name='blackpink/'+name+ '_Audio.mp3', session=session)
+        print("Audio Downloaded")
  
         print('正在组合 "'+name+'" 的视频和音频····')
  
@@ -178,5 +161,7 @@ def combineVideoAudio(videopath,audiopath,outpath):
     os.remove(audiopath)
  
  
+ 
 if __name__ == '__main__':
     main() 
+

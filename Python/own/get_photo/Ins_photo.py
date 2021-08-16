@@ -6,20 +6,24 @@
 '''
 
 import requests
+import re
 from lxml import etree
 
 url = 'https://www.instagram.com/_soyaaaa.____/'
 headers = {
-    'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36'
+    'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101 Firefox/91.0'
 }
 
 response = requests.get(url ,headers=headers)
 html = etree.HTML(response.text)
-results = html.xpath()
-print(results)
-    
-# results = html.xpath('//article[@class="ySN3v"]/div/div/div[1]/div[1]/a/div[1]/div/img')
+
+print(response.text)
+# print(href)
+
+# results = html.xpath('//div[@class=" _2z6nI"]/article/div[1]/div/div[1]/div[1]/a/@href')[0]
+# results = html.xpath('/html/body/div[1]/section/main/div/div[4]/article/div[1]/div/div[1]/div[1]/a/@href')
 # print(results)
+    
 
 # with open('jisoo_' + '.jpg', 'wb') as f:
 #     f.write(response.content)
