@@ -1,4 +1,4 @@
-# 知足的喷瓜
+#知足的喷瓜
 
 '''
     全局思路：
@@ -62,9 +62,13 @@ def getLink(links):
             pass
     return li
 
+def writeInTXT(result):
+    with open("课堂.txt", "a+") as f:
+        f.write(result)
+
 # 设置格式来编排数据
 def format(links_, titles_):
-    format = '''标题：{}\n网址：{}\n'''.format(titles_, links_)
+    format = '''标题：{}\n网址：{}\n\n'''.format(titles_, links_)
     return format
 
 # 请求网页得到源代码
@@ -87,7 +91,7 @@ def main():
         results.append(format(links_=i, titles_=j))
 
     for result in results:
-        print(result)
+        writeInTXT(result)
 
 # 调用主函数
 main()
