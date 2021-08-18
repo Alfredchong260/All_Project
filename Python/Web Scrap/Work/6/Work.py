@@ -7,7 +7,7 @@ headers = {
 
 for i in range(0, 91, 10):
     url = f'https://maoyan.com/board/4?offset={i}'
-    response = requests.get(url, headers=headers, proxies={'http': '119.81.189.194'})
+    response = requests.get(url, headers=headers, proxies={'http': '119.81.189.194'}, timeout=10)
     html = etree.HTML(response.text)
     results = html.xpath('//div[@class="movie-item-info"]')
 
