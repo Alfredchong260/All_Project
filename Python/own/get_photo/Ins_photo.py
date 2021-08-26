@@ -5,26 +5,46 @@
     将内层数据下载成jpg
 '''
 
-import requests
-import re
-from lxml import etree
+from selenium import webdriver
+import time
 
-url = 'https://www.instagram.com/_soyaaaa.____/'
-headers = {
-    'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101 Firefox/91.0'
-}
+driver = webdriver.Firefox("/usr/local/bin")
 
-response = requests.get(url ,headers=headers)
-html = etree.HTML(response.text)
+class ins:
 
-print(response.text)
-# print(href)
+    def main(self):
+        driver.get("https://www.instagram.com/sooyaaa__/")
+        time.sleep(3)
+        try: 
+            self.logIn()
+            self.findWebsite()
+        except Exception:
+            pass
+        self.visitPhoto()
 
-# results = html.xpath('//div[@class=" _2z6nI"]/article/div[1]/div/div[1]/div[1]/a/@href')[0]
-# results = html.xpath('/html/body/div[1]/section/main/div/div[4]/article/div[1]/div/div[1]/div[1]/a/@href')
-# print(results)
-    
+    def logIn(self):
+        driver.find_element_by_xpath('//*[@id="loginForm"]/div/div[1]/div/label/input').send_keys("affredchong@gmail.com")
+        driver.find_element_by_xpath('//*[@id="loginForm"]/div/div[2]/div/label/input').send_keys("Chong6260")
+        driver.find_element_by_xpath('//*[@id="loginForm"]/div/div[3]').click()
+        time.sleep(3)
+        driver.find_element_by_class_name("cmbtv").click()
+        time.sleep(3)
+        driver.find_element_by_xpath('/html/body/div[6]/div/div/div/div[3]/button[2]').click()
+        time.sleep(3)
 
-# with open('jisoo_' + '.jpg', 'wb') as f:
-#     f.write(response.content)
+    def findWebsite(self):
+        driver.find_element_by_xpath('/html/body/div[1]/section/nav/div[2]/div/div/div[2]/div[1]/div').send_keys('sooyaaa__')
+        time.sleep(3)
+        
+    def visitPhoto(self):
+        links = driver.find_elements_by_tag_name("a")
+        time.sleep(2)
+        driver.execute_script("window.scrollBy(0, 300)")
+        time.sleep(2)
+        for link in links:
+            print(link.get_attribute("href"))
+
+if __name__ == "__main__":
+    test = ins()
+    test.main()
 

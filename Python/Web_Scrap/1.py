@@ -123,3 +123,12 @@ HTTP 和 HTTPS
                 响应体
                     正文的数据都在响应体中的HTML代码，需要爬取的数据
 '''
+import requests
+
+response = requests.get('https://randomuser.me/api/?results=10')
+print(response)
+
+data = response.json()
+
+for user in data['results']:
+    print(user['name']['first'])
