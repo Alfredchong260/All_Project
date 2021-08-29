@@ -1,33 +1,35 @@
 """
-    思路：
-        爬取王者皮肤资料
+Target:
+    1. print a hello
+    2. print a friend
 """
+# print("hello")
+# print("My name is Alfred i am 18 years old")
 
-# print('Hello World')
+# print('Hello')
+'''
+data type
+''' 
 
-# data type
+# 字符串 str = string
+# print('Hello')
 
-# 字符串 String
-x = "HANZ"
-y = 'alfred'
-a = "are"
-b = "friends"
+# 整数 int = integer
+# print(type("100"))
 
-# 数字 int
-c = "3.142"
-z = 100
+# float
+'''
+    float
+'''
+# print(type("3.142"))
 
-# print(type(int(c)))
-# 浮点数 float
-e = 3.142
-# casting
+'''
+    string 
+    integer
+    float
+'''
 
-# print(x + " " + y + " " + a + " " + b + str(z) + str(e))
-
-print("My name is Hanz, i am 18 year's old")
-
-# print(type(x))
-# print(type(y))
-# print(type(z))
-# print(type(e))
-
+# variable
+x = 'hello'
+y = 'my friend'
+print(x + y)

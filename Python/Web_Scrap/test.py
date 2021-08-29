@@ -83,7 +83,7 @@ class baidu:
         return li
 
     def formatForNameDate(self, name, date):
-        format = '''专辑名称：{}\n发放日子：{}\n\n'''.format(name, date)
+        format = '专辑名称：{}\n发放日子：{}\n\n'.format(name, date)
 
         return format
 
@@ -91,9 +91,6 @@ class baidu:
         format = '''电影名字：{}\n发行日子：{}\n\n'''.format(name, date)
 
         return format
-
-    def formatForResults(self):
-        pass
 
     def writeData(self, data):
         with open('数据.txt', 'a+') as w:

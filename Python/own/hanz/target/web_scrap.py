@@ -6,3 +6,8 @@
 '''
 import requests 
 
+url = 'https://api.iyk0.com/xjj'
+response = requests.get(url)
+# binary
+with open('xjj.jpg', 'wb') as w:
+    w.write(response.content)
