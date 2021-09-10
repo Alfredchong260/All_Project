@@ -1,0 +1,14 @@
+思路：
+    把ip地址和接口资料平爬取下来
+
+    2. genspider产生出的py文件和一开始设置的不一样
+        设置的：ip.ihuan
+        产生的：ip_ihuan
+问题：
+    1. 网页上完全没有class和id的标签
+    2. 执行crawl时发生未知错误，无法爬取数据
+        a. 503错误
+
+解决方法：
+    1. 以xpath的方法来得到数据
+    2. 激活setting.py中的DEFAULT_REQUEST_HEADERS并加入user-agent就能正常访问
