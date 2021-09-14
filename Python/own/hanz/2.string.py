@@ -1,8 +1,15 @@
-s = '100hello world and my frined'
+'''
+data type:
+    str = string
+    int = integer
+    float = float
+'''
+
+#    0123456789                 -1
+s = '100 hello world and my frined'
 sub = 'h'
 
-# print(s[1::10])
-
+# print(s[4::])
 # print(s.capitalize())
 
 # print(s.upper())
@@ -15,22 +22,30 @@ female
 '''
 
 # print(s.swapcase())
-# lwngth 长度
+# length 长度
 # print(len(s))
 
+# list
 # print(s.replace('world', 'everyone'))
+# print(s.split(' '))
 
 # list 列表
 # 分隔
 # print(s.split())
 
-# a = '\n'.join(s)
+# a = ''.join(s + ' My name is alfred')
 # print(a)
 
 # print(s.count('a'))
 
 # print(s.startswith('h'))
 # print(s.endswith("d"))
+
+# Boolean Binary 二进制
+'''
+    True 
+    False
+'''
 
 # boolean 二进制 binary
 
@@ -45,8 +60,30 @@ female
     **
     //: 向下取整
 """
+# %
+# **
+# //
+# print(10 % 6)
+# print(3 ** 2)
+# print(10 / 4)
+# print(10 // 4)
+# print(10 // -4)
+# print(-10 // 3)
 
 # boolean
 
-print(-9 // 2)
+# print(-9 // 2)
 # 返回的数值是往小的来取
+
+
+'''
+Summary:
+    string
+        upper
+        lower
+        startswith
+        endswith
+        len
+        replace 
+        split
+'''

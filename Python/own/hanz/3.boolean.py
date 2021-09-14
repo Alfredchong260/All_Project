@@ -4,5 +4,5 @@ boolean only contain 2 values
     False
 """
 
-True
-False
+# 1 = True
+# 0 = False
