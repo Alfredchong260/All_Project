@@ -1,3 +1,8 @@
+'''
+qq音乐大部分音乐已下架，等以后看它是否会宠幸上架音乐
+'''
+
+
 import random
 import requests
 from pprint import pprint
