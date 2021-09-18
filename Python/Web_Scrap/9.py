@@ -80,4 +80,4 @@ if __name__ == '__main__':
     r = requests.post(url,headers=headers,data=fanyi.get_data())
     data = r.json()
     # print(data)
-    print('输入单词：{}\n翻译为{}：'.format(data['translateResult'][0][0]['src'],data['translateResult'][0][0]['tgt']))
+    print('输入单词：{}\n翻译为：{}'.format(data['translateResult'][0][0]['src'],data['translateResult'][0][0]['tgt']))

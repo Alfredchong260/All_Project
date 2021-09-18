@@ -4,6 +4,7 @@ def play():
     li = ['r', 's', 'p']
     user = input("'r' for Rock, 'p' for Paper, 's' for scissors :")
     computer = random.choice(li)
+    print(computer)
 
     if user == computer:
         print('Draw') 
@@ -20,4 +21,5 @@ def win(player, opponent):
 
         return True
 
-play()
+if __name__ == '__main__':
+    play()
