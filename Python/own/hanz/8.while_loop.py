@@ -1,5 +1,4 @@
 # While loop will continue execute when it true
-
 '''
     4 steps:
         1. set a variable

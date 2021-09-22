@@ -7,6 +7,9 @@ num  = [9, 8, 7, 6, 5]
 num1 = [1, 2, 3, 4, 5]
 #       0  1  2  3  4
 
+num[1] = 5
+print(num)
+
 # Get a value
 # print(num[0:2])
 
@@ -36,4 +39,4 @@ num1 = [1, 2, 3, 4, 5]
 # print(num)
 
 # Reverse the list
-print(num[::-1])
+# print(num[::-1])
