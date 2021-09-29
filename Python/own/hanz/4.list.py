@@ -7,8 +7,8 @@ num  = [9, 8, 7, 6, 5]
 num1 = [1, 2, 3, 4, 5]
 #       0  1  2  3  4
 
-num[1] = 5
-print(num)
+# num[1] = 5
+# print(num)
 
 # Get a value
 # print(num[0:2])
@@ -17,7 +17,7 @@ print(num)
 # print(len(num))
 
 # Append new value
-# num.append('hello')
+# num.append('Hello')
 # print(num)
 
 # 扩展
@@ -40,3 +40,11 @@ print(num)
 
 # Reverse the list
 # print(num[::-1])
+
+# index  0              1           2
+a = [
+    ('x', 'y'),
+    [1,2,3,4,5],
+    {"name": 'Chong', "Age":18}
+]
+print(a[2].keys())
