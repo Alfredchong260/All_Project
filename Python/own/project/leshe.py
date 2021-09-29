@@ -1,4 +1,5 @@
 from tqdm import tqdm
+import random
 import requests
 import parsel
 import os
@@ -9,6 +10,12 @@ headers = {
     'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.63 Safari/537.36',
     'cookie': 'ga=GA1.2.359235668.1631173779; _gid=GA1.2.2040819696.1631173779; Hm_lvt_56ff2ff29805a0d6ca5a4573276ffae7=1631173780,1631175228; PHPSESSID=1ce292mmmhdgcv15k1r4sunu7u; Hm_lpvt_56ff2ff29805a0d6ca5a4573276ffae7=1631175510'
 }
+
+proxies = ['HTTP://110.243.30.23:9999', 'HTTP://222.189.191.206:9999',
+            'HTTP://106.42.163.100:9999', 'HTTP://120.83.107.69:9999',
+           'HTTP://60.13.42.135:9999',  'HTTP://113.195.232.23:9999',
+           'HTTP://59.62.36.74:9000', 'HTTP://218.2.226.42:80']
+proxy = {'HTTP': random.choice(proxies)}
 
 class leshe:
     def __init__(self, url):
@@ -24,7 +31,7 @@ class leshe:
 
     def initialize(self):
         sum = []
-        response = requests.get(self.url, headers=headers)
+        response = requests.get(self.url, headers=headers, proxies=proxy)
         selector = parsel.Selector(response.text)
         page = str(selector.xpath('//ul[@class="page-numbers"]/li').getall())
         a = page.split(',')
