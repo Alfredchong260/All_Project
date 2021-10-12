@@ -47,6 +47,7 @@ person2 = dict(first_name='Sara', last_name='Williams', age=18)
 # Add key/value
 # person.setdefault('hobby', 'play badminton')
 # person['sleep time'] = "10 hours"
+# person['hobby'] = 'sleep'
 # print(person)
 
 # Get dict keys
@@ -78,7 +79,6 @@ people = [
     ('Apples', 'Mango')
 ]
 
-# print(people)
 
 
 '''

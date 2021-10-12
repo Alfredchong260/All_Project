@@ -60,7 +60,7 @@ class sticker:
 if __name__ == '__main__':
     test = sticker()
     exe = concurrent.futures.ThreadPoolExecutor(max_workers=8)
-    for page in range(1, 11):
+    for page in tqdm(range(1, 11)):
         url = f'https://www.fabiaoqing.com/biaoqing/lists/page/{page}.html'
         exe.submit(test.main, url)
     exe.shutdown()

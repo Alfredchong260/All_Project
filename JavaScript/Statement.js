@@ -301,4 +301,3 @@ var Music = [
 
 var bios = Music[1].artist;
 console.log(bios)
-

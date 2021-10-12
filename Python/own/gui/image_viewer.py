@@ -4,11 +4,11 @@ from PIL import ImageTk, Image
 root = Tk()
 root.title('Own Image Viewer')
 
-img = ImageTk.PhotoImage(Image.open('./lengluii/1f1f70a4183c5830bc6c964a2a974e76.jpg'))
-img1 = ImageTk.PhotoImage(Image.open('./lengluii/21068858cecb1d9845b08b301c05ad4a.jpg'))
-img2 = ImageTk.PhotoImage(Image.open('./lengluii/88f825117381879649d1effed4450fb6.jpg'))
-img3 = ImageTk.PhotoImage(Image.open('./lengluii/a9fd0e34bd2466724f2069b3f6ff20ac.jpg'))
-img_list = [img, img1, img2, img3]
+img = ImageTk.PhotoImage(Image.open('../scrap/lenglui/20200514155238.jpg'))
+img1 = ImageTk.PhotoImage(Image.open('../scrap/lenglui/20200514155235.jpg'))
+img2 = ImageTk.PhotoImage(Image.open('../scrap/lenglui/20200514155236.jpg'))
+img3 = ImageTk.PhotoImage(Image.open('../scrap/lenglui/20200514155237.jpg'))
+img_list = [img1, img2, img3]
 
 my_label = Label(image=img)
 my_label.grid(row=0, column=0, columnspan=3)
