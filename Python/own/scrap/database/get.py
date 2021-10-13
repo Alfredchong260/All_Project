@@ -197,17 +197,18 @@ def proxy_freeproxylists():
         data = re.findall(obj, response.text)
         for ip, port in data:
             yield ip + ":" + port
+
 proxy_list = [proxy_89, proxy_kuai, proxy_xiaohuan, proxy_ipku, proxy_xila, proxy_xiaosu, proxy_seofangfa, proxy_yqie, proxy_freeproxylist, proxy_free, proxy_scan, proxy_hideme, proxy_freeproxylists]
 
 if __name__ == '__main__':
 
     client = RedisClient()
 
-    # for func in proxy_list:
-    #     proxies = func()
-    #     for proxy in proxies:
-    #         print(proxy)
-    #         client.add(proxy)
+    for func in proxy_list:
+        proxies = func()
+        for proxy in proxies:
+            print(proxy)
+            # client.add(proxy)
 
-    result = client.all()
-    print(result)
+    # result = client.all()
+    # print(result)

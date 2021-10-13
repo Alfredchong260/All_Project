@@ -8,6 +8,7 @@
 请在下方编写代码
 """
 
+from tqdm import tqdm
 import requests
 import time
 import re
@@ -28,12 +29,13 @@ for page in range(0, 101, 10):
     dates = re.findall('<p class="releasetime">(.*?)</p>', response.text, re.S)
     ratings = re.findall('<i class="integer">(\d{1,2}.)</i><i class="fraction">(\d)</i>', response.text, re.S)
 
-    for title, actor, date, rating in zip(titles, actors, dates, ratings):
-        print(f"电影名字:{title}")
-        print(actor)
-        print(date)
-        print(f"评分:{rating[0]}{rating[1]}")
-        print()
+    with open('./电影信息.txt', 'a', encoding='utf-8') as w:
+        for title, actor, date, rating in tqdm(zip(titles, actors, dates, ratings)):
+            first = f"电影名字:{title}"
+            second = actor
+            third = date
+            forth = f"评分:{rating[0]}{rating[1]}"
+            w.write(f"{first}\n{second}\n{third}\n{forth}\n\n")
 
 '''2'''
 # Cookies

@@ -10,7 +10,7 @@ REDIS_OBJECT = 'PROXIES'            # 数据库操作对象
 
 '''时间间隔配置'''
 GETTER_PROXY = 60 * 5               # 获取代理的时间间隔
-VERIFY_PROXY = 60 * 6               # 验证代理的时间间隔
+VERIFY_PROXY = 60 * 8               # 验证代理的时间间隔
 
 '''服务器配置'''
 SERVER_HOST = '127.0.0.1'           # api服务器地址
