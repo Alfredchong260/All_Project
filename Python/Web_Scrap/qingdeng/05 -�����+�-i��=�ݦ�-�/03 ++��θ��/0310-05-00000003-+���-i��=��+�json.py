@@ -13,6 +13,7 @@
 """
 from pprint import pprint
 import requests
+import json
 import re
 
 url = 'https://haokan.baidu.com/web/video/feed?tab=gaoxiao_new&act=pcFeed&pd=pc&num=5&shuaxin_id=1634613779446&hot=1'
@@ -24,10 +25,11 @@ headers = {
 }
 
 response = requests.get(url, headers=headers)
-infos = response.json()['data']['response']['videos']
-for info in infos:
-    title = info['title']
-    duration = info['duration']
-    comment = info['comment']
-    fmplaycnt = info['fmplaycnt']
-    print(f'标题：{title}\n时长：{duration}\n评论：{comment}\n播放量：{fmplaycnt}\n')
+infos = json.dumps(response.json(), ensure_ascii=False)
+title = re.findall('"title": "(.*?)"', infos, re.S)
+duration = re.findall('"duration": "(.*?)"', infos, re.S)
+comment = re.findall('"comment": "(\d+)"', infos, re.S)
+fmplaycnt = re.findall('"fmplaycnt": "(.*?)"', infos, re.S)
+
+for t, d, c, f in zip(title, duration, comment, fmplaycnt):
+    print(f'标题：{t}\n时长：{d}\n评论：{c}\n播放量：{f}\n')
