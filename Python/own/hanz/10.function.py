@@ -1,6 +1,5 @@
 # A function is a block of code which only runs when it is called
 
-
 '''
     1.无参数，无返回值
     2.无参数，有返回值

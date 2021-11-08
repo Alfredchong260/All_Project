@@ -3,33 +3,33 @@ Target:
     1. print a hello
     2. print a friend
 """
-# print("hello")
-# print("My name is Alfred i am 18 years old")
+# print("hello world")
+# print(10)
+# print("10")
+# print(1.0)
+# print('1.0')
 
-# print('Hello')
 '''
 data type
-''' 
-
-# 字符串 str = string
-# print('Hello')
-
-# 整数 int = integer
-# print(type("100"))
-
-# float
+    string  字符串  字母
+    integer 数字
+    float   浮点数 小数点
 '''
-    float
-'''
-# print(type("3.142"))
+# variable 变量 变数
+# = 跟数学不一样，=：赋值，==：等于
+name = 'ChaiLam'
+hello = 'hello world' + ' ' + name
+print(hello)
 
 '''
-    string 
-    integer
-    float
-'''
+Python可以做到领域
+    网络爬虫    web scraping
 
-# variable
-x = 'hello'
-y = 'my friend'
-print(x + y)
+    人工智能 AI
+    数据分析    data analysis
+    数据可视化  data visualization
+
+    自动化办公
+    后端
+    全站
+'''

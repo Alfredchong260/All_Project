@@ -17,14 +17,15 @@ headers = {
     'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101 Firefox/91.0'
 }
 
-web = webdriver.Chrome('/usr/local/bin/chromedriver')
+option = Options()
+option.add_argument('--disable-blink-features=AutomationControlled')
+
+web = webdriver.Chrome('/usr/local/bin/chromedriver', options=option)
+
 class DuckDuckGo:
         
     def main(self, url):
-        
         self.mkdir()
-        option = Options()
-        option.add_argument('--disable-blink-features=AutomationControlled')
         web.get(url)
         sleep(1)
         a = web.find_elements_by_xpath('//div[@class="islrc"]/div/a[1]/div/img')
@@ -33,13 +34,10 @@ class DuckDuckGo:
             link = i.get_property('src')
             all_a.append(link)
         num = 0
-        all = []
-        for a in all_a:
-            all.append(a)
-        print(all)
+        print(all_a)
         sleep(1)
         logo = self.random_logo()
-        for i in all:
+        for i in all_a:
             num += 1
             response = self.second_visit(link=i)
 
@@ -54,6 +52,7 @@ class DuckDuckGo:
             return response.content
         except Exception:
             pass
+            self.second_visit(link)
 
 
     def download_img(self, name, response, logo):
@@ -76,6 +75,6 @@ if __name__ =='__main__':
     while True:
         info = input('请输入你要查询的关键字眼：')
         if info.upper() == 'Q':
-            break
+            web.close()
         url = "https://www.google.com/search?q={}&source=lnms&tbm=isch&sa=X".format(info)
         test.main(url)
