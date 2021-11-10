@@ -143,9 +143,9 @@ def free_proxy_world_crawler(exe):
 
 #         return proxy
 
-if __name__ == '__main__':
-    proxies_list = [yun_crawler, crawler89, kuai_crawler, xiaohuan_crawler, xila_crawler, mipu_crawler, nima_crawler, free_proxy_world_crawler]
+proxies_list = [yun_crawler, crawler89, kuai_crawler, xiaohuan_crawler, xila_crawler, mipu_crawler, nima_crawler, free_proxy_world_crawler]
 
+if __name__ == '__main__':
 
     # 鸭子类型： 不关注对象是什么类型，只关注对象的行为
     # 创建一个多线池对象，带入函数内部使用
