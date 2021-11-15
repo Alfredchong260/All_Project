@@ -1,0 +1,21 @@
+01 创建项目
+    1. scrapy startproject +(项目名字<独一无二>)
+    2. 通过 cd 切换到所创建的项目目录
+    3. scrapy genspider (+爬虫文件的名字) (所采集网站的域名)
+
+02 项目逻辑编写
+    001
+        在 setting.py 文件中关闭 robots 协议
+
+    002
+        在爬虫文件中修改起始网址
+        在 parse 函数中写数据解析逻辑
+
+    003
+        在 items.py 文件中定义项目的数据结构
+
+    004
+        在 pipelines.py 文件中写数据保存的逻辑
+
+    005
+        在 setting.py 文件中打开保存数据的管道配置

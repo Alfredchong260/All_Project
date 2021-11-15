@@ -16,7 +16,8 @@ title_bar.bind('<B1-Motion>', move)
 title = Label(title_bar, text='Code', bg='gray17', fg='lime', bd=2)
 title.pack(side=LEFT)
 
-close_btn = Button(title_bar, text='  x  ', command=root.destroy, bg='gray17', fg='red', font=('', 15))
+close_btn = Button(title_bar, text='  x  ', command=root.destroy,
+                   bg='gray17', fg='red', font=('', 15))
 close_btn.pack(side=RIGHT)
 
 min_btn = Button(title_bar, text='  -  ', bg='gray17', fg='skyblue', font=('', 15))
