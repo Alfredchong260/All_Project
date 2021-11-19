@@ -13,6 +13,7 @@ REDIS_OBJECT = 'PROXIES'
 """时间间隔配置"""
 GETTER_PROXY = 60 * 5
 VERIFY_PROXY = 60 * 8
+TIMEOUT = 10
 
 
 """服务器配置"""

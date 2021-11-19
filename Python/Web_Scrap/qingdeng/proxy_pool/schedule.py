@@ -28,7 +28,7 @@ class Schedule:
                                 print(i)
                                 Client.add(proxy=i)
                                 time.sleep(1)
-                    except ConnectionError:
+                    except Exception:
                         time.sleep(2)
                         proxies = func(exe)
                         for proxy in as_completed(proxies):

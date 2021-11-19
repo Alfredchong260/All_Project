@@ -4,6 +4,7 @@
 from database import RedisClient
 from configure import URL
 import concurrent.futures
+from configure import TIMEOUT
 import requests
 
 headers = {
@@ -22,7 +23,7 @@ def verify_proxy(proxy):
 }
     
     try:
-        response = requests.get(URL, headers=headers, proxies=proxies, timeout=5)
+        response = requests.get(URL, headers=headers, proxies=proxies, timeout=TIMEOUT)
         if response.status_code == [200, 204, 206, 302]:
             # 如果代理可用，就调用之前写过的数据库类里面的max方法
             print('*****代理可用*****', proxy)
