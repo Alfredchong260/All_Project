@@ -9,4 +9,3 @@ import scrapy
 class LesheItem(scrapy.Item):
     # define the fields for your item here like:
     img_url = scrapy.Field()
-    pass

@@ -35,7 +35,7 @@ def getVideoContent(bv, cid, session):
 
 bv = 'BV1Db411b7Vx'
 cid = '78922728'
-session = '431dac90167799a646be5b2a349e7b38'
+session = '599644f1907897062216365f5cfadd9d'
 
 # response = getVideoInfo(bv)
 # parseData(response)
