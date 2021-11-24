@@ -20,9 +20,11 @@ https://docs.qq.com/sheet/DU2d0TW1ueVVqc3lS（学号查看）
 """
 from tkinter import *
 
-def button(text, bg, width, height, row, column, padx, pady, sticky=N, command=None):
-    button1 = Button(root, text=text, font=font, bg=bg, width=width, height=height, command=command)
-    button1.grid(row=row, column=column, padx=padx, pady=pady, sticky=sticky)
+def button(text, bg, width, height, row, column, padx, pady, sticky=N, command=None, rowspan=1, columnspan=1):
+    button1 = Button(root, text=text, font=font, bg=bg,
+                     width=width, height=height, command=command, relief=SUNKEN)
+    button1.grid(row=row, column=column, padx=padx, pady=pady,
+                 sticky=sticky, rowspan=rowspan, columnspan=columnspan)
 
 root = Tk()
 root.title('计算器')
@@ -34,10 +36,11 @@ root.resizable(False, False)
 font = ('', 20)
 
 num_var = StringVar()
+num_var.set('0')
 
 sep = Label(root, text='', height=2, bg='white', fg='white').grid(row=1, column=1)
 
-main = Label(root, textvariable=num_var, font=font, anchor=E, width=6, bg='white').grid(row=2, column=3, padx=2, pady=5)
+main = Label(root, textvariable=num_var, font=font, anchor=E, width=23, bg='white').grid(row=2, column=1, columnspan=8)
 
 def num(number):
     if num_var.get() == '' or num_var.get() == '0':
@@ -73,9 +76,9 @@ label_plus = button('+', '#c6c6c6', 4, 2, 5, 4, 3, 3, sticky=N, command=lambda x
 label_1 = button('1', '#ffe1b5', 4, 2, 6, 1, 3, 3, command=lambda x = 1: num(x))
 label_2 = button('2', '#ffe1b5', 4, 2, 6, 2, 3, 3, command=lambda x = 2: num(x))
 label_3 = button('3', '#ffe1b5', 4, 2, 6, 3, 3, 3, command=lambda x = 3: num(x))
-label_equal = button('=', '#c6c6c6', 4, 5, 6, 4, 3, 3)
+label_equal = button('=', '#c6c6c6', 4, 5, 6, 4, 3, 3, rowspan=2)
 
-label_0 = Button(root, text='0', font=font, bg='#ffe1b5', width=10, height=2, command=lambda x = 0: num(x)).place(relx=0.01, rely=0.834)
-label_dot = Button(root, text='.', font=font, bg='#ffe1b5', width=4, height=2, command=lambda x = '.': num(x)).place(relx=0.505, rely=0.834)
+label_0 = button('0', '#ffe1b5', 10, 2, 7, 1, 3, 3, columnspan=2)
+label_dot = button('.', '#ffe1b5', 4, 2, 7, 3, 3, 3, command=lambda x = '.': num(x))
 
 root.mainloop()

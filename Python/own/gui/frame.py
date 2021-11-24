@@ -3,7 +3,7 @@ from tkinter import *
 root = Tk()
 root.title('Frames')
 
-frame = Label(root, padx=50, pady=50, bd=2)
+frame = Label(root, padx=50, pady=50, bd=2, bg='red')
 frame.pack(padx=100, pady=100)
 
 b = Button(frame, text='Don\'t click here', command=root.quit)

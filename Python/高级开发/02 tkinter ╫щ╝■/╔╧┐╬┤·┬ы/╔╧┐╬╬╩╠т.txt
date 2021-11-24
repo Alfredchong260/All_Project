@@ -1,0 +1,1 @@
+func = lambda: print('文件按钮被点击了')
