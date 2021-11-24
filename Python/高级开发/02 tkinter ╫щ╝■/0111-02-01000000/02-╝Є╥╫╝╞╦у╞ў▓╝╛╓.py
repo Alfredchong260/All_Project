@@ -21,6 +21,7 @@ def button(text, bg, width, height, row, column, padx, pady, sticky=N, command=N
     button1.grid(row=row, column=column, padx=padx, pady=pady,
                  sticky=sticky, rowspan=rowspan, columnspan=columnspan)
 
+result_lst = []
 
 root = Tk()
 root.title('计算器')
@@ -40,59 +41,52 @@ sep = Label(root, text='', height=2, bg='white',
 main = Label(root, textvariable=num_var, font=font, anchor=E,
              width=23, bg='white').grid(row=2, column=1, columnspan=8)
 
-
-def num(number):
-    if num_var.get() == '' or num_var.get() == '0':
-        num_var.set(number)
+def add_num(num):
+    operator = ['+', '-', '*', '/', '.']
+    if num in operator and result_lst[-1] in operator:
+        result_lst[-1] = num
+        num_var.set(''.join(result_lst))
     else:
-        a = num_var.get()
-        num_var.set(a + str(number))
+        result_lst.append(num)
+        num_var.set(''.join(result_lst))
 
-
-def delete():
-    old = num_var.get()
-    length = len(old)
-    new = old[0:length - 1]
-    num_var.set(new)
-
-
-def delet_all():
+def delete_all():
+    result_lst.clear()
     num_var.set('0')
 
+def delete_one():
+    result_lst.pop(-1)
+    num_var.set(''.join(result_lst))
 
 def calculate():
-    string = num_var.get()
-    ans = eval(string)
+    cal_str = ''.join(result_lst)
+    ans = eval(cal_str)
+    result_lst.clear()
+    result_lst.append(str(ans))
     num_var.set(ans)
 
+label_c = button('C', '#c6c6c6', 4, 2, 3, 1, 3, 3, command=delete_all)
+label_arrow = button('←', '#c6c6c6', 4, 2, 3, 2, 3, 3, command=delete_one)
+label_divide = button('/', '#c6c6c6', 4, 2, 3, 3, 3, 3, command=lambda:add_num('/'))
+label_times = button('*', '#c6c6c6', 4, 2, 3, 4, 3, 3, command=lambda:add_num('*'))
 
-label_c = button('C', '#c6c6c6', 4, 2, 3, 1, 3, 3, command=delet_all)
-label_arrow = button('←', '#c6c6c6', 4, 2, 3, 2, 3, 3, command=delete)
-label_divide = button('/', '#c6c6c6', 4, 2, 3, 3, 3,
-                      3, command=lambda x='/': num(x))
-label_times = button('*', '#c6c6c6', 4, 2, 3, 4, 3,
-                     3, command=lambda x='*': num(x))
+label_7 = button('7', '#ffe1b5', 4, 2, 4, 1, 3, 3, command=lambda:add_num('7'))
+label_8 = button('8', '#ffe1b5', 4, 2, 4, 2, 3, 3, command=lambda:add_num('8'))
+label_9 = button('9', '#ffe1b5', 4, 2, 4, 3, 3, 3, command=lambda:add_num('9'))
+label_minus = button('-', '#c6c6c6', 4, 2, 4, 4, 3, 3, command=lambda:add_num('-'))
 
-label_7 = button('7', '#ffe1b5', 4, 2, 4, 1, 3, 3, command=lambda x=7: num(x))
-label_8 = button('8', '#ffe1b5', 4, 2, 4, 2, 3, 3, command=lambda x=8: num(x))
-label_9 = button('9', '#ffe1b5', 4, 2, 4, 3, 3, 3, command=lambda x=9: num(x))
-label_minus = button('-', '#c6c6c6', 4, 2, 4, 4, 3,
-                     3, command=lambda x='-': num(x))
+label_4 = button('4', '#ffe1b5', 4, 2, 5, 1, 3, 3, command=lambda:add_num('4'))
+label_5 = button('5', '#ffe1b5', 4, 2, 5, 2, 3, 3, command=lambda:add_num('5'))
+label_6 = button('6', '#ffe1b5', 4, 2, 5, 3, 3, 3, command=lambda:add_num('6'))
+label_plus = button('+', '#c6c6c6', 4, 2, 5, 4, 3, 3, sticky=N, command=lambda:add_num('+'))
 
-label_4 = button('4', '#ffe1b5', 4, 2, 5, 1, 3, 3, command=lambda x=4: num(x))
-label_5 = button('5', '#ffe1b5', 4, 2, 5, 2, 3, 3, command=lambda x=5: num(x))
-label_6 = button('6', '#ffe1b5', 4, 2, 5, 3, 3, 3, command=lambda x=6: num(x))
-label_plus = button('+', '#c6c6c6', 4, 2, 5, 4, 3, 3,
-                    sticky=N, command=lambda x='+': num(x))
-
-label_1 = button('1', '#ffe1b5', 4, 2, 6, 1, 3, 3, command=lambda x=1: num(x))
-label_2 = button('2', '#ffe1b5', 4, 2, 6, 2, 3, 3, command=lambda x=2: num(x))
-label_3 = button('3', '#ffe1b5', 4, 2, 6, 3, 3, 3, command=lambda x=3: num(x))
+label_1 = button('1', '#ffe1b5', 4, 2, 6, 1, 3, 3, command=lambda:add_num('1'))
+label_2 = button('2', '#ffe1b5', 4, 2, 6, 2, 3, 3, command=lambda:add_num('2'))
+label_3 = button('3', '#ffe1b5', 4, 2, 6, 3, 3, 3, command=lambda:add_num('3'))
 label_equal = button('=', '#c6c6c6', 4, 5, 6, 4, 3, 3, rowspan=2, command=calculate)
 
-label_0 = button('0', '#ffe1b5', 10, 2, 7, 1, 3, 3, columnspan=2, command=lambda x=0: num(x))
-label_dot = button('.', '#ffe1b5', 4, 2, 7, 3, 3,
-                   3, command=lambda x='.': num(x))
+label_0 = button('0', '#ffe1b5', 10, 2, 7, 1, 3, 3, columnspan=2, command=lambda:add_num('0'))
+label_dot = button('.', '#ffe1b5', 4, 2, 7, 3, 3, 3, command=lambda:add_num('.'))
 
 root.mainloop()
 
