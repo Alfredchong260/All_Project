@@ -61,21 +61,22 @@ class Mage(Hero):
         super().attack()
 
         if self.magical >= self.max:
-            self.magical = 0
+            self.magical -= self.max
             self.nirvana()
 
         if self.anger >= 100:
-            self.max = 50
-            self.stage = 2
+            self.stage_two()
+
+    def stage_two(self):
+        self.max = 50
+        self.stage = 2
+        self.anger = 0
+        print(f"{self.name} 切换成第二形态")
 
 class Tank(Hero):
-    def __init__(self, name, high, width, blood, anger):
-        super().__init__(name, high, width, blood, anger)
-
     def attack(self):
-        self.anger -= 2
-        self.anger += 5
         super().attack()
+        self.anger += 3
 
     def nirvana(self):
         super().nirvana()

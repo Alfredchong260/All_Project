@@ -34,18 +34,17 @@ class MySqlDB:
     def search(self, name):
         for data in self.data:
             if name == data['name']:
-                return f"姓名：{data['name']}\n语文：{data['chinese']}\n数学：{data['math']}\n英文：{data['english']}\n总平均：{data['total']}"
+                return data
+
         return None
 
     def change(self, dict1):
-        for data in self.data:
-            if dict1['name'] == data['name']:
-                data['chinese'] = dict1['chinese']
-                data['math'] = dict1['math']
-                data['english'] = dict1['english']
-                data['total'] = dict1['total']
-                return '成功修改'
-        return None
+        student = self.search(dict1['name'])
+        if student:
+            student.update(dict1)
+            return '修改成功'
+        else:
+            return None
 
     def save(self):
         self.students.close()
@@ -63,8 +62,8 @@ db = MySqlDB('students.json')
 # db.delete('李四')
 # print(db.all())
 # print(db.insert({'name':'王五', 'chinese':100, 'math':100, 'english':100, 'total': 100}))
-# print(db.all())
-# print(db.search('李四'))
-# print(db.change({'name': '李四', 'chinese': 100, 'math': 100, 'english': 100, 'total': 100}))
+print(db.search('李四'))
+print(db.change({'name': '李四', 'chinese': 100, 'math': 100, 'english': 100, 'total': 100}))
+print(db.all())
 # print(db.all())
 # print(db.save())

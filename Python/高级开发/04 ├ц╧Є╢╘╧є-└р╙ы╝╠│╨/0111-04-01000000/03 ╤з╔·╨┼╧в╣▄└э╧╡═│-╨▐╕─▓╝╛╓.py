@@ -110,6 +110,8 @@ class ChangeFrame(tk.Frame, MySqlDB):  # 继承Frame类
         middle.pack()
 
         Label(top, text='修改界面', font=self.font).pack()
+        self.label = Label(top, text='', font=self.font)
+        self.label.pack()
 
         Label(middle, text='姓名:', font=self.font).grid(
             row=1, column=1, padx=10, pady=10)
@@ -134,26 +136,36 @@ class ChangeFrame(tk.Frame, MySqlDB):  # 继承Frame类
 
     def _search(self):
         # 补全查找逻辑
-        name = self.name.get()
-        var = self.search(name)
+        try:
+            self.label.config(text='')
+            name = self.name.get()
+            var = self.search(name)
 
-        self.math.set(var['math'])
-        self.chinese.set(var['chinese'])
-        self.english.set(var['english'])
-        self.total.set(var['total'])
+            self.math.set(var['math'])
+            self.chinese.set(var['chinese'])
+            self.english.set(var['english'])
+            self.total.set(var['total'])
+        except Exception:
+            self.label.config(text=f"{self.name.get()}不存在")
 
     def _change(self):
         # 补全修改数据逻辑
-        name = self.name.get()
-        math = int(self.math.get())
-        chinese = int(self.chinese.get())
-        english = int(self.english.get())
+        try:
+            self.label.config(text='')
+            name = self.name.get()
+            math = int(self.math.get())
+            chinese = int(self.chinese.get())
+            english = int(self.english.get())
 
-        total = int((math + chinese + english) / 3)
+            total = int((math + chinese + english) / 3)
 
-        dict1 = {"name": name, "chinese": chinese, "math": math, "english": english, "total": total}
+            dict1 = {"name": name, "chinese": chinese, "math": math, "english": english, "total": total}
 
-        return self.change(dict1)
+            self.label.config(text='修改成功')
+            return self.change(dict1)
+
+        except Exception:
+            self.label.config(text=f"{self.name.get()}不存在")
 
 
 
