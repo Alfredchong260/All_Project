@@ -1,6 +1,5 @@
 from pyecharts import options as opts
 from pyecharts.charts import Bar
-from pyecharts.faker import Faker
 import pandas as pd
 import requests
 import parsel
@@ -50,10 +49,14 @@ with open('马来西亚股票.csv', 'w', encoding='utf-8') as f:
 
 data_df = pd.read_csv('./马来西亚股票.csv')
 df = data_df.dropna()
-df1 = df[['名称', '交易量']]
+df1 = df[['名称', '最新价']]
 df2 = df1.iloc[:20]
-x_axis = df['名称'].values
-y_axis = df['交易量'].values
+x_axis = list(df['名称'].values)
+y_axis = []
+y = df['最新价'].values
+
+for i in y:
+    y_axis.append(int(i))
 
 c = (
     Bar()

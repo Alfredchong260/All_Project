@@ -60,18 +60,18 @@ class ImgViewer:
         self.check()
 
         self.page_label = tk.Label(self.label_frame, text='{} of {}'.format(
-            1, len(self.photos)), font=('', 12), width=10, anchor=tk.CENTER)
-        self.page_label.grid(row=1, column=2, columnspan=2)
+            1, len(self.photos)), font=('', 12), width=16, anchor=tk.CENTER)
+        self.page_label.grid(row=1, column=1, columnspan=2)
 
         self.btn_previous = tk.Button(self.label_frame, text='上一页',
-                                      command=self.pre_page).grid(row=2, column=1)
+                                      command=self.pre_page, state=tk.DISABLED).grid(row=2, column=1)
         self.btn_next = tk.Button(self.label_frame, text='下一页',
                                   command=self.next_page).grid(row=2, column=2)
 
     def check(self):
         root_height = self.photos[self.page].height()
         root_width = self.photos[self.page].width()
-        self.root.geometry(f"{root_width + 100}x{root_height + 100}+100+100")
+        self.root.geometry(f"{root_width}x{root_height + 100}+100+100")
         self.root.update()
 
 
