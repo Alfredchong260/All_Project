@@ -7,6 +7,7 @@
             + 发送 `你已经有xx条信息记录` 给客户端（信息数量可以从文件中读取）
 
 """
+import threading
 import socket
 import re
 
@@ -22,9 +23,12 @@ class Server:
         self.socket.listen(128)
 
         # 可以接收到很多个用户的请求
-        socket_client, socket_client_addr = self.socket.accept()
-        socket_client.send('hellow world!'.encode('utf-8'))
-        self.handle_recv(socket_client, socket_client_addr)
+        while True:
+            socket_client, socket_client_addr = self.socket.accept()
+            socket_client.send('hellow world!'.encode('utf-8'))
+            t1 = threading.Thread(target=self.handle_recv, args=(socket_client, socket_client_addr))
+            t1.start()
+            # self.handle_recv(socket_client, socket_client_addr)
 
     def handle_recv(self, clt_socket, clt_addr):
         """
@@ -45,13 +49,14 @@ class Server:
                     length = len(send_data)
                     print(send_data)
                     clt_socket.send(f'你已经有{length}条信息记录'.encode('utf-8'))
+                    self.record(clt_socket, filename, length)
             except Exception:
                 try:
-                    filename = re.findall('\d+\.\d+\.\d+\.\d+', filename)
+                    filename = re.findall('\d+\.\d+\.\d+\.\d+-\d+', filename)
                     if filename:
                         self.create(filename[0])
                         clt_socket.send('已创建新的对话'.encode('utf-8'))
-                        self.record(clt_socket, clt_addr[0], length)
+                        self.record(clt_socket, clt_addr[0] + '-' + clt_addr[1], length)
 
                     clt_socket.send('文件格式错误'.encode('utf-8'))
 
