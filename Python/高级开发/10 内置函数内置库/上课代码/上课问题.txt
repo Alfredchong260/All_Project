@@ -1,0 +1,9 @@
+temp列表在这里到底起什么作用啊
+print(sorted(tuple(arr), key=lambda temp: temp[0] + temp[1]))
+
+动态和静态分不清
+
+    动态: 在程序运行的过程中,可以动态修改对象的属性与方法, python 直接运行 py 代码
+    静态: java/c 代码在运行之前会被编译为二进制数据  c 语言直接运行exe程序, Java 是运行 jar 程序
+
+
