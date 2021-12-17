@@ -12,8 +12,8 @@ from dateutil.relativedelta import relativedelta
 mouth = relativedelta(months=1)
 print('月份时间差对象:', mouth)
 
-old_day = datetime.datetime(2018, 1, 1, 0, 0, 0)
-target_day = datetime.datetime(2020, 12, 31, 0, 0, 0)
+old_day = datetime.datetime(2018, 1, 1)
+target_day = datetime.datetime(2020, 12, 31)
 
 while old_day < target_day:
     print(old_day)
