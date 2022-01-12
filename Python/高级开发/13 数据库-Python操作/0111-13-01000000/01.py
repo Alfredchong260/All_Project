@@ -55,13 +55,14 @@ create = '''create table changsha(
 with open('./changsha.csv', 'r', encoding='gbk') as fs:
     lines = fs.readlines()
 
+insert = 'insert to changsha(city, region, title, star_level, star, review_num, mean_price, comment_list1, comment_list2, comment_list3, link, shop_tag_cate_click, shop_tag_region_click, addr) value (%s, %s, %s, %s,%s, %s, %s, %s,%s, %s, %s, %s, %s, %s);'
 for line, fieldname in zip(lines, fieldnames):
     try:
-        data = line.strip().split(',')
-        canshu = '%s ' * len(data)
-        insert = f'insert to changsha(city, region, title, star_level, star, review_num, mean_price, comment_list1, comment_list2, comment_list3, link, shop_tag_cate_click, shop_tag_region_click, addr) value ({canshu});'
-        cursor.execute(insert, tuple(data))
-        break
+        data = tuple(line.strip().split(','))
+        cursor.execute(insert, data)
+        # canshu = '%s ' * len(data)
+        # cursor.execute(insert, tuple(data))
+        # break
 
     except Exception as e:
         print('出错', e)
