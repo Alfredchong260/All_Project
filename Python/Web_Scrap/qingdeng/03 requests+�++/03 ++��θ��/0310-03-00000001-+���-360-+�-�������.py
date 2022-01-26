@@ -74,7 +74,7 @@ def downloadImage(url, count):
         second = random.choice(symbol)
         name = str(first) + str(second) + '.jpg'
     else:
-        name = url.split('/')[-1]
+        name = url.split('.jpg')[0] + '.jpg'
     time.sleep(0.5)
     response1 = requests.get(url)
     print(f'正在下载第{count}张图')
