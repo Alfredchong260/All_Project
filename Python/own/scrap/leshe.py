@@ -19,7 +19,7 @@ proxies = ['HTTP://110.243.30.23:9999', 'HTTP://222.189.191.206:9999',
            'HTTP://59.62.36.74:9000', 'HTTP://218.2.226.42:80']
 proxy = {'HTTP': random.choice(proxies)}
 
-filename = './lenglui/'
+filename = './leshe/'
 if not os.path.exists(filename):
     os.mkdir(filename)
 
