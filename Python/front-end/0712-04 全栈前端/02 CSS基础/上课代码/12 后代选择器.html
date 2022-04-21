@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            font-size: 25px
+        }
+
+        /* 直接加空格是后代选择器 */
+        div.nav a {
+            text-decoration: none;
+        }
+
+        /* > 表示必须是亲儿字 */
+        div.nav > a {
+            color: black;
+        }
+
+        div.nav > div.sub_nav > a {
+            background-color: cyan;
+        }
+    </style>
+</head>
+<body>
+<div class="nav">
+    <a href="#">内部链接</a>
+    <a href="#">内部链接</a>
+    <a href="#">内部链接</a>
+
+    <div class="sub_nav">
+        <a href="#">内部链接</a>
+        <a href="#">内部链接</a>
+        <a href="#">内部链接</a>
+    </div>
+</div>
+
+<a href="#">外部链接</a>
+<a href="#">外部链接</a>
+<a href="#">外部链接</a>
+
+</body>
+</html>

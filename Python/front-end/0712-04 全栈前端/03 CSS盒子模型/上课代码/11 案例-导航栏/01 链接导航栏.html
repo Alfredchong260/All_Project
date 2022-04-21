@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>01 链接导航栏</title>
+    <script>
+        /*
+        *  使用图片实现 `图片导航栏.png` 的布局
+        *  默认显示橙色图片，让鼠标点击上去之后显示蓝色图片
+        *  文字居中对齐
+        * */
+    </script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav {
+            padding-bottom: 5px;
+            border-bottom: 1px solid #bfbfbf;
+        }
+
+        .nav a {
+            color: white;
+            background-image: url(bg.png);
+            display: inline-block;
+            width: 120px;
+            height: 50px;
+            text-decoration: none;
+            line-height: 50px;
+            text-align: center;
+        }
+
+        .nav a:hover {
+            background-image: url(bgc.png);
+            color: black;
+        }
+
+    </style>
+</head>
+
+<body>
+<div class="nav">
+    <a href="#">网站首页</a>
+    <a href="#">办公软件</a>
+    <a href="#">PPT教程</a>
+    <a href="#">WPS教程</a>
+    <a href="#">电子书籍</a>
+    <a href="#">今日特价</a>
+</div>
+
+
+</html>

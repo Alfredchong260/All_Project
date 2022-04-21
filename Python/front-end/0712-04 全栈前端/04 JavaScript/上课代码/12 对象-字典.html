@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let obj = {
+    'uname': '正心',
+    age: 18,
+    hobby: ['吃饭', '睡觉', '打豆豆'],
+  };
+  obj['nickname'] = '青灯教育-正心';
+  console.log(obj);
+  console.log(obj.nick_name);
+  // obj.属性  调用
+  // obj['属性']  调用
+  for (key in obj){
+    console.log(key, obj[key]);
+  }
+
+  // Object 对象就是json
+</script>
+</body>
+</html>

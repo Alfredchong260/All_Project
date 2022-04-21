@@ -1,0 +1,2618 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.11">
+    
+    
+      
+        <title>HTML标签 - 青灯教育-前端开发 11 期</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.50e68009.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#web" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href=".." title="青灯教育-前端开发 11 期" class="md-header__button md-logo" aria-label="青灯教育-前端开发 11 期" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            青灯教育-前端开发 11 期
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              HTML标签
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../00%20%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D/%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D/" class="md-tabs__link">
+        课前注意
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="./" class="md-tabs__link md-tabs__link--active">
+        课程目录
+      </a>
+    </li>
+  
+
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="青灯教育-前端开发 11 期" class="md-nav__button md-logo" aria-label="青灯教育-前端开发 11 期" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    青灯教育-前端开发 11 期
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1">
+          课前注意
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="课前注意" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          课前注意
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../00%20%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D/%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D/" class="md-nav__link">
+        课程介绍
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../00%20%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D/%E4%BD%9C%E4%B8%9A%E6%8F%90%E4%BA%A4/" class="md-nav__link">
+        作业提交
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../00%20%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D/%E8%B5%84%E6%96%99%E4%B8%8B%E8%BD%BD/" class="md-nav__link">
+        资料下载
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          课程目录
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="课程目录" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          课程目录
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1">
+          01 HTML标签
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="01 HTML标签" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          01 HTML标签
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          HTML标签
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        HTML标签
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#web" class="md-nav__link">
+    认识WEB
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#html" class="md-nav__link">
+    HTML结构
+  </a>
+  
+    <nav class="md-nav" aria-label="HTML结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#html_1" class="md-nav__link">
+    HTML 初识
+  </a>
+  
+    <nav class="md-nav" aria-label="HTML 初识">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#html_2" class="md-nav__link">
+    HTML骨架
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#html_3" class="md-nav__link">
+    HTML元素标签分类
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#html_4" class="md-nav__link">
+    HTML标签关系
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#html_5" class="md-nav__link">
+    HTML结构
+  </a>
+  
+    <nav class="md-nav" aria-label="HTML结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#doctype" class="md-nav__link">
+    文档类型 &lt;!DOCTYPE&gt;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    注释标签
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lang" class="md-nav__link">
+    页面语言lang
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    字符集
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#html_6" class="md-nav__link">
+    HTML常用标签
+  </a>
+  
+    <nav class="md-nav" aria-label="HTML常用标签">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#html_7" class="md-nav__link">
+    HTML常用标签
+  </a>
+  
+    <nav class="md-nav" aria-label="HTML常用标签">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    排版标签
+  </a>
+  
+    <nav class="md-nav" aria-label="排版标签">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1h" class="md-nav__link">
+    1）标题标签h (熟记)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2p" class="md-nav__link">
+    2）段落标签p ( 熟记)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3hr" class="md-nav__link">
+    3）水平线标签hr(认识)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4br" class="md-nav__link">
+    4）换行标签br (熟记)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5div-span" class="md-nav__link">
+    5）div 和  span标签(重点)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    排版标签总结
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#html_8" class="md-nav__link">
+    HTML标签的语义化
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    文本格式化标签(熟记)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#img" class="md-nav__link">
+    图像标签img (重点)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    链接标签(重点)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    表格
+  </a>
+  
+    <nav class="md-nav" aria-label="表格">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#table" class="md-nav__link">
+    表格 table(会使用)
+  </a>
+  
+    <nav class="md-nav" aria-label="表格 table(会使用)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    创建表格
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    表格属性
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#th" class="md-nav__link">
+    表头单元格标签th
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#caption" class="md-nav__link">
+    表格标题caption
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    总结表格
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    列表和表单
+  </a>
+  
+    <nav class="md-nav" aria-label="列表和表单">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    列表标签（重点）
+  </a>
+  
+    <nav class="md-nav" aria-label="列表标签（重点）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ul" class="md-nav__link">
+    无序列表 ul （重点）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ol" class="md-nav__link">
+    有序列表 ol （了解）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    列表总结
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    表单标签(掌握)
+  </a>
+  
+    <nav class="md-nav" aria-label="表单标签(掌握)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#input" class="md-nav__link">
+    input 控件(重点)
+  </a>
+  
+    <nav class="md-nav" aria-label="input 控件(重点)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-type" class="md-nav__link">
+    1. type 属性
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-value" class="md-nav__link">
+    2. value属性   值
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-name" class="md-nav__link">
+    3. name属性
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-checked" class="md-nav__link">
+    4. checked属性
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-input" class="md-nav__link">
+    5. input 属性小结
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#label" class="md-nav__link">
+    label标签(理解)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#textarea" class="md-nav__link">
+    textarea控件(文本域)
+  </a>
+  
+    <nav class="md-nav" aria-label="textarea控件(文本域)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    文本框和文本域区别
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#select" class="md-nav__link">
+    select下拉列表
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#form" class="md-nav__link">
+    form表单域
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#html5" class="md-nav__link">
+    @拓展：HTML5 新增标签
+  </a>
+  
+    <nav class="md-nav" aria-label="@拓展：HTML5 新增标签">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#input_1" class="md-nav__link">
+    新增 input 标签
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    新增表单属性
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    查文档
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%E6%8B%93%E5%B1%95-emment%E8%AF%AD%E6%B3%95/" class="md-nav__link">
+        emment语法
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02%20CSS%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+        02 CSS基础
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3">
+          03 CSS盒子模型
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="03 CSS盒子模型" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          03 CSS盒子模型
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03%20CSS%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
+        CSS盒子模型
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03%20CSS%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/Flex%20%E5%B8%83%E5%B1%80/" class="md-nav__link">
+        Flex 布局
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#web" class="md-nav__link">
+    认识WEB
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#html" class="md-nav__link">
+    HTML结构
+  </a>
+  
+    <nav class="md-nav" aria-label="HTML结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#html_1" class="md-nav__link">
+    HTML 初识
+  </a>
+  
+    <nav class="md-nav" aria-label="HTML 初识">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#html_2" class="md-nav__link">
+    HTML骨架
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#html_3" class="md-nav__link">
+    HTML元素标签分类
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#html_4" class="md-nav__link">
+    HTML标签关系
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#html_5" class="md-nav__link">
+    HTML结构
+  </a>
+  
+    <nav class="md-nav" aria-label="HTML结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#doctype" class="md-nav__link">
+    文档类型 &lt;!DOCTYPE&gt;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    注释标签
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lang" class="md-nav__link">
+    页面语言lang
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    字符集
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#html_6" class="md-nav__link">
+    HTML常用标签
+  </a>
+  
+    <nav class="md-nav" aria-label="HTML常用标签">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#html_7" class="md-nav__link">
+    HTML常用标签
+  </a>
+  
+    <nav class="md-nav" aria-label="HTML常用标签">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    排版标签
+  </a>
+  
+    <nav class="md-nav" aria-label="排版标签">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1h" class="md-nav__link">
+    1）标题标签h (熟记)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2p" class="md-nav__link">
+    2）段落标签p ( 熟记)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3hr" class="md-nav__link">
+    3）水平线标签hr(认识)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4br" class="md-nav__link">
+    4）换行标签br (熟记)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5div-span" class="md-nav__link">
+    5）div 和  span标签(重点)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    排版标签总结
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#html_8" class="md-nav__link">
+    HTML标签的语义化
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    文本格式化标签(熟记)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#img" class="md-nav__link">
+    图像标签img (重点)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    链接标签(重点)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    表格
+  </a>
+  
+    <nav class="md-nav" aria-label="表格">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#table" class="md-nav__link">
+    表格 table(会使用)
+  </a>
+  
+    <nav class="md-nav" aria-label="表格 table(会使用)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    创建表格
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    表格属性
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#th" class="md-nav__link">
+    表头单元格标签th
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#caption" class="md-nav__link">
+    表格标题caption
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    总结表格
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    列表和表单
+  </a>
+  
+    <nav class="md-nav" aria-label="列表和表单">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    列表标签（重点）
+  </a>
+  
+    <nav class="md-nav" aria-label="列表标签（重点）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ul" class="md-nav__link">
+    无序列表 ul （重点）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ol" class="md-nav__link">
+    有序列表 ol （了解）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    列表总结
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    表单标签(掌握)
+  </a>
+  
+    <nav class="md-nav" aria-label="表单标签(掌握)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#input" class="md-nav__link">
+    input 控件(重点)
+  </a>
+  
+    <nav class="md-nav" aria-label="input 控件(重点)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-type" class="md-nav__link">
+    1. type 属性
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-value" class="md-nav__link">
+    2. value属性   值
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-name" class="md-nav__link">
+    3. name属性
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-checked" class="md-nav__link">
+    4. checked属性
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-input" class="md-nav__link">
+    5. input 属性小结
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#label" class="md-nav__link">
+    label标签(理解)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#textarea" class="md-nav__link">
+    textarea控件(文本域)
+  </a>
+  
+    <nav class="md-nav" aria-label="textarea控件(文本域)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    文本框和文本域区别
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#select" class="md-nav__link">
+    select下拉列表
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#form" class="md-nav__link">
+    form表单域
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#html5" class="md-nav__link">
+    @拓展：HTML5 新增标签
+  </a>
+  
+    <nav class="md-nav" aria-label="@拓展：HTML5 新增标签">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#input_1" class="md-nav__link">
+    新增 input 标签
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    新增表单属性
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    查文档
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+  <h1>HTML标签</h1>
+
+<h2 id="web">认识WEB<a class="headerlink" href="#web" title="Permanent link">&para;</a></h2>
+<p><strong>网页</strong> </p>
+<p>网页主要由文字、图像和超链接等元素构成。当然，除了这些元素，网页中还可以包含音频、视频等。</p>
+<p>网页有图片、链接、文字等元素组成，我们后面的任务就是要把这部分网页元素用代码写出来。。。</p>
+<p><strong>构成：</strong> 主要包括结构（Structure）、表现（Presentation）和行为（Behavior）三个方面。</p>
+<ul>
+<li>
+<p>结构标准：结构用于对网页元素进行整理和分类，咱们主要学的是HTML。 对于网页来说最重要的一部分</p>
+</li>
+<li>
+<p>表现标准：表现用于设置网页元素的版式、颜色、大小等外观样式，主要指的是CSS</p>
+</li>
+<li>行为标准：行为是指网页模型的定义及交互的编写，咱们主要学的是 Javascript</li>
+</ul>
+<p>理想状态我们的源码： .HTML      .css      .js </p>
+<p><strong>结构层：通过对语义的分析，可以对其划分结构。具有了结构的内容，将更容易阅读</strong></p>
+<p><strong>表现层：是为了让网页就能展现出灵活多样的显示效果</strong> </p>
+<p><strong>行为层：用户对网页进行操作，网页可以做出响应性的变化。</strong> </p>
+<h2 id="html">HTML结构<a class="headerlink" href="#html" title="Permanent link">&para;</a></h2>
+<h3 id="html_1">HTML 初识<a class="headerlink" href="#html_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>HTML 指的是超文本标记语言 (**H**yper **T**ext **M**arkup **L**anguage)是用来描述网页的一种语言。</li>
+<li>HTML 不是一种编程语言，而是一种标记语言 (markup language)</li>
+<li>标记语言是一套标记标签 (markup tag)</li>
+</ul>
+<p><strong>所谓超文本，有2层含义：</strong> </p>
+<ol>
+<li>因为它可以加入图片、声音、动画、多媒体等内容（**超越文本限制 **）</li>
+<li>不仅如此，它还可以从一个文件跳转到另一个文件，与世界各地主机的文件连接（**超级链接文本 **）。</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span> 我是一个大标题 <span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</code></pre></div>
+<blockquote>
+<p>网页是由网页元素组成的 ， 这些元素是利用 html 标签描述出来，然后通过浏览器解析，就可以显示给用户了。</p>
+</blockquote>
+<h4 id="html_2">HTML骨架<a class="headerlink" href="#html_2" title="Permanent link">&para;</a></h4>
+<p>HTML 有自己的语言语法骨架格式：（要遵循，要专业） 要求务必非常流畅的默写下来。。</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Title<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+<p><strong>html骨架标签总结</strong> </p>
+<table>
+<thead>
+<tr>
+<th>标签名</th>
+<th align="center">定义</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;html&gt;&lt;/html&gt;</code></td>
+<td align="center">HTML标签</td>
+<td align="left">页面中最大的标签，我们成为  根标签</td>
+</tr>
+<tr>
+<td><code>&lt;head&gt;&lt;/head&gt;</code></td>
+<td align="center">文档的头部</td>
+<td align="left">注意在head标签中我们必须要设置的标签是title</td>
+</tr>
+<tr>
+<td><code>&lt;titile&gt;&lt;/title&gt;</code></td>
+<td align="center">文档的标题</td>
+<td align="left">让页面拥有一个属于自己的网页标题</td>
+</tr>
+<tr>
+<td><code>&lt;body&gt;&lt;/body&gt;</code></td>
+<td align="center">文档的主体</td>
+<td align="left">元素包含文档的所有内容，页面内容 基本都是放到body里面的 **</td>
+</tr>
+</tbody>
+</table>
+<h4 id="html_3">HTML元素标签分类<a class="headerlink" href="#html_3" title="Permanent link">&para;</a></h4>
+<p><strong>标签：</strong></p>
+<p>在HTML页面中，带有“&lt; &gt;”符号的元素被称为HTML标签，如上面提到的 &lt;html&gt;、&lt;head&gt;、&lt;body&gt;都是HTML骨架结构标签。</p>
+<p><strong>分类：</strong></p>
+<ol>
+<li>常规元素（双标签）</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">标签名</span><span class="p">&gt;</span> 内容 <span class="p">&lt;/</span><span class="nt">标签名</span><span class="p">&gt;</span>   
+
+比如 
+
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>  我是文字  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</code></pre></div>
+<ul>
+<li>该语法中“&lt;标签名&gt;”表示该标签的作用开始，一般称为“开始标签（start tag）”，“<!--标签名-->” 表示该标签的作用结束，一般称为“结束标签（end tag）”。</li>
+<li>和开始标签相比，结束标签只是在前面加了一个关闭符“/”。</li>
+<li>
+<p>我们以后接触的基本都是双标签</p>
+</li>
+<li>
+<p>空元素（单标签）</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">标签名</span> <span class="p">/&gt;</span>  比如  <span class="p">&lt;</span><span class="nt">br</span> <span class="p">/&gt;</span>
+</code></pre></div>
+<ul>
+<li>空元素 用单标签来表示， 简单点说，就是里面不需要包含内容， 只有一个开始标签不需要关闭。</li>
+</ul>
+<h4 id="html_4">HTML标签关系<a class="headerlink" href="#html_4" title="Permanent link">&para;</a></h4>
+<p>主要针对于**双标签** 的相互关系分为两种：  请大家务必熟悉记住这种标签关系，因为后面我们标签嵌套特别多，很容易弄混他们的关系。</p>
+<ol>
+<li>嵌套关系</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>  
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span> <span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span> 
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>2.并列关系</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</code></pre></div>
+<h3 id="html_5">HTML结构<a class="headerlink" href="#html_5" title="Permanent link">&para;</a></h3>
+<h4 id="doctype">文档类型 &lt;!DOCTYPE&gt;<a class="headerlink" href="#doctype" title="Permanent link">&para;</a></h4>
+<p><strong>用法：</strong> </p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span> 
+</code></pre></div>
+<p><strong>作用：</strong></p>
+<p><code>&lt;!DOCTYPE&gt;</code> 声明位于文档中的最前面的位置，处于 <html> 标签之前。此标签可告知浏览器文档使用哪种 HTML 或 XHTML 规范。</p>
+<h4 id="_1">注释标签<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
+<p>在HTML中还有一种特殊的标签——注释标签。如果需要在HTML文档中添加一些便于阅读和理解但又不需要显示在页面中的注释文字，就需要使用注释标签。</p>
+<p>简单解释：</p>
+<p>注释内容不会显示在浏览器窗口中，但是作为HTML文档内容的一部分，也会被下载到用户的计算机上，查看源代码时就可以看到。</p>
+<p>语法格式：</p>
+<div class="highlight"><pre><span></span><code>    <span class="cm">&lt;!-- 注释语句 --&gt;</span>     快捷键是：    ctrl + /  
+</code></pre></div>
+<p>注释重要性：</p>
+<blockquote>
+<p>注释是给人看的，目的是为了更好的解释这部分代码是干啥的， 程序是不执行这个代码的</p>
+</blockquote>
+<h4 id="lang">页面语言lang<a class="headerlink" href="#lang" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>  指定html 语言种类
+</code></pre></div>
+<p>最常见的2个：</p>
+<ol>
+<li><code>en</code>定义语言为英语</li>
+<li><code>zh-CN</code>定义语言为中文</li>
+</ol>
+<blockquote>
+<p><html lang="zh-CN">  指定该html标签 内容 所用的语言为中文</p>
+</blockquote>
+<h4 id="_2">字符集<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span> <span class="p">/&gt;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>字符集(Character set)是多个字符的集合。
+
+计算机要准确的处理各种字符集文字，需要进行字符编码，以便计算机能够识别和存储各种文字。
+</code></pre></div>
+<p>utf-8是目前最常用的字符集编码方式，常用的字符集编码方式还有gbk和gb2312。</p>
+<ul>
+<li>gb2312 简单中文  包括6763个汉字</li>
+<li>BIG5   繁体中文 港澳台等用</li>
+<li>GBK包含全部中文字符    是GB2312的扩展，加入对繁体字的支持，兼容GB2312</li>
+<li>UTF-8则基本包含全世界所有国家需要用到的字符</li>
+<li><strong>这句代码非常关键， 是必须要写的代码，否则可能引起乱码的情况。</strong> </li>
+</ul>
+<blockquote>
+<p>这句话是让 html 文件是以 UTF-8 编码保存的， 浏览器根据编码去解码对应的html内容。</p>
+</blockquote>
+<h2 id="html_6">HTML常用标签<a class="headerlink" href="#html_6" title="Permanent link">&para;</a></h2>
+<h3 id="html_7">HTML常用标签<a class="headerlink" href="#html_7" title="Permanent link">&para;</a></h3>
+<p>首先 HTML和CSS是两种完全不同的语言，我们学的是结构，就只写HTML标签，认识标签就可以了。 不会再给结构标签指定样式了。</p>
+<p>HTML标签有很多，这里我们学习最为常用的，后面有些较少用的，我们可以查下手册就可以了。 </p>
+<h4 id="_3">排版标签<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
+<p>排版标签主要和css搭配使用，显示网页结构的标签，是网页布局最常用的标签。</p>
+<h5 id="1h">1）标题标签h (熟记)<a class="headerlink" href="#1h" title="Permanent link">&para;</a></h5>
+<p>单词缩写：  head   头部. 标题       title  文档标题</p>
+<p>为了使网页更具有语义化，我们经常会在页面中用到标题标签，HTML提供了6个等级的标题，即</p>
+<p><strong>标题标签语义：</strong>  作为标题使用，并且依据重要性递减</p>
+<p>其基本语法格式如下：</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>标题一共六级选, <span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>文字加粗一行显。<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>由大到小依次减，<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h4</span><span class="p">&gt;</span>从重到轻随之变。<span class="p">&lt;/</span><span class="nt">h4</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h5</span><span class="p">&gt;</span>语法规范书写后，<span class="p">&lt;/</span><span class="nt">h5</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h6</span><span class="p">&gt;</span>具体效果刷新见。<span class="p">&lt;/</span><span class="nt">h6</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>显示效果如下：</p>
+<p><img alt="image-20200818203231007" src="../assets/image-20200818203231007.png" /></p>
+<p><strong>小结 :</strong> </p>
+<ul>
+<li>加了标题的文字会变的加粗，字号也会依次变大</li>
+<li>一行是只能放一个标题的</li>
+</ul>
+<h5 id="2p">2）段落标签p ( 熟记)<a class="headerlink" href="#2p" title="Permanent link">&para;</a></h5>
+<p>单词缩写：  paragraph  段落  [ˈpærəgræf]    无须记这个单词</p>
+<p><strong>作用语义：</strong></p>
+<p>可以把 HTML 文档分割为若干段落</p>
+<p>在网页中要把文字有条理地显示出来，离不开段落标签，就如同我们平常写文章一样，整个网页也可以分为若干个段落，而段落的标签就是</p>
+<div class="highlight"><pre><span></span><code>静夜思
+
+床前明月光，疑是地上霜。
+
+举头望明月，低头思故乡。
+<span class="p">&lt;</span><span class="nt">hr</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>静夜思<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>【作者】李白 【朝代】唐<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>床前明月光，疑是地上霜。<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>举头望明月，低头思故乡。<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>是HTML文档中最常见的标签，默认情况下，文本在一个段落中会根据浏览器窗口的大小自动换行。</p>
+<h5 id="3hr">3）水平线标签hr(认识)<a class="headerlink" href="#3hr" title="Permanent link">&para;</a></h5>
+<p>单词缩写：  horizontal  横线    [ˌhɔrəˈzɑntl]    同上</p>
+<p>在网页中常常看到一些水平线将段落与段落之间隔开，使得文档结构清晰，层次分明。这些水平线可以通过插入图片实现，也可以简单地通过标签来完成，<hr />就是创建横跨网页水平线的标签。其基本语法格式如下：</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">hr</span><span class="p">&gt;</span>是单标签
+</code></pre></div>
+<p>在网页中显示默认样式的水平线。</p>
+<p>课堂练习:新闻页面 </p>
+<blockquote>
+<p><a href="https://tech.163.com/20/0609/20/FEN57N6500097U7T.html">https://tech.163.com/20/0609/20/FEN57N6500097U7T.html</a></p>
+</blockquote>
+<p><img alt="image-20200610022553208" src="../assets/image-20200610022553208.png" /></p>
+<h5 id="4br">4）换行标签br (熟记)<a class="headerlink" href="#4br" title="Permanent link">&para;</a></h5>
+<p>单词缩写：  break   打断 ,换行</p>
+<p>在HTML中，一个段落中的文字会从左到右依次排列，直到浏览器窗口的右端，然后自动换行。如果希望某段文本强制换行显示，就需要使用换行标签</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>这时如果还像在word中直接敲回车键换行就不起作用了。</p>
+<p>此处有练习题</p>
+<h5 id="5div-span">5）div 和  span标签(重点)<a class="headerlink" href="#5div-span" title="Permanent link">&para;</a></h5>
+<p>div   span    是没有语义的     是我们网页布局主要的2个盒子   想必你听过  css+div</p>
+<p>div 就是  division  的缩写   分割， 分区的意思  其实有很多div 来组合网页。</p>
+<p>span   跨度，跨距；范围    </p>
+<p>语法格式：</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>静夜思<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>【作者】李白 【朝代】唐<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>床前明月光，<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>疑是地上霜。<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>举头望明月，<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>低头思故乡。<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>他们两个都是盒子，用来装我们网页元素的， 只不过他们有区别，现在我们记住</p>
+<ul>
+<li>div标签  用来布局的，但是现在一行只能放一个div</li>
+<li>span标签  用来布局的，一行上可以放好多个span</li>
+</ul>
+<p>后面后面讲显示模式的时候，会告诉大家</p>
+<h5 id="_4">排版标签总结<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h5>
+<table>
+<thead>
+<tr>
+<th>标签名</th>
+<th align="left">定义</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;hx&gt;&lt;/hx&gt;</code></td>
+<td align="left">标题标签</td>
+<td align="left">作为标题使用，并且依据重要性递减</td>
+</tr>
+<tr>
+<td><code>&lt;p&gt;&lt;/p&gt;</code></td>
+<td align="left">段落标签</td>
+<td align="left">可以把 HTML 文档分割为若干段落</td>
+</tr>
+<tr>
+<td><code>&lt;hr&gt;</code></td>
+<td align="left">水平线标签</td>
+<td align="left">没啥可说的，就是一条线</td>
+</tr>
+<tr>
+<td><code>&lt;br&gt;</code></td>
+<td align="left">换行标签</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td><code>&lt;div&gt;&lt;/div&gt;</code></td>
+<td align="left">div标签</td>
+<td align="left">用来布局的，但是现在一行只能放一个div</td>
+</tr>
+<tr>
+<td><code>&lt;span&gt;&lt;/span&gt;</code></td>
+<td align="left">span标签</td>
+<td align="left">用来布局的，一行上可以放好多个span</td>
+</tr>
+</tbody>
+</table>
+<h5 id="html_8">HTML标签的语义化<a class="headerlink" href="#html_8" title="Permanent link">&para;</a></h5>
+<p>所谓标签语义化，就是指标签的含义。</p>
+<ol>
+<li>方便代码的阅读和维护</li>
+<li>同时让浏览器或是网络爬虫可以很好地解析，从而更好分析其中的内容 </li>
+<li>使用语义化标签会具有更好地搜索引擎优化 </li>
+</ol>
+<blockquote>
+<p>根据标签的语义，在合适的地方给一个最为合理的标签。</p>
+</blockquote>
+<p><img alt="image-20210926141232935" src="../assets/image-20210926141232935.png" /></p>
+<p>语义是否良好： 当我们去掉CSS之后，网页结构依然组织有序，并且有良好的可读性。(  裸奔起来一样好看 )</p>
+<p>遵循的原则：先确定语义的HTML ，再选合适的CSS。所以，<strong>我们接下来学习html标签，要根据语义去记忆。</strong> HTML网页中任何元素的实现都要依靠HTML标签。</p>
+<h4 id="_5">文本格式化标签(熟记)<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<p>在网页中，有时需要为文字设置粗体、斜体或下划线效果，这时就需要用到HTML中的文本格式化标签，使文字以特殊的方式显示。</p>
+<p><img alt="tab" src="../assets/tab.png" /></p>
+<p><strong>区别：</strong></p>
+<p>b  只是加粗        strong  除了可以加粗还有 强调的意思，  语义更强烈。</p>
+<p>剩下的同理...    </p>
+<blockquote>
+<p>请同学们重点记住 前两组   加粗 和 倾斜   后面两组没记住回来查</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>走过路过不要错过，买不买没关系，到屋里瞧一瞧到屋里看一看，
+<span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+本店<span class="p">&lt;</span><span class="nt">b</span><span class="p">&gt;</span>所有商品都两块<span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;</span>，<span class="p">&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>全场都两块<span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span>，
+<span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+挑啥都<span class="p">&lt;</span><span class="nt">i</span><span class="p">&gt;</span>两块<span class="p">&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>，买啥都<span class="p">&lt;</span><span class="nt">em</span><span class="p">&gt;</span>两块<span class="p">&lt;/</span><span class="nt">em</span><span class="p">&gt;</span>，挑啥拿啥买啥都两块，
+<span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+原价<span class="p">&lt;</span><span class="nt">s</span><span class="p">&gt;</span>十块八块<span class="p">&lt;/</span><span class="nt">s</span><span class="p">&gt;</span>的都两块，两块钱你
+<span class="p">&lt;</span><span class="nt">del</span><span class="p">&gt;</span>买不了吃亏<span class="p">&lt;/</span><span class="nt">del</span><span class="p">&gt;</span>
+，你买不了上当，
+<span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">u</span><span class="p">&gt;</span>真正的清仓<span class="p">&lt;/</span><span class="nt">u</span><span class="p">&gt;</span>，
+<span class="p">&lt;</span><span class="nt">ins</span><span class="p">&gt;</span>真正的甩货<span class="p">&lt;/</span><span class="nt">ins</span><span class="p">&gt;</span>
+，不用问价也不用讲价，全场都两块，挑啥啥便宜，买啥啥贱！走过路过千万不要错过！
+</code></pre></div>
+<h4 id="img">图像标签img (重点)<a class="headerlink" href="#img" title="Permanent link">&para;</a></h4>
+<p>单词缩写：   image  图像</p>
+<p>要想在网页中显示图像就需要使用图像标签，接下来将详细介绍图像标签<img />以及和他相关的属性。（它是一个单身狗）</p>
+<p>语法如下：</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">h4</span><span class="p">&gt;</span>正常的图片：<span class="p">&lt;/</span><span class="nt">h4</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;images/timg.jpg&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>该语法中src属性用于指定图像文件的路径和文件名，他是img标签的必需属性。</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>属性值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>src</td>
+<td>URL</td>
+<td>图像的路径</td>
+</tr>
+<tr>
+<td>alt</td>
+<td>文本</td>
+<td>图像不能显示时的替换文本</td>
+</tr>
+<tr>
+<td>title</td>
+<td>文本</td>
+<td>鼠标悬停时显示的内容</td>
+</tr>
+<tr>
+<td>width</td>
+<td>像素、百分比</td>
+<td>置图像的宽度</td>
+</tr>
+<tr>
+<td>height</td>
+<td>像素、百分比</td>
+<td>设置图像的高度</td>
+</tr>
+<tr>
+<td>border</td>
+<td>数字</td>
+<td>设置图像边框的宽度</td>
+</tr>
+</tbody>
+</table>
+<p>border 后面我们会用css来做，这里童鞋们就记住这个border 单词就好了</p>
+<p>**注意: **</p>
+<ol>
+<li>标签可以拥有多个属性，必须写在开始标签中，位于标签名后面。</li>
+<li>属性之间不分先后顺序，标签名与属性、属性与属性之间均以空格分开。</li>
+<li>任何标签的属性都有默认值，省略该属性则取默认值。</li>
+<li>采取  键值对 的格式   key="value"  的格式  </li>
+</ol>
+<p>比如:  </p>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">h4</span><span class="p">&gt;</span>正常的图片：<span class="p">&lt;/</span><span class="nt">h4</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;images/timg.jpg&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">hr</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">h4</span><span class="p">&gt;</span>带alt替换文本：（图片不能正常显示，就显示文本）<span class="p">&lt;/</span><span class="nt">h4</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;images/timg.jpg&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;今晚剑不来&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">hr</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">h4</span><span class="p">&gt;</span>带title提示文本：（鼠标放到图片上，显示的文字）<span class="p">&lt;/</span><span class="nt">h4</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;images/timg.jpg&quot;</span> <span class="na">title</span><span class="o">=</span><span class="s">&quot;请假一天么么哒&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">hr</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">h4</span><span class="p">&gt;</span> 修改图片大小 宽度 width 高度 height <span class="p">&lt;/</span><span class="nt">h4</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;images/timg.jpg&quot;</span> <span class="na">title</span><span class="o">=</span><span class="s">&quot;请假一天么么哒&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;600&quot;</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">hr</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">h4</span><span class="p">&gt;</span> 带有边框的图片 <span class="p">&lt;/</span><span class="nt">h4</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;images/timg.jpg&quot;</span> <span class="na">title</span><span class="o">=</span><span class="s">&quot;请假一天么么哒&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;600&quot;</span> <span class="na">border</span><span class="o">=</span><span class="s">&quot;10&quot;</span> <span class="p">/&gt;</span>
+</code></pre></div>
+<p>此处有练习题</p>
+<p><strong>重点掌握点：</strong></p>
+<ul class="task-list">
+<li class="task-list-item"><input type="checkbox" disabled/> 请说出 图像标签那个属性是必须要写的？  img  src 图片的路径</li>
+<li class="task-list-item"><input type="checkbox" disabled/> 请说出 图像标签中 alt 和  title 属性区别？ alt 图片显示不出，文字就显示     title 鼠标经过图片的时候显示文字</li>
+</ul>
+<h4 id="_6">链接标签(重点)<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
+<p>单词缩写：  anchor 的缩写  [ˈæŋkə&reg;] 。基本解释 锚, 铁锚 的</p>
+<p>在HTML中创建超链接非常简单，只需用标签把文字包括起来就好。</p>
+<p>语法格式：</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;跳转目标&quot;</span> <span class="na">target</span><span class="o">=</span><span class="s">&quot;目标窗口的弹出方式&quot;</span><span class="p">&gt;</span>文本或图像<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">h4</span><span class="p">&gt;</span>外部链接:<span class="p">&lt;/</span><span class="nt">h4</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;http://www.baidu.com&quot;</span><span class="p">&gt;</span>百度一哈<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">h4</span><span class="p">&gt;</span>内部链接:<span class="p">&lt;/</span><span class="nt">h4</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;demo.html&quot;</span><span class="p">&gt;</span>剑来图片<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">h4</span><span class="p">&gt;</span>空链接:<span class="p">&lt;/</span><span class="nt">h4</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#&quot;</span><span class="p">&gt;</span>这里什么都没有<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h4</span><span class="p">&gt;</span>图片链接：<span class="p">&lt;/</span><span class="nt">h4</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;http://www.baidu.com&quot;</span><span class="p">&gt;&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;images/timg.jpg&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+
+
+<span class="p">&lt;</span><span class="nt">hr</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h4</span><span class="p">&gt;</span>打开方式<span class="p">&lt;/</span><span class="nt">h4</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;http://www.baidu.com&quot;</span> <span class="na">target</span><span class="o">=</span><span class="s">&quot;_blank&quot;</span><span class="p">&gt;</span>百度一哈 在新的页面打开<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th align="left">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>href</td>
+<td align="left">用于指定链接目标的url地址，（必须属性）当为标签应用href属性时，它就具有了超链接的功能</td>
+</tr>
+<tr>
+<td>target</td>
+<td align="left">用于指定链接页面的打开方式，其取值有_self和_blank两种，其中_self为默认值，_blank为在新窗口中打开方式。</td>
+</tr>
+</tbody>
+</table>
+<p><strong>注意：</strong></p>
+<ol>
+<li>外部链接 需要添加 http:// <a href="http://www.baidu.com">www.baidu.com</a></li>
+<li>内部链接 直接链接内部页面名称即可 比如 &lt; a href="index.html"&gt; 首页 </a ></li>
+<li>如果当时没有确定链接目标时，通常将链接标签的href属性值定义为“#”(即href="#")，表示该链接暂时为一个空链接。</li>
+<li>不仅可以创建文本超链接，在网页中各种网页元素，如图像、表格、音频、视频等都可以添加超链接。</li>
+</ol>
+<p><strong>重点掌握点：</strong></p>
+<ul class="task-list">
+<li class="task-list-item"><input type="checkbox" disabled/> 请说出 链接标签那个属性是必须要写的？  href</li>
+<li class="task-list-item"><input type="checkbox" disabled/> 请说出 如何新窗口打开这个一个链接网页的？ target=“_blank”</li>
+</ul>
+<h2 id="_7">表格<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<h3 id="table">表格 table(会使用)<a class="headerlink" href="#table" title="Permanent link">&para;</a></h3>
+<p>目标：</p>
+<ul>
+<li>理解：</li>
+<li>能说出表格用来做什么的</li>
+<li>表格的基本结构组成</li>
+<li>应用：</li>
+<li>能够熟练写出n行n列的表格</li>
+<li>能简单的合并单元格</li>
+</ul>
+<p><img alt="ttt" src="../assets/ttt.png" /></p>
+<p><strong>表格作用：</strong></p>
+<p>存在即是合理的。  表格的现在还是较为常用的一种标签，但不是用来布局，<strong>常见显示、展示表格式数据。</strong></p>
+<p>因为它可以让数据显示的非常的规整，可读性非常好。</p>
+<p><strong>特别是后台展示数据的时候表格运用是否熟练就显得很重要</strong>，一个清爽简约的表格能够把繁杂的数据表现得很有条理，虽然 div 布局也可以做到，但是总没有表格来得方便。</p>
+<p><img alt="table" src="../assets/table.png" /></p>
+<p>ps:  这些地方用表格，你会觉得生活还是那么美好。。。。忍不住想说  PPAP i hava a pen  </p>
+<h4 id="_8">创建表格<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
+<p>在HTML网页中，要想创建表格，就需要使用表格相关的标签。</p>
+<p><strong>创建表格的基本语法：</strong> </p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">table</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>姓名<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>年龄<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>性别<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>张三<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>18<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>男<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>张三丰<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>99<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>女<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>张三疯子<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>199<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>未知<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>要深刻体会表格、行、单元格他们的构成。</p>
+<p>在上面的语法中包含基本的三对HTML标签，分别为 table、tr、td，他们是创建表格的基本标签，缺一不可，下面对他们进行具体地解释</p>
+<ol>
+<li>
+<p>table用于定义一个表格标签。</p>
+</li>
+<li>
+<p>tr标签 用于定义表格中的行，必须嵌套在 table标签中。</p>
+</li>
+<li>
+<p>td 用于定义表格中的单元格，必须嵌套在<tr></tr>标签中。</p>
+</li>
+<li>
+<p>字母 td 指表格数据（table data），即数据单元格的内容，现在我们明白，表格最合适的地方就是用来存储数据的。</p>
+</li>
+</ol>
+<p>**总结： **</p>
+<ul>
+<li>表格的主要目的是用来显示特殊数据的</li>
+<li>
+<p>一个完整的表格有表格标签（table），行标签（tr），单元格标签（td）组成，没有列的标签</p>
+</li>
+<li>
+<p><tr></tr>中只能嵌套<td></td> 类的单元格</p>
+</li>
+<li><td></td>标签，他就像一个容器，可以容纳所有的元素</li>
+</ul>
+<h4 id="_9">表格属性<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
+<p>表格有部分属性我们不常用，这里重点记住 cellspacing 、 cellpadding。</p>
+<table>
+<thead>
+<tr>
+<th>属性名</th>
+<th>含义</th>
+<th>常用属性值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>border</td>
+<td>设置表格的边框(默认border="0"无边框)</td>
+<td>像素值</td>
+</tr>
+<tr>
+<td>cellspacing</td>
+<td>设置单元格与单元格边框之间的空白间距</td>
+<td>像素值(默认为2像素)</td>
+</tr>
+<tr>
+<td>cellpadding</td>
+<td>设置单元格内容与单元格边框之间的空白间距</td>
+<td>像素值(默认为1像素)</td>
+</tr>
+<tr>
+<td>width</td>
+<td>设置表格的宽度</td>
+<td>像素值</td>
+</tr>
+<tr>
+<td>height</td>
+<td>设置表格的高度</td>
+<td>像素值</td>
+</tr>
+<tr>
+<td>align</td>
+<td>设置表格在网页中的水平对齐方式</td>
+<td>left、center、 right</td>
+</tr>
+</tbody>
+</table>
+<p>我们经常有个说法，是三参为0，  平时开发的我们这三个参数    border  cellpadding  cellspacing  为  0</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">&quot;1&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;500&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;200&quot;</span> <span class="na">align</span><span class="o">=</span><span class="s">&quot;center&quot;</span> <span class="na">cellspacing</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">cellpadding</span><span class="o">=</span><span class="s">&quot;2&quot;</span><span class="p">&gt;</span>
+    ...
+<span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+</code></pre></div>
+<h4 id="th">表头单元格标签th<a class="headerlink" href="#th" title="Permanent link">&para;</a></h4>
+<ul>
+<li>作用：</li>
+<li>一般表头单元格位于表格的第一行或第一列，并且文本加粗居中</li>
+<li>语法：</li>
+<li>只需用表头标签&lt;th&gt;&lt;/th&gt;替代相应的单元格标签&lt;td&gt;&lt;/td&gt;即可。 </li>
+</ul>
+<p><img alt="th" src="../assets/th.png" /></p>
+<p><strong>案例2：</strong></p>
+<p>效果图</p>
+<p><img alt="tht" src="../assets/tht.png" /></p>
+<p>代码：</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">table</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;500&quot;</span> <span class="na">border</span><span class="o">=</span><span class="s">&quot;1&quot;</span> <span class="na">align</span><span class="o">=</span><span class="s">&quot;center&quot;</span> <span class="na">cellspacing</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">cellpadding</span><span class="o">=</span><span class="s">&quot;0&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>  
+            <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>姓名<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span> 
+            <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>性别<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>电话<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>小王<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>女<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>110<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>小明<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>男<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>120<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>   
+    <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+</code></pre></div>
+<blockquote>
+<p>th 也是一个单元格   只不过和普通的 td单元格不一样，它会让自己里面的文字居中且加粗</p>
+</blockquote>
+<h4 id="caption">表格标题caption<a class="headerlink" href="#caption" title="Permanent link">&para;</a></h4>
+<p><strong>定义和用法</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">table</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">caption</span><span class="p">&gt;</span>我是表格标题<span class="p">&lt;/</span><span class="nt">caption</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>**注意： **</p>
+<ol>
+<li>caption 元素定义**表格标题**，通常这个标题会被居中且显示于表格之上。</li>
+<li>caption 标签必须紧随 table 标签之后。</li>
+<li>这个标签只存在 表格里面才有意义。你是风儿我是沙</li>
+</ol>
+<h4 id="_10">总结表格<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>标签名</th>
+<th align="left">定义</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;table&gt;&lt;/table&gt;</code></td>
+<td align="left">表格标签</td>
+<td align="left">就是一个四方的盒子</td>
+</tr>
+<tr>
+<td><code>&lt;tr&gt;&lt;/tr&gt;</code></td>
+<td align="left">表格行标签</td>
+<td align="left">行标签要再table标签内部才有意义</td>
+</tr>
+<tr>
+<td><code>&lt;td&gt;&lt;/td&gt;</code></td>
+<td align="left">单元格标签</td>
+<td align="left">单元格标签是个容器级元素，可以放任何东西</td>
+</tr>
+<tr>
+<td><code>&lt;th&gt;&lt;/th&gt;</code></td>
+<td align="left">表头单元格标签</td>
+<td align="left">它还是一个单元格，但是里面的文字会居中且加粗</td>
+</tr>
+<tr>
+<td><code>&lt;caption&gt;&lt;/caption&gt;</code></td>
+<td align="left">表格标题标签</td>
+<td align="left">表格的标题，跟着表格一起走，和表格居中对齐</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>表格提供了HTML 中定义表格式数据的方法。</li>
+<li>表格中由行中的单元格组成。</li>
+<li>表格中没有列元素，列的个数取决于行的单元格个数。</li>
+<li>表格不要纠结于外观，那是CSS 的作用。</li>
+<li>表格的学习要求：  能手写表格结构，并且能简单合并单元格。</li>
+</ol>
+<h2 id="_11">列表和表单<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<h3 id="_12">列表标签（重点）<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<p>HTML包含专门用于创建项目列表的元素。你可以创建普通列表、编号列表、符号列表以及描述列表，可以在一个列表中嵌套另外一个或多个列表。</p>
+<p>所有的列表都是由主要元素和次要元素构成的。主要元素用于指定要创建的列表的类型，其中，<code>ul</code> 表示**无序列表** （unordered list），<code>ol</code> 表示**有序列表** （ordered list），<code>dl</code> 表示**描述列表** （description list；在HTML5之前称为定义列表）。次要元素用于指定要创建的列表项目类型，其中，<code>li</code> 代表<code>ol</code> 或<code>ul</code> 中的列表项目，<code>dt</code> 和<code>dd</code> 分别代表<code>dl</code> 中的术语和描述。</p>
+<p>在这些类型里面，无序列表是万维网上最为常见的列表类型，它也是对大多数类型的导航进行标记的事实标准（本书有几个这样的例子）。不过，上述三种类型都各有用武之地</p>
+<p>表格一般用于数据展示的，但是网页中还是有很多跟表格类似的布局，如下图~~ 我们用什么做呢？</p>
+<p><img alt="lili" src="../assets/lili.png" /></p>
+<p>答：</p>
+<p>答案是列表， 那什么是列表？  表格是用来显示数据的，那么列表就是用来布局的。 因为非常整齐和自由</p>
+<ul>
+<li>概念：</li>
+</ul>
+<p>容器里面装载着结构，样式一致的文字或图表的一种形式，叫列表</p>
+<ul>
+<li>特点：</li>
+</ul>
+<p>列表最大的特点就是  整齐 、整洁、 有序，跟表格类似，但是他可组合自由度会更高。</p>
+<h4 id="ul">无序列表 ul （重点）<a class="headerlink" href="#ul" title="Permanent link">&para;</a></h4>
+<p>无序列表的各个列表项之间没有顺序级别之分，是并列的。其基本语法格式如下：</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>列表项1<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>列表项2<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>列表项3<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+  ......
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>比如下面这些，新闻是没有顺序的，不用排队，先到先得，后发布先显示。</p>
+<p><img alt="ul" src="../assets/ul.png" /></p>
+<p><strong>脚下留心：</strong></p>
+<div class="highlight"><pre><span></span><code> 1. &lt;ul&gt;&lt;/ul&gt;中只能嵌套&lt;li&gt;&lt;/li&gt;，直接在&lt;ul&gt;&lt;/ul&gt;标签中输入其他标签或者文字的做法是不被允许的。
+ 2. &lt;li&gt;与&lt;/li&gt;之间相当于一个容器，可以容纳所有元素。
+ 3. 无序列表会带有自己样式属性，放下那个样式，一会让CSS来！
+</code></pre></div>
+<h4 id="ol">有序列表 ol （了解）<a class="headerlink" href="#ol" title="Permanent link">&para;</a></h4>
+<p><img alt="gold" src="../assets/gold.png" /></p>
+<p>有序列表即为有排列顺序的列表，其各个列表项按照一定的顺序排列定义，有序列表的基本语法格式如下：</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">ol</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>列表项1<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>列表项2<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>列表项3<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+  ......
+<span class="p">&lt;/</span><span class="nt">ol</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>所有特性基本与ul 一致。  但是实际中比 无序列表 用的少很多。</p>
+<h4 id="_13">列表总结<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>标签名</th>
+<th align="center">定义</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;ul&gt;&lt;/ul&gt;</code></td>
+<td align="center"><strong>无序标签</strong></td>
+<td align="left">里面只能包含li    没有顺序，我们以后布局中最常用的列表</td>
+</tr>
+<tr>
+<td><code>&lt;ol&gt;&lt;/ol&gt;</code></td>
+<td align="center">有序标签</td>
+<td align="left">里面只能包含li    有顺序， 使用情况较少</td>
+</tr>
+</tbody>
+</table>
+<p>我们现在还没有学布局，现在只要保证2个点：</p>
+<ol>
+<li>学会什么时候用无序列表， 学会什么时候用自定义列表</li>
+<li>无序列表和自定义列表代码怎么写？</li>
+<li>具体的我们刚才看的布局，等我们学了css 在来全面布局。</li>
+</ol>
+<h3 id="_14">表单标签(掌握)<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<p>目标：</p>
+<ul>
+<li>能写出最常用的注册类表单</li>
+<li>能说出input表单常见属性</li>
+</ul>
+<p>现实中的表单，类似我们去银行办理信用卡填写的单子。 如下图</p>
+<p><img alt="car" src="../assets/car.jpg" /></p>
+<p>**作用： **</p>
+<p>表单目的是为了收集用户信息。</p>
+<p>在我们网页中， 我们也需要跟用户进行交互，收集用户资料，此时也需要表单。</p>
+<blockquote>
+<p>在HTML中，一个完整的表单通常由表单控件（也称为表单元素）、提示信息和表单域3个部分构成。</p>
+</blockquote>
+<p><img alt="bd" src="../assets/bd.png" /></p>
+<p>**表单控件： **</p>
+<p>​       包含了具体的表单功能项，如单行文本输入框、密码输入框、复选框、提交按钮、重置按钮等。</p>
+<p><strong>提示信息：</strong></p>
+<p>​        一个表单中通常还需要包含一些说明性的文字，提示用户进行填写和操作。</p>
+<p><strong>表单域：</strong>  </p>
+<p>​      他相当于一个容器，用来容纳所有的表单控件和提示信息，可以通过他定义处理表单数据所用程序的url地址，以及数据提交到服务器的方法。如果不定义表单域，表单中的数据就无法传送到后台服务器。</p>
+<h4 id="input">input 控件(重点)<a class="headerlink" href="#input" title="Permanent link">&para;</a></h4>
+<ul>
+<li>语法：</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;属性值&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;你好&quot;</span><span class="p">&gt;</span>
+</code></pre></div>
+<ul>
+<li>
+<p>input 输入的意思 </p>
+</li>
+<li>
+<p>&lt;input /&gt;标签为单标签</p>
+</li>
+<li>type属性设置不同的属性值用来指定不同的控件类型</li>
+<li>
+<p>除了type属性还有别的属性</p>
+</li>
+<li>
+<p>常用属性：</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>属性值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>text</td>
+<td>单行文本输入框</td>
+</tr>
+<tr>
+<td></td>
+<td>password</td>
+<td>密码输入框</td>
+</tr>
+<tr>
+<td></td>
+<td>radio</td>
+<td>单选按钮</td>
+</tr>
+<tr>
+<td></td>
+<td>checkbox</td>
+<td>复选框</td>
+</tr>
+<tr>
+<td></td>
+<td>button</td>
+<td>普通按钮</td>
+</tr>
+<tr>
+<td></td>
+<td>submit</td>
+<td>提交按钮</td>
+</tr>
+<tr>
+<td></td>
+<td>reset</td>
+<td>重置按钮</td>
+</tr>
+<tr>
+<td></td>
+<td>image</td>
+<td>图像形式的提交按钮</td>
+</tr>
+<tr>
+<td></td>
+<td>file</td>
+<td>文件域</td>
+</tr>
+<tr>
+<td>name</td>
+<td>由用户自定义</td>
+<td>控件的名称</td>
+</tr>
+<tr>
+<td>value</td>
+<td>由用户自定义</td>
+<td>input控件中的默认文本值</td>
+</tr>
+<tr>
+<td>size</td>
+<td>正整数</td>
+<td>input控件在页面中的显示宽度</td>
+</tr>
+<tr>
+<td>checked</td>
+<td>checked</td>
+<td>定义选择控件默认被选中的项</td>
+</tr>
+<tr>
+<td>maxlength</td>
+<td>正整数</td>
+<td>控件允许输入的最多字符数</td>
+</tr>
+</tbody>
+</table>
+<h6 id="1-type">1. type 属性<a class="headerlink" href="#1-type" title="Permanent link">&para;</a></h6>
+<ul>
+<li>这个属性通过改变值，可以决定了你属于那种input表单。</li>
+<li>比如 type = 'text'  就表示 文本框 可以做 用户名， 昵称等。</li>
+<li>比如 type = 'password'  就是表示密码框   用户输入的内容 是不可见的。</li>
+</ul>
+<div class="highlight"><pre><span></span><code>用户名: <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="p">/&gt;</span> 
+密  码：<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;password&quot;</span> <span class="p">/&gt;</span>
+</code></pre></div>
+<h6 id="2-value">2. value属性   值<a class="headerlink" href="#2-value" title="Permanent link">&para;</a></h6>
+<div class="highlight"><pre><span></span><code>用户名:<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span>  <span class="na">name</span><span class="o">=</span><span class="s">&quot;username&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;请输入用户名&quot;</span><span class="p">&gt;</span> 
+</code></pre></div>
+<ul>
+<li>value 默认的文本值。 有些表单想刚打开页面就默认显示几个文字，就可以通过这个value 来设置。</li>
+</ul>
+<h6 id="3-name">3. name属性<a class="headerlink" href="#3-name" title="Permanent link">&para;</a></h6>
+<div class="highlight"><pre><span></span><code>用户名:<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span>  <span class="na">name</span><span class="o">=</span><span class="s">“username”</span> <span class="p">/&gt;</span>  
+</code></pre></div>
+<p>name表单的名字， 这样，后台可以通过这个name属性找到这个表单。  页面中的表单很多，name主要作用就是用于区别不同的表单。</p>
+<ul>
+<li>
+<p>name属性后面的值，是我们自己定义的。</p>
+</li>
+<li>
+<p>radio  如果是一组，我们必须给他们命名相同的名字 name   这样就可以多个选其中的一个啦</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;sex&quot;</span>  <span class="p">/&gt;</span>男
+<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;sex&quot;</span> <span class="p">/&gt;</span>女
+</code></pre></div>
+<ul>
+<li>name属性，我们现在用的较少， 但是，当我们学ajax 和后台的时候，是必须的。</li>
+</ul>
+<h6 id="4-checked">4. checked属性<a class="headerlink" href="#4-checked" title="Permanent link">&para;</a></h6>
+<ul>
+<li>表示默认选中状态。  较常见于 单选按钮和复选按钮。</li>
+</ul>
+<div class="highlight"><pre><span></span><code>性    别:
+<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;sex&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;男&quot;</span> <span class="na">checked</span><span class="o">=</span><span class="s">&quot;checked&quot;</span> <span class="p">/&gt;</span>男
+<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;sex&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;女&quot;</span> <span class="p">/&gt;</span>女 
+</code></pre></div>
+<p>上面这个，表示就默认选中了 男 这个单选按钮</p>
+<h6 id="5-input">5. input 属性小结<a class="headerlink" href="#5-input" title="Permanent link">&para;</a></h6>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th align="left">说明</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td align="left">表单类型</td>
+<td>用来指定不同的控件类型</td>
+</tr>
+<tr>
+<td>value</td>
+<td align="left">表单值</td>
+<td>表单里面默认显示的文本</td>
+</tr>
+<tr>
+<td>name</td>
+<td align="left">表单名字</td>
+<td>页面中的表单很多，name主要作用就是用于区别不同的表单。</td>
+</tr>
+<tr>
+<td>checked</td>
+<td align="left">默认选中</td>
+<td>表示那个单选或者复选按钮一开始就被选中了</td>
+</tr>
+</tbody>
+</table>
+<h4 id="label">label标签(理解)<a class="headerlink" href="#label" title="Permanent link">&para;</a></h4>
+<p><strong>目标：</strong></p>
+<p>label标签主要目的是为了提高用户体验。 为用户提高最优秀的服务。</p>
+<p><strong>概念：</strong></p>
+<p>label 标签为 input 元素定义标注（标签）。</p>
+<p><strong>作用：</strong> </p>
+<p>用于绑定一个表单元素, 当点击label标签的时候, 被绑定的表单元素就会获得输入焦点。</p>
+<p><strong>如何绑定元素呢？</strong></p>
+<ol>
+<li>第一种用法就是用label直接包括input表单。</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span> 用户名： <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;usename&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;请输入用户名&quot;</span><span class="p">&gt;</span>   <span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>适合单个表单选择</p>
+<ol>
+<li>第二种用法 for 属性规定 label 与哪个表单元素绑定。</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;sex&quot;</span><span class="p">&gt;</span>男<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;sex&quot;</span>  <span class="na">id</span><span class="o">=</span><span class="s">&quot;sex&quot;</span><span class="p">&gt;</span>
+</code></pre></div>
+<blockquote>
+<p>当我们鼠标点击 label标签里面的文字时， 光标会定位到指定的表单里面</p>
+</blockquote>
+<h4 id="textarea">textarea控件(文本域)<a class="headerlink" href="#textarea" title="Permanent link">&para;</a></h4>
+<p><img alt="textarea" src="../assets/textarea.png" /></p>
+<ul>
+<li>语法：</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">textarea</span> <span class="p">&gt;</span>
+  文本内容
+<span class="p">&lt;/</span><span class="nt">textarea</span><span class="p">&gt;</span>
+</code></pre></div>
+<ul>
+<li>作用：</li>
+</ul>
+<p>通过textarea控件可以轻松地创建多行文本输入框.</p>
+<p>cols="每行中的字符数" rows="显示的行数"  我们实际开发不用</p>
+<h6 id="_15">文本框和文本域区别<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h6>
+<table>
+<thead>
+<tr>
+<th align="left">表单</th>
+<th align="center">名称</th>
+<th align="center">区别</th>
+<th align="right">默认值显示</th>
+<th align="right">用于场景</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">input type="text"</td>
+<td align="center">文本框</td>
+<td align="center">只能显示一行文本</td>
+<td align="right">单标签，通过value显示默认值</td>
+<td align="right">用户名、昵称、密码等</td>
+</tr>
+<tr>
+<td align="left">textarea</td>
+<td align="center">文本域</td>
+<td align="center">可以显示多行文本</td>
+<td align="right">双标签，默认值写到标签中间</td>
+<td align="right">留言板</td>
+</tr>
+</tbody>
+</table>
+<h4 id="select">select下拉列表<a class="headerlink" href="#select" title="Permanent link">&para;</a></h4>
+<p><strong>目的：</strong></p>
+<p>如果有多个选项让用户选择，为了节约空间，我们可以使用select控件定义下拉列表.</p>
+<p><img alt="sele" src="../assets/sele.png" /></p>
+<p><strong>语法：</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">select</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">option</span><span class="p">&gt;</span>选项1<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">option</span><span class="p">&gt;</span>选项2<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">option</span><span class="p">&gt;</span>选项3<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+  ...
+<span class="p">&lt;/</span><span class="nt">select</span><span class="p">&gt;</span>
+</code></pre></div>
+<ul>
+<li>
+<p>注意：</p>
+</li>
+<li>
+<p>&lt;select&gt;  中至少包含一对 option </p>
+</li>
+<li>在option 中定义selected =" selected "时，当前项即为默认选中项。</li>
+<li>但是我们实际开发会用的比较少</li>
+</ul>
+<h3 id="form">form表单域<a class="headerlink" href="#form" title="Permanent link">&para;</a></h3>
+<ul>
+<li>收集的用户信息怎么传递给服务器？</li>
+</ul>
+<p>通过form表单域</p>
+<ul>
+<li>目的：</li>
+</ul>
+<p>在HTML中，form标签被用于定义表单域，以实现用户信息的收集和传递，form中的所有内容都会被提交给服务器。</p>
+<p>表单有三个重要的组成部分：</p>
+<p><code>form</code> 元素，其中包含用于处理表单的脚本的URL和处理表单的方法（<code>post</code> 或<code>get</code> ）；</p>
+<p>表单元素，如字段和选择框（复选框、下拉菜单、单选按钮）；</p>
+<p>提交按钮，用于触发向服务器上的接听脚本发送数据的动作</p>
+<p>**语法: **</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;url地址&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;提交方式&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;表单名称&quot;</span><span class="p">&gt;</span>
+  各种表单控件
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</code></pre></div>
+<p><strong>常用属性：</strong></p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th align="left">属性值</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>action</td>
+<td align="left">url地址</td>
+<td>用于指定接收并处理表单数据的服务器程序的url地址。</td>
+</tr>
+<tr>
+<td>method</td>
+<td align="left">get/post</td>
+<td>用于设置表单数据的提交方式，其取值为get或post。</td>
+</tr>
+<tr>
+<td>name</td>
+<td align="left">名称</td>
+<td>用于指定表单的名称，以区分同一个页面中的多个表单。</td>
+</tr>
+</tbody>
+</table>
+<p><strong>注意:</strong>  </p>
+<p>每个表单都应该有自己表单域。我们现在做页面，不写看不到效果，但是 如果后面学 ajax 后台交互的时候，必须需要 form表单域。</p>
+<h2 id="html5">@拓展：<code>HTML5</code> 新增标签<a class="headerlink" href="#html5" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p>什么是语义化</p>
+</li>
+<li>
+<p>新增了那些语义化标签</p>
+<ul>
+<li><code>header</code>   ---  头部标签</li>
+<li><code>nav</code>        ---  导航标签</li>
+<li><code>article</code> ---   内容标签</li>
+<li><code>section</code> ---   块级标签</li>
+<li><code>aside</code>     ---   侧边栏标签</li>
+<li><code>footer</code>   ---   尾部标签</li>
+</ul>
+<p><img alt="" src="../assets/yuyibq.png" /></p>
+</li>
+<li>
+<p>使用语义化标签的注意</p>
+<ul>
+<li>语义化标签主要针对搜索引擎</li>
+<li>新标签可以使用一次或者多次</li>
+<li>在 <code>IE9</code> 浏览器中，需要把语义化标签都转换为块级元素</li>
+<li>语义化标签，在移动端支持比较友好，</li>
+<li>另外，<code>HTML5</code> 新增的了很多的语义化标签，随着课程深入，还会学习到其他的</li>
+</ul>
+</li>
+</ol>
+<h4 id="input_1">新增 input 标签<a class="headerlink" href="#input_1" title="Permanent link">&para;</a></h4>
+<p><img alt="" src="../assets/h5input.png" /></p>
+<h4 id="_16">新增表单属性<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h4>
+<p><img alt="" src="../assets/newinput.png" /></p>
+<h3 id="_17">查文档<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
+<p>经常查阅文档是一个非常好的学习习惯。</p>
+<p>W3C :  <a href="http://www.w3school.com.cn/">http://www.w3school.com.cn/</a></p>
+<p>MDN: <a href="https://developer.mozilla.org/zh-CN/">https://developer.mozilla.org/zh-CN/</a></p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="页脚">
+      
+        
+        <a href="../00%20%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D/%E8%B5%84%E6%96%99%E4%B8%8B%E8%BD%BD/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 资料下载" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              资料下载
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="%E6%8B%93%E5%B1%95-emment%E8%AF%AD%E6%B3%95/" class="md-footer__link md-footer__link--next" aria-label="下一页: emment语法" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              emment语法
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "search": "../assets/javascripts/workers/search.092fa1f6.min.js"}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.5a9542cf.min.js"></script>
+      
+    
+  </body>
+</html>

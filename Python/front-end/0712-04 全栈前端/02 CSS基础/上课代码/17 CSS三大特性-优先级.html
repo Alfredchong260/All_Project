@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body {
+            color: gray;
+        }
+
+        /*标签选择器的权重最后*/
+        div {
+            color: red;
+        }
+
+        div {
+            color: pink !important;  /*!important 游走在规则之外,权重最高*/
+        }
+
+        /*类选择器的选择第三大*/
+        .one {
+            color: blue;
+        }
+
+        /*id 选择器的权重第二大*/
+        #two {
+            color: green;
+        }
+
+    </style>
+</head>
+<body>
+<!--内联样式权重最大  style="color: yellow;"-->
+<div class="one" id="two"> 权重还有30秒到达战场</div>
+</body>
+</html>

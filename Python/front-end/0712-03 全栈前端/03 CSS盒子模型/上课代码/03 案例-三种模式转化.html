@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*把行内元素转化为块级元素*/
+        .title {
+            display: block;
+            /*width: 100px;*/
+            height: 100px;
+            background-color: cyan;
+        }
+
+        /*把块级元素变成行内元素*/
+        .div1 {
+            display: inline;
+            background-color: pink;
+            height: 50px;
+            width: 80%;
+        }
+
+        /*把行内元素变成块级元素*/
+        a {
+            display: none;
+            text-decoration: none;
+            color: black;
+            width: 100px;
+            height: 100px;
+            line-height: 100px; /*文字上下居中对其*/
+            background-color: cyan;
+        }
+    </style>
+</head>
+<body>
+<span class="title">百度一下</span>
+<div class="div1">div 是块级元素</div>
+<div>
+<!--
+    display: none 隐藏元素
+    直接不写代码
+-->
+<!--    <a href="http://www.qingdengedu.com">青灯教育</a>-->
+</div>
+</body>
+</html>

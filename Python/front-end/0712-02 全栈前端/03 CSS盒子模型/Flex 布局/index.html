@@ -1,0 +1,1225 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.11">
+    
+    
+      
+        <title>Flex 布局 - 青灯教育-前端开发 11 期</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.50e68009.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#flex" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="青灯教育-前端开发 11 期" class="md-header__button md-logo" aria-label="青灯教育-前端开发 11 期" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            青灯教育-前端开发 11 期
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Flex 布局
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../00%20%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D/%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D/" class="md-tabs__link">
+        课前注意
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../01%20HTML/" class="md-tabs__link md-tabs__link--active">
+        课程目录
+      </a>
+    </li>
+  
+
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="青灯教育-前端开发 11 期" class="md-nav__button md-logo" aria-label="青灯教育-前端开发 11 期" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    青灯教育-前端开发 11 期
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1">
+          课前注意
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="课前注意" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          课前注意
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00%20%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D/%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D/" class="md-nav__link">
+        课程介绍
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00%20%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D/%E4%BD%9C%E4%B8%9A%E6%8F%90%E4%BA%A4/" class="md-nav__link">
+        作业提交
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00%20%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D/%E8%B5%84%E6%96%99%E4%B8%8B%E8%BD%BD/" class="md-nav__link">
+        资料下载
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          课程目录
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="课程目录" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          课程目录
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1">
+          01 HTML标签
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="01 HTML标签" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          01 HTML标签
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01%20HTML/" class="md-nav__link">
+        HTML标签
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01%20HTML/%E6%8B%93%E5%B1%95-emment%E8%AF%AD%E6%B3%95/" class="md-nav__link">
+        emment语法
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02%20CSS%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+        02 CSS基础
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3">
+          03 CSS盒子模型
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="03 CSS盒子模型" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          03 CSS盒子模型
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        CSS盒子模型
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Flex 布局
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Flex 布局
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#flex" class="md-nav__link">
+    flex布局
+  </a>
+  
+    <nav class="md-nav" aria-label="flex布局">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#flex_1" class="md-nav__link">
+    flex布局原理
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    父项常见属性
+  </a>
+  
+    <nav class="md-nav" aria-label="父项常见属性">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#justify-content" class="md-nav__link">
+    justify-content
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#align-items" class="md-nav__link">
+    align-items
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flex-direction" class="md-nav__link">
+    flex-direction
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flex-item" class="md-nav__link">
+    调整 Flex Item的大小
+  </a>
+  
+    <nav class="md-nav" aria-label="调整 Flex Item的大小">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#flex-grow" class="md-nav__link">
+    一、flex-grow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flex-basis" class="md-nav__link">
+    二、flex-basis
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flex-shirk" class="md-nav__link">
+    三、flex-shirk
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flex_2" class="md-nav__link">
+    Flex包装
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flexbox" class="md-nav__link">
+    高级Flexbox属性
+  </a>
+  
+    <nav class="md-nav" aria-label="高级Flexbox属性">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    一、添加间隙
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    二、元素排序
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flex_3" class="md-nav__link">
+    三、Flex 简写
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#flex" class="md-nav__link">
+    flex布局
+  </a>
+  
+    <nav class="md-nav" aria-label="flex布局">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#flex_1" class="md-nav__link">
+    flex布局原理
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    父项常见属性
+  </a>
+  
+    <nav class="md-nav" aria-label="父项常见属性">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#justify-content" class="md-nav__link">
+    justify-content
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#align-items" class="md-nav__link">
+    align-items
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flex-direction" class="md-nav__link">
+    flex-direction
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flex-item" class="md-nav__link">
+    调整 Flex Item的大小
+  </a>
+  
+    <nav class="md-nav" aria-label="调整 Flex Item的大小">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#flex-grow" class="md-nav__link">
+    一、flex-grow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flex-basis" class="md-nav__link">
+    二、flex-basis
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flex-shirk" class="md-nav__link">
+    三、flex-shirk
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flex_2" class="md-nav__link">
+    Flex包装
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flexbox" class="md-nav__link">
+    高级Flexbox属性
+  </a>
+  
+    <nav class="md-nav" aria-label="高级Flexbox属性">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    一、添加间隙
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    二、元素排序
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flex_3" class="md-nav__link">
+    三、Flex 简写
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+  <h1>Flex 布局</h1>
+
+<h2 id="flex">flex布局<a class="headerlink" href="#flex" title="Permanent link">&para;</a></h2>
+<p><strong>什么是Flexbox</strong> </p>
+<p>Flexbox 是一种在 CSS 中布局元素的方式，分为两个主要组件，分别是弹性容器（flexbox container）和弹性项目(flexbox items)。</p>
+<p>flexbox 容器是包含所有 flexbox 项作为其子项的父元素。它是你定义所有关于 flexbox 布局属性的地方，你也可以对单个项目进行额外的调整。</p>
+<p>让我们看一下如何实现一个简单的 flexbox 示例。如果我们有一个包含子元素的元素，我们需要做的就是将父元素的 display 属性设置为 flex，这样就会拥有一个 flex 容器。</p>
+<div class="highlight"><pre><span></span><code><span class="nt">display</span><span class="err">：</span><span class="nt">flex</span><span class="w"></span>
+</code></pre></div>
+<p><img alt="image-20211208185754774" src="../assets/image-20211208185754774.png" /></p>
+<p>正如你在默认情况下看到的，当我们在元素上指定<code>display:flex</code>时，我们将该元素设置为 flex 容器。该元素中的所有直接子元素都被视为弹性项目。默认情况下，如果你未指定其他属性，则 flex 项目将从左到右排列在一行上，仅占用所需的空间。如果项目会溢出，它们也会自动缩小以适应 flex 容器。</p>
+<p>这是 flexbox 的基础核心，它本身作用并不强，所以接下来我们需要讨论如何处理容器中项目的布局。</p>
+<h3 id="flex_1">flex布局原理<a class="headerlink" href="#flex_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>flex 是 flexible Box 的缩写，意为"弹性布局"，用来为盒状模型提供最大的灵活性，任何一个容器都可以指定为 flex 布局。</li>
+<li>当我们为父盒子设为 flex 布局以后，子元素的 float、clear 和 vertical-align 属性将失效。</li>
+<li>flex布局又叫伸缩布局 、弹性布局 、伸缩盒布局 、弹性盒布局 </li>
+<li>采用 Flex 布局的元素，称为 Flex 容器（flex container），简称"容器"。它的所有子元素自动成为容器成员，称为 Flex 项目（flex
+  item），简称"项目"。</li>
+</ul>
+<p><strong>总结</strong>：就是通过给父盒子添加flex属性，来控制子盒子的位置和排列方式</p>
+<p>Flexbox 是第一个与普通 CSS 完全不同方式工作的 CSS 布局方法。不用担心块/内联元素， flexbox 担心主轴和交叉轴。</p>
+<p><img alt="image-20211208223407873" src="../assets/image-20211208223407873.png" /></p>
+<p>默认情况下，主轴（以绿色显示）水平穿过容器，而横轴垂直。这意味着任何处理主轴的布局方法都会水平布局元素，而横轴会垂直布局元素。让我们先看看如何沿主轴布局元素。</p>
+<h3 id="_1">父项常见属性<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>flex-direction：设置主轴的方向</li>
+<li>justify-content：设置主轴上的子元素排列方式</li>
+<li>flex-wrap：设置子元素是否换行  </li>
+<li>align-content：设置侧轴上的子元素的排列方式（多行）</li>
+<li>align-items：设置侧轴上的子元素排列方式（单行）</li>
+<li>flex-flow：复合属性，相当于同时设置了 flex-direction 和 flex-wrap</li>
+</ul>
+<h4 id="justify-content">justify-content<a class="headerlink" href="#justify-content" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>justify-content 设置主轴上的子元素排列方式</p>
+</blockquote>
+<p>对于下方所有示例，我们将假设 flex-items 的宽度为 20%。</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>flex-direction<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span><span class="w"></span>
+<span class="w">        </span><span class="p">.</span><span class="nc">flex-container</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">flex</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">px</span><span class="w"> </span><span class="kc">dashed</span><span class="w"> </span><span class="kc">black</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="k">justify-content</span><span class="p">:</span><span class="w"> </span><span class="kc">flex-start</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">        </span><span class="p">.</span><span class="nc">flex-item</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="kt">%</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="kt">rem</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">cyan</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="kc">black</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;flex-container&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;flex-item&quot;</span><span class="p">&gt;</span>1<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;flex-item&quot;</span><span class="p">&gt;</span>2<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;flex-item&quot;</span><span class="p">&gt;</span>3<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+<p><strong>1、flex-start（默认）</strong></p>
+<p>将所有项目放置在主轴的起点，默认情况下是轴的左侧。这也是 justify-content 的默认行为。</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">flex-container</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">flex</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">justify-content</span><span class="p">:</span><span class="w"> </span><span class="kc">flex-start</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p><img alt="image-20211208225851365" src="../assets/image-20211208225851365.png" /></p>
+<p><strong>2、flex-end</strong></p>
+<p>将所有项目放置在主轴的末端，默认情况下是轴的右侧。</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">flex-container</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">flex</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">justify-content</span><span class="p">:</span><span class="w"> </span><span class="kc">flex-end</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p><img alt="image-20211208225948036" src="../assets/image-20211208225948036.png" /></p>
+<p><strong>3、center</strong></p>
+<p>将所有项目放置在主轴的中心。这是在 CSS 中居中元素的最简单方法之一。</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">flex-container</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">flex</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">justify-content</span><span class="p">:</span><span class="w"> </span><span class="kc">center</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p><img alt="image-20211208230111923" src="../assets/image-20211208230111923.png" /></p>
+<p><strong>4、space-between</strong></p>
+<p>这会占用容器内的所有额外空间，并将其均匀分布在每个元素之间，以在填充整个容器的同时将它们彼此间隔得尽可能远。</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">flex-container</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">flex</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">justify-content</span><span class="p">:</span><span class="w"> </span><span class="kc">space-between</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p><img alt="image-20211208230547303" src="../assets/image-20211208230547303.png" /></p>
+<p><strong>5、space-around</strong></p>
+<p>这与 space-between非常相似，但它也在容器外部和第一个/最后一个元素之间增加了空间。容器外部和第一个/最后一个元素之间的空间量正好是元素之间空间量的一半。</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">flex-container</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">flex</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">justify-content</span><span class="p">:</span><span class="w"> </span><span class="kc">space-around</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p><img alt="image-20211208230650289" src="../assets/image-20211208230650289.png" /></p>
+<table>
+<thead>
+<tr>
+<th>属性名</th>
+<th>效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>flex-start</td>
+<td>默认值从头部开始如果主轴是x轴，则从左到右</td>
+</tr>
+<tr>
+<td>flex-end</td>
+<td>从尾部开始排列</td>
+</tr>
+<tr>
+<td>center</td>
+<td>在主轴居中对齐(如果主轴是x轴则水平居中)</td>
+</tr>
+<tr>
+<td>space-around</td>
+<td>平分剩余空间</td>
+</tr>
+<tr>
+<td>space-between</td>
+<td>先两边贴边再平分剩余空间(重要)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="align-items">align-items<a class="headerlink" href="#align-items" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>align-items 设置侧轴上的子元素排列方式（单行 ）</p>
+</blockquote>
+<p>该属性是控制子项在侧轴（默认是y轴）上的排列方式  在子项为单项（单行）的时候使用</p>
+<p>对于下方这些示例，我们将假设 flex-items 的宽度均为 20%，但元素的高度都不同。</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">flex-item</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="kt">%</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="p">.</span><span class="nc">flex-item</span><span class="p">:</span><span class="nd">nth-child</span><span class="o">(</span><span class="nt">1</span><span class="o">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">75</span><span class="kt">px</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="p">.</span><span class="nc">flex-item</span><span class="p">:</span><span class="nd">nth-child</span><span class="o">(</span><span class="nt">2</span><span class="o">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">px</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="p">.</span><span class="nc">flex-item</span><span class="p">:</span><span class="nd">nth-child</span><span class="o">(</span><span class="nt">3</span><span class="o">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">125</span><span class="kt">px</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p><strong>1、stretch(默认）</strong></p>
+<p>这将拉伸所有项目以填充横轴的整个高度，除非它们设置了特定的高度。在我们的示例中，我将第一个子元素的高度设置为初始值，这与我们从未在第一个孩子上设置高度基本相同。默认情况下，当 div 没有高度时，它只是其中内容的高度，但是正如你在下面看到的，第一个子项填充了容器的整个高度，因为它正在拉伸以填充整个高度。但是，第二个元素没有拉伸，因为我们在其上设置了 100px 的特定高度。**stretch**是 align-items 的默认行为。</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">flex-container</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">flex</span><span class="p">;</span><span class="w">  </span><span class="k">align-items</span><span class="p">:</span><span class="w"> </span><span class="kc">stretch</span><span class="p">;}.</span><span class="nc">flex-item</span><span class="p">:</span><span class="nd">nth-child</span><span class="o">(</span><span class="nt">1</span><span class="o">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="c">/* 这就像我们没有设置高度一样 */</span><span class="w">  </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="kc">initial</span><span class="p">;}</span><span class="w"></span>
+</code></pre></div>
+<p><img alt="image-20211208232130028" src="../assets/image-20211208232130028.png" /></p>
+<p><strong>2、flex-start</strong></p>
+<p>这与 justify-content 的 flex-start 的工作原理相同，但默认情况下将从交叉轴的顶部开始。</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">flex-container</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">flex</span><span class="p">;</span><span class="w">  </span><span class="k">align-items</span><span class="p">:</span><span class="w"> </span><span class="kc">flex-start</span><span class="p">;}</span><span class="w"></span>
+</code></pre></div>
+<p><img alt="image-20211208232251263" src="../assets/image-20211208232251263.png" /></p>
+<p><strong>3、flex-end</strong></p>
+<p>这与 justify-content 的 flex-end 的工作原理相同，但默认情况下将从交叉轴的底部开始。</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">flex-container</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">flex</span><span class="p">;</span><span class="w">  </span><span class="k">align-items</span><span class="p">:</span><span class="w"> </span><span class="kc">flex-end</span><span class="p">;}</span><span class="w"></span>
+</code></pre></div>
+<p><img alt="image-20211208232338519" src="../assets/image-20211208232338519.png" /></p>
+<table>
+<thead>
+<tr>
+<th>属性名</th>
+<th>效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>flex-start</td>
+<td>默认值从头部开始如果主轴是x轴，则从左到右</td>
+</tr>
+<tr>
+<td>flex-end</td>
+<td>从尾部开始排列</td>
+</tr>
+<tr>
+<td>center</td>
+<td>在主轴居中对齐(如果主轴是x轴则水平居中)</td>
+</tr>
+<tr>
+<td>stretch</td>
+<td>拉伸</td>
+</tr>
+</tbody>
+</table>
+<p><strong>4、center</strong></p>
+<p>这与 justify-content 的 <code>center</code>相同，但将基于交叉轴居中。</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">flex-container</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">flex</span><span class="p">;</span><span class="w">  </span><span class="k">align-items</span><span class="p">:</span><span class="w"> </span><span class="kc">center</span><span class="p">;}</span><span class="w"></span>
+</code></pre></div>
+<p><img alt="image-20211208232440415" src="../assets/image-20211208232440415.png" /></p>
+<p>上方内容已经涵盖了沿主轴和交叉轴布置元素的所有方式，但是关于 flexbox 轴，你还需要了解一件更重要的事情。它们实际上可以互换。有一个叫做 flex-direction 的属性，它决定了主轴和交叉轴的方向。</p>
+<h4 id="flex-direction">flex-direction<a class="headerlink" href="#flex-direction" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>flex-direction设置主轴的方向，此属性允许我们确定每个轴对应的方向以及轴的起点。</p>
+</blockquote>
+<p>在 flex 布局中，是分为主轴和侧轴两个方向，同样的叫法有 ： 行和列、x 轴和y 轴</p>
+<p>默认主轴方向就是 x 轴方向，水平向右</p>
+<p>默认侧轴方向就是 y 轴方向，水平向下</p>
+<p><img alt="" src="../assets/1.jpg" /></p>
+<p>注意： 主轴和侧轴是会变化的，就看 flex-direction 设置谁为主轴，剩下的就是侧轴。而我们的子元素是跟着主轴来排列的</p>
+<p><strong>1、row(默认)</strong></p>
+<p>默认方向是行。这意味着主轴是水平的，而横轴是垂直的。这也意味着主轴从左侧开始，而横轴从顶部开始。</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">flex-container</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">flex</span><span class="p">;</span><span class="w">  </span><span class="k">flex-direction</span><span class="p">:</span><span class="w"> </span><span class="kc">row</span><span class="p">;</span><span class="w">  </span><span class="k">justify-content</span><span class="p">:</span><span class="w"> </span><span class="kc">flex-start</span><span class="p">;</span><span class="w">  </span><span class="k">align-items</span><span class="p">:</span><span class="w"> </span><span class="kc">flex-start</span><span class="p">;}</span><span class="w"></span>
+</code></pre></div>
+<p><img alt="image-20211208233113566" src="../assets/image-20211208233113566.png" /></p>
+<p><strong>2、row-reverse</strong> </p>
+<p>与 row 类似，我们有 row-reverse。该方向不会交换主轴/交叉轴，但会交换主轴开始的位置。主轴现在从右边开始，而横轴没有改变，仍然从顶部开始。你将在下面看到我们的项目从容器的右侧开始并从右到左排列，因为我们使用的是相反的顺序。</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">flex-container</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">flex</span><span class="p">;</span><span class="w">  </span><span class="k">flex-direction</span><span class="p">:</span><span class="w"> </span><span class="kc">row-reverse</span><span class="p">;</span><span class="w">  </span><span class="k">justify-content</span><span class="p">:</span><span class="w"> </span><span class="kc">flex-start</span><span class="p">;</span><span class="w">  </span><span class="k">align-items</span><span class="p">:</span><span class="w"> </span><span class="kc">flex-start</span><span class="p">;}</span><span class="w"></span>
+</code></pre></div>
+<p><img alt="image-20211208233201476" src="../assets/image-20211208233201476.png" /></p>
+<p><strong>3、column</strong></p>
+<p>列方向完全交换了我们的轴，所以现在主轴是垂直的，横轴是水平的。这意味着，如果你使用 justify-content，你将在垂直方向布置元素，而 align-items 将在水平方向工作。</p>
+<div class="highlight"><pre><span></span><code>.flex-container {  display: flex;  flex-direction: column;  justify-content: flex-start;  align-items: center;}
+</code></pre></div>
+<p><img alt="image-20211209132650166" src="../assets/image-20211209132650166.png" /></p>
+<p><strong>4、column-reverse</strong></p>
+<p>column-reverse 方向与 column 基本相同，但它反转了主轴的方向，因此现在项目从容器的底部开始。</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">flex-container</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">flex</span><span class="p">;</span><span class="w">  </span><span class="k">flex-direction</span><span class="p">:</span><span class="w"> </span><span class="kc">column-reverse</span><span class="p">;</span><span class="w">  </span><span class="k">justify-content</span><span class="p">:</span><span class="w"> </span><span class="kc">flex-start</span><span class="p">;</span><span class="w">  </span><span class="k">align-items</span><span class="p">:</span><span class="w"> </span><span class="kc">center</span><span class="p">;}</span><span class="w"></span>
+</code></pre></div>
+<p><img alt="image-20211209132756090" src="../assets/image-20211209132756090.png" /></p>
+<p>刚刚我们介绍了很多与布局相关的内容，但实际上你需要了解的主要内容是 justify-content、align-items、flex-direction 以及它们中的每一个是如何影响主轴/横轴。</p>
+<p>到目前为止，我们涵盖的所有内容都必须处理整个 flex 容器的布局。不过，我们实际上可以更进一步， flex 容器中的每个项目都有特定的布局，这是通过 align-self 属性完成的。</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">flex-container</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">flex</span><span class="p">;</span><span class="w">  </span><span class="k">align-items</span><span class="p">:</span><span class="w"> </span><span class="kc">flex-start</span><span class="p">;}.</span><span class="nc">flex-item</span><span class="p">:</span><span class="nd">nth-child</span><span class="o">(</span><span class="nt">1</span><span class="o">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="k">align-self</span><span class="p">:</span><span class="w"> </span><span class="kc">flex-end</span><span class="p">;}</span><span class="w"></span>
+</code></pre></div>
+<p><img alt="image-20211209132844006" src="../assets/image-20211209132844006.png" /></p>
+<p>正如你从上面的例子中看到的，我们将第一个子元素的 align-self 属性设置为 flex-end 并且它现在在我们的交叉轴的底部对齐，即使整个 flex 容器有一个 align-items：flex-start。</p>
+<p>此 align-self 属性可与任何 align-items 值一起使用，以将每个项目准确放置在容器中你想要的位置。</p>
+<p>但是，需要注意的一件重要事情是，没有justify-self方法，因为这是由父容器负责。</p>
+<p><img alt="" src="../assets/2.jpg" /></p>
+<h3 id="flex-item">调整 Flex Item的大小<a class="headerlink" href="#flex-item" title="Permanent link">&para;</a></h3>
+<p>现在我们来到了 flexbox 中最令人困惑的部分，即单个项目的大小调整。</p>
+<p>flexbox 的真正威力不在于它的布局属性（尽管这些属性很棒），而在于它能够根据页面上其他元素的大小调整项目的大小。这是通过 3 个不同的属性 flex-grow、flex-shrink 和 flex-basis 完成的。首先谈谈 flex-grow 因为它是你使用的最常见的属性。</p>
+<h4 id="flex-grow">一、flex-grow<a class="headerlink" href="#flex-grow" title="Permanent link">&para;</a></h4>
+<p>flex-grow 属性是你在 flex 项目上定义的一个属性，它告诉项目该项目允许占用多少额外空间来填充其容器。默认情况下，此属性设置为 0，这意味着该项目不会获得任何额外空间。让我们首先看一个 flex 容器中没有任何项目设置了 flex-grow的情况 。</p>
+<p><img alt="image-20211209133112679" src="../assets/image-20211209133112679.png" /></p>
+<p>如你所见，每个项目仅占用其宽度，容器中的其余空间未填充。这是 flexbox 的默认行为，但如果你希望一个或多个项目填充剩余空间，则需要 flex-grow。</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">flex-item</span><span class="p">:</span><span class="nd">nth-child</span><span class="o">(</span><span class="nt">2</span><span class="o">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="k">flex-grow</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">;}</span><span class="w"></span>
+</code></pre></div>
+<p>通过将 flex-grow 设置为 1，我们告诉第二个元素它应该获得额外空间的 1 部分，并且由于没有其他项目具有 flex grow，那么额外空间的 1 部分就是剩余空间的全部。</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">flex-item</span><span class="p">:</span><span class="nd">nth-child</span><span class="o">(</span><span class="nt">1</span><span class="o">),</span><span class="p">.</span><span class="nc">flex-item</span><span class="p">:</span><span class="nd">nth-child</span><span class="o">(</span><span class="nt">2</span><span class="o">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="k">flex-grow</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">;}</span><span class="w"></span>
+</code></pre></div>
+<p><img alt="image-20211209133432610" src="../assets/image-20211209133432610.png" /></p>
+<p>在这个例子中，我们将第一个和第二个元素的 flex-grow 都设置为 1，所以现在这些元素中的每一个都将获得剩余空间的 1 部分。为了确定有多少空间，我们只需将容器中每个项目的所有 flex-grow 数字相加 (1 + 1 = 2)，然后将每个项目的 flex-grow 除以该数字。由于我们对每个项目的 flex-grow 是 1，因此每个项目将获得 剩余空间的&frac12; 。</p>
+<p>不过，我们可以通过为某些元素提供或多或少的可用空间来制作更复杂的布局。</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">flex-item</span><span class="p">:</span><span class="nd">nth-child</span><span class="o">(</span><span class="nt">1</span><span class="o">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="k">flex-grow</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">;}.</span><span class="nc">flex-item</span><span class="p">:</span><span class="nd">nth-child</span><span class="o">(</span><span class="nt">2</span><span class="o">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="k">flex-grow</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">;}</span><span class="w"></span>
+</code></pre></div>
+<p>在这个例子中，我们让第一个元素得到剩余空间的 2 部分，而第二个元素只得到 1 部分。当我们做数学运算时，我们会看到第一个元素获得了剩余空间的 &#8532;，而第二个元素只获得了剩余空间的 &#8531;。</p>
+<p><img alt="image-20211209133752054" src="../assets/image-20211209133752054.png" /></p>
+<p>乍一看，你可能认为这段代码是说第一个元素的大小应该是第二个元素的两倍，但 flex grow 只关心在所有元素添加到容器后剩余的空间。由于默认情况下我们的 3 个元素占据了容器大小的 60%，元素之间的剩余空间仅占容器大小的 40%。不过，我们实际上可以通过使用 flex-basis 来修改剩余空间的计算方式</p>
+<h4 id="flex-basis">二、flex-basis<a class="headerlink" href="#flex-basis" title="Permanent link">&para;</a></h4>
+<p>flex-basis 属性告诉我们的 flex 容器项目在容器中占用了多少空间。默认情况下，它设置为 auto 这意味着它只使用元素的 width 属性来计算它。</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">flex-item</span><span class="p">:</span><span class="nd">nth-child</span><span class="o">(</span><span class="nt">1</span><span class="o">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="k">flex-basis</span><span class="p">:</span><span class="w"> </span><span class="mi">40</span><span class="kt">%</span><span class="p">;}</span><span class="w"></span>
+</code></pre></div>
+<p><img alt="image-20211209134225157" src="../assets/image-20211209134225157.png" /></p>
+<p>在上面的代码中，我们将第一个元素的 flex-basis 设置为 40%，所以现在不是占用 20% 的宽度（这是我们定义为元素的宽度），而是占用 40% 容器大小。这现在意味着可以用 flex-grow 进行划分的容器剩余空间更少。</p>
+<p>这个属性只有在你想改变 flex 容器中元素的宽度时才有用，以便它们更好地与 flex-grow 配合使用。例如，假设你想在容器中创建 3 个相同大小的元素，但它们的宽度一开始就不同，而你无法更改。</p>
+<p><img alt="image-20211209134255454" src="../assets/image-20211209134255454.png" /></p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">flex-item</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="k">flex-grow</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">;}</span><span class="w"></span>
+</code></pre></div>
+<p><img alt="image-20211209134324877" src="../assets/image-20211209134324877.png" /></p>
+<p>你可能认为将 flex-grow 设置为 1 会使它们的大小都相同，但是由于它们以不同的宽度开始，因此它们最终会以不同的宽度结束，因为添加到元素的额外空间量对于每个独立的元素是完全相同的。</p>
+<p>要解决这个问题，你需要为所有元素提供相同的 flex-basis，以便它们都以相同的大小开始并以相同的速度增长。通常将使用 0 作为 flex-basis，因为它会确保所有元素始终具有相同的大小，无论它们开始多小/多大。</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">flex-item</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="k">flex-grow</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">  </span><span class="k">flex-basis</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;}</span><span class="w"></span>
+</code></pre></div>
+<p><img alt="image-20211209134423202" src="../assets/image-20211209134423202.png" /></p>
+<p>现在我们要讨论的最后一个大小属性是 flex-shrink。</p>
+<h4 id="flex-shirk">三、flex-shirk<a class="headerlink" href="#flex-shirk" title="Permanent link">&para;</a></h4>
+<p>本文开头提到如果容器中的 flex 项目溢出容器，它们将自动缩小以填充正确的大小。这是因为默认情况下，所有 flex 项目的 flex-shrink 都设置为 1。</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">flex-item</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="kt">%</span><span class="p">;}</span><span class="w"></span>
+</code></pre></div>
+<p>即使每个元素应该占容器的 50%，它们也会均匀地缩小，因此每个元素只有容器大小的 33%。如果我们想防止其中一个子元素收缩，我们可以将 flex-shrink 设置为 0。</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">flex-item</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="kt">%</span><span class="p">;}.</span><span class="nc">flex-item</span><span class="p">:</span><span class="nd">nth-child</span><span class="o">(</span><span class="nt">1</span><span class="o">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="k">flex-shrink</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;}</span><span class="w"></span>
+</code></pre></div>
+<p><img alt="image-20211209134522748" src="../assets/image-20211209134522748.png" /></p>
+<p>正如你所看到的，第一个元素保持容器大小的 50% 并且不会缩小，而其他两个元素会缩小以确保所有项目都可以放入容器中。</p>
+<p>我们还可以使某些项目比其他项目收缩得更多。</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">flex-item</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="kt">%</span><span class="p">;}.</span><span class="nc">flex-item</span><span class="p">:</span><span class="nd">nth-child</span><span class="o">(</span><span class="nt">1</span><span class="o">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="k">flex-shrink</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">;}</span><span class="w"></span>
+</code></pre></div>
+<p><img alt="image-20211209134547468" src="../assets/image-20211209134547468.png" /></p>
+<p>通过将 flex-shrink 设置为 2，第一个元素应该失去溢出空间的 2 部分，而其他两个元素每个只丢失 1 部分，因为它们默认设置 flex-shrink为1。这在比例方面与 flex-grow 完全相同，但 flex-shrink 处理容器外溢出的空间，而 flex-grow 处理容器内剩余的空间。</p>
+<p>在大多数情况下，这并不是一个真正需要处理的属性，因为你通常只关心增长的项目，并且溢出时收缩的默认设置通常也是你想要的。</p>
+<p>另外，需要注意的一件重要事情是 flex-shrink 非常聪明，它将确保如果你有一个非常大的项目和一个非常小的项目，它们会以一种方式收缩，即大项目收缩得更多，以便小项目不会缩小到消失的地步。</p>
+<p>以上是需要了解的有关调整 flex 项目大小的全部信息。</p>
+<h3 id="flex_2">Flex包装<a class="headerlink" href="#flex_2" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>flex-wrap 设置是否换行</p>
+</blockquote>
+<p>默认情况下，项目都排在一条线（又称”轴线”）上。flex-wrap属性定义，flex布局中默认是不换行的。</p>
+<ul>
+<li>nowrap 不换行</li>
+<li>wrap 换行</li>
+</ul>
+<p>当你在 flexbox 中工作时，通常只处理一行项目，但有时在极少数情况下，当你的项目多于一行时，就可能需要处理 wrapping 包装。</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">flex-container</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="k">flex-wrap</span><span class="p">:</span><span class="w"> </span><span class="kc">wrap</span><span class="p">;}.</span><span class="nc">flex-item</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="kt">%</span><span class="p">;}</span><span class="w"></span>
+</code></pre></div>
+<p><img alt="image-20211209134819286" src="../assets/image-20211209134819286.png" /></p>
+<p>由于我们的项目通常有 50% 的宽度，它们会缩小以确保都在一行上，但我们将 flex-wrap 属性设置为 wrap，这意味着如果项目溢出容器，则将其放在新的一行 . 如果你使用 wrap 来确保即使项目列表变得太大，它们仍然看起来不错，这虽然也还好，但是如果你使用 wrap 来创建二维布局，那么使用flexbox 就是错误的。相反，你应该考虑使用 CSS 网格布局。后续也会进行分享！</p>
+<p>如果你想阻止 flex 容器包装，只需要将 wrap 属性设置为 nowrap。</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">flex-container</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="k">flex-wrap</span><span class="p">:</span><span class="w"> </span><span class="kc">nowrap</span><span class="p">;}</span><span class="w"></span>
+</code></pre></div>
+<p>如果你在列布局中使用 flex-wrap，则项目将换行到新列而不是行上。</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">flex-container</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="k">flex-direction</span><span class="p">:</span><span class="w"> </span><span class="kc">column</span><span class="p">;</span><span class="w">  </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">250</span><span class="kt">px</span><span class="p">;</span><span class="w">  </span><span class="k">flex-wrap</span><span class="p">:</span><span class="w"> </span><span class="kc">wrap</span><span class="p">;}.</span><span class="nc">flex-item</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">px</span><span class="p">;}</span><span class="w"></span>
+</code></pre></div>
+<p><img alt="image-20211209134933200" src="../assets/image-20211209134933200.png" /></p>
+<p>要知道的另一件重要事情是，现在有多个行/列，可以使用 align-content 来布局不同行/列的交互方式。</p>
+<p>在普通的 flexbox 布局中，可以使用 justify-content 来分隔主轴上的项目，而 align-content 本质上是相同的，但用于在横轴上分隔元素。此属性仅在 flex-wrap 设置为 wrap 并且内容正在包装时才重要。</p>
+<p>例如，在普通的 flexbox 布局中， align-content 属性设置为 normal，这意味着没有设置特定的对齐方式。如果我们愿意，我们可以使用所有可用的花哨对齐方式来对齐 align-content 中的内容。</p>
+<div class="highlight"><pre><span></span><code>.flex-container {  height: 250px;  flex-wrap: wrap;  align-content: flex-end;}.flex-item {  width: 50%;  height: 100px;}
+</code></pre></div>
+<p><img alt="image-20211209135021641" src="../assets/image-20211209135021641.png" /></p>
+<p>如你所见，所有项目都位于容器底部，即交叉轴的末端。如果我们改用列布局，那么 align-content 将水平放置元素。</p>
+<div class="highlight"><pre><span></span><code>.flex-container {  flex-direction: column;  height: 250px;  flex-wrap: wrap;  align-content: center;}.flex-item {  height: 100px;}
+</code></pre></div>
+<p><img alt="image-20211209135052968" src="../assets/image-20211209135052968.png" /></p>
+<h3 id="flexbox">高级Flexbox属性<a class="headerlink" href="#flexbox" title="Permanent link">&para;</a></h3>
+<p>目前分享的内容已经涵盖了 flexbox 的所有基础和进阶属性，现在我想涵盖一些高级/小众的 flexbox 属性。</p>
+<h4 id="_2">一、添加间隙<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
+<p>到目前为止我们还没有涉及的一件事是能够在 flexbox 容器中的元素之间添加间隙。你可以尝试使用margin/padding来执行此操作，但更简单的方法是使用 gap 属性。此属性将根据我们传递给 gap 的值在每个项目之间添加空间。</p>
+<div class="highlight"><pre><span></span><code>.flex-container {  gap: 10px;}
+</code></pre></div>
+<p><img alt="image-20211209135146987" src="../assets/image-20211209135146987.png" /></p>
+<p>正如你所看到的，我们上面的每个项目之间都有 10 px的间隙。这种差距也适用于多行 flex 容器。</p>
+<div class="highlight"><pre><span></span><code>.flex-container {  flex-direction: column;  height: 250px;  flex-wrap: wrap;  align-content: center;  gap: 10px;}.flex-item {  height: 100px;}
+</code></pre></div>
+<p><img alt="image-20211209135220627" src="../assets/image-20211209135220627.png" /></p>
+<p>如你所见，我们的每一行/列都有 10px的间隙。</p>
+<p>我们还可以更进一步，仅定义行间距或仅定义列间距。</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">flex-container</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="k">flex-direction</span><span class="p">:</span><span class="w"> </span><span class="kc">column</span><span class="p">;</span><span class="w">  </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">250</span><span class="kt">px</span><span class="p">;</span><span class="w">  </span><span class="k">flex-wrap</span><span class="p">:</span><span class="w"> </span><span class="kc">wrap</span><span class="p">;</span><span class="w">  </span><span class="k">align-content</span><span class="p">:</span><span class="w"> </span><span class="kc">center</span><span class="p">;</span><span class="w">  </span><span class="n">row-gap</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="kt">px</span><span class="p">;}.</span><span class="nc">flex-item</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">px</span><span class="p">;}</span><span class="w"></span>
+</code></pre></div>
+<p><img alt="image-20211209135246361" src="../assets/image-20211209135246361.png" /></p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">flex-container</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="k">flex-direction</span><span class="p">:</span><span class="w"> </span><span class="kc">column</span><span class="p">;</span><span class="w">  </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">250</span><span class="kt">px</span><span class="p">;</span><span class="w">  </span><span class="k">flex-wrap</span><span class="p">:</span><span class="w"> </span><span class="kc">wrap</span><span class="p">;</span><span class="w">  </span><span class="k">align-content</span><span class="p">:</span><span class="w"> </span><span class="kc">center</span><span class="p">;</span><span class="w">  </span><span class="k">column-gap</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="kt">px</span><span class="p">;}.</span><span class="nc">flex-item</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">px</span><span class="p">;}</span><span class="w"></span>
+</code></pre></div>
+<p><img alt="image-20211209135338866" src="../assets/image-20211209135338866.png" /></p>
+<h4 id="_3">二、元素排序<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
+<p>默认情况下，我们可以使用 flex-direction 以正常顺序或相反顺序对元素进行排序，但我们也可以使用 order 属性对单个元素进行排序。</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">flex-item</span><span class="p">:</span><span class="nd">nth-child</span><span class="o">(</span><span class="nt">1</span><span class="o">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="k">order</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">}.</span><span class="nc">flex-item</span><span class="p">:</span><span class="nd">nth-child</span><span class="o">(</span><span class="nt">2</span><span class="o">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="k">order</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">}.</span><span class="nc">flex-item</span><span class="p">:</span><span class="nd">nth-child</span><span class="o">(</span><span class="nt">3</span><span class="o">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="k">order</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p><img alt="image-20211209135448950" src="../assets/image-20211209135448950.png" /></p>
+<p>正如你所看到的，通过指定元素的 order 属性，我们可以确定它们的确切顺序。默认情况下，每个元素的顺序为 0，并且由于 flexbox 将根据它们在 HTML 中的顺序以相同的顺序排列所有元素，你会注意到，如果你不定义任何顺序，所有元素将保持和HTML 相同的顺序  。</p>
+<p>在我们的示例中，我们为第一个项目指定了 2 的order，然后为其他两个项目指定了 1 的order。当 flexbox 布局项目时，它从最低的顺序开始，在我们的例子中是 1。由于我们的第二个和第三个元素具有相同的顺序，它们将根据它们的 HTML 顺序进行排序，因此第二个元素将首先出现，而 第三个元素将排在第二位。最后，我们的第一个元素的阶数为 2，比 1 大，因此它将作为我们的最后一个元素。</p>
+<p>现在这似乎是一个很酷的技巧，它允许你真正改变页面的工作方式，但建议永远不要使用 order 属性。这样做的原因是它不适用于屏幕阅读器，因为屏幕阅读器总是根据 HTML 顺序阅读。例如在我们上面的场景中，一个人看着屏幕会看到数字的顺序是 2、3、1，而屏幕阅读器会看到它们的顺序是 1、2、3，因为这是它们出现在 HTML 中的顺序 .</p>
+<h4 id="flex_3">三、Flex 简写<a class="headerlink" href="#flex_3" title="Permanent link">&para;</a></h4>
+<p>我们已经讨论了用于调整 flex item 大小的 3 个主要属性，flex-grow、flex-shrink 和 flex-basis。通常你一次只需要定义其中一个，但如果你想一次定义多个，你可以使用定义所有 3 个属性的 flex 简写属性。</p>
+<div class="highlight"><pre><span></span><code>.flex-item {  flex: 1 0 10px;}
+</code></pre></div>
+<p>上面的代码是一样的：</p>
+<div class="highlight"><pre><span></span><code>.flex-item {  flex-grow: 1;  flex-shrink: 0;  flex-basis: 10px;}
+</code></pre></div>
+<p>这个属性的工作方式是第一个值传递给 flex-grow，第二个值传递给 flex-shrink，第三个属性传递给 flex-basis。如果你只定义了第一个属性，那么它只会设置 flex-grow 属性。但是，CSS 足够聪明，如果你传递一个宽度值，比如 10px，作为唯一的 flex 属性，那么它只会设置 flex-basis。</p>
+<div class="highlight"><pre><span></span><code>.flex-item {  flex: 2;}/* 等同于 */.flex-item {  flex-grow: 2;  flex-shrink: 1;  flex-basis: 0;}
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>.flex-item {  flex: 10px;}/* 等同于 */.flex-item {  flex-grow: 0;  flex-shrink: 1;  flex-basis: 10px;}
+</code></pre></div>
+<p>使用 flex 简写时，除非定义，否则 flex-grow 将默认为 0，flex-shrink 将默认为 1，而 flex-basis 将默认为 0。这一点很重要，因为 flex-basis 通常是自动的，但如果你使用 flex 简写，除非定义，否则默认 flex-basis 为 0。</p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="页脚">
+      
+        
+        <a href="../" class="md-footer__link md-footer__link--prev" aria-label="上一页: CSS盒子模型" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              CSS盒子模型
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "search": "../../assets/javascripts/workers/search.092fa1f6.min.js"}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.5a9542cf.min.js"></script>
+      
+    
+  </body>
+</html>

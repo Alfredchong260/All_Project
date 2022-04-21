@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        .flex-container {
+            /*声明flex布局之后,就可以使用属性对子元素进行控制*/
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .flex-item {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            /*n em 以字体作为单位进行计算  font-size * n*/
+            background-color: cyan;
+        }
+    </style>
+</head>
+<body>
+<div class="flex-container">
+    <div class="flex-item">1</div>
+    <div class="flex-item">2</div>
+    <div class="flex-item">3</div>
+</div>
+</body>
+</html>

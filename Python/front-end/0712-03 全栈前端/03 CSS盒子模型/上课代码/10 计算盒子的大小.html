@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .father {
+            display: block;
+            background-color: cyan;
+            width: 200px;
+            height: 200px;
+            /*margin: 0 10px 0 10px;*/
+            /*上下0 左右自动设置, 块级元素独占一行*/
+            margin: 0 auto;
+        }
+
+        .son {
+            width: 70px;
+            height: 70px;
+            padding: 10px;
+            margin: 15px;
+            background-color: purple;
+            line-height: 100px;
+            text-align: center;
+            border: 5px solid red;
+            /*box-sizing: border-box; !*可以忽略边框与内边距对盒子大小的影响*!*/
+        }
+        /*
+            width: 100 + 10 * 2 + 5 * 2 + 15 * 2 =
+            height: 100 + 10 * 2 + 5 * 2 + 15 * 2 =
+
+            做网站之前需要提前算网页上元素的宽高以及大小
+        */
+    </style>
+</head>
+<body>
+
+<div class="father">
+    <div class="son">
+        儿子 div
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .father {
+            display: block;
+            background-color: cyan;
+            width: 200px;
+            height: 200px;
+            /*margin: 0 10px 0 10px;*/
+            /*上下0 左右自动设置, 块级元素独占一行*/
+
+            margin: 0 auto;
+            /*padding-top: 50px;*/
+            /*box-sizing: border-box; !* 可以防止panding margin 影响盒子的大小*!*/
+        }
+
+        .son {
+            width: 100px;
+            height: 100px;
+            background-color: purple;
+            line-height: 100px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="father">
+    <div class="son">
+        儿子 div
+    </div>
+</div>
+
+</body>
+</html>
