@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a href="http://www.baidu.com" title="都挺好">都挺好</a>
+
+<input type="checkbox" name="input" checked="checked" value="">
+<div index="1" data-index="2">我是div</div>
+<span>123</span>
+<script src="../jquery-3.6.0.js"></script>
+<script>
+  $(function() {
+    // prop 是获取标签默认的属性
+    console.log('a:href', $('a').prop('title'));
+    $('a').prop('title', '都不好')
+    console.log('a:href', $('a').prop('title'));
+
+    $('[name="input"]').change(function() {
+      console.log($(this).prop('checked'));
+    })
+
+    // attr 自定义属性与值
+    console.log('a:href', $('a').attr('href'));
+    console.log('div:index', $('div').attr('index'));
+
+    // data- 用作在网页里面缓存数据
+    console.log('div:data-index', $('div').attr('data-index'));
+
+    $('span').data("name","value")
+    // <span data-name="value">123</span>
+    console.log('span:name', $('span').data("name"));
+  });
+</script>
+</body>
+</html>

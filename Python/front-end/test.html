@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Title</title>
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    #div
+  </div>
+  <script src="./jquery.js"></script>
+  <script>
+    //jQuery 顶级对象 $
+    // 在$里面定义一个函数,然后再进行处理
+    $(function() {
+      $('div').css({
+        'background-color': 'red',
+        'width': '500px',
+        'height': '500px'
+      })
+    });
+  </script>
+</body>
+
+</html>

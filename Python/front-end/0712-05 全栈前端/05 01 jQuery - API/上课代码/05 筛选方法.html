@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<div class="yeye">
+    <span>爷爷</span>
+    <div class="father">
+        <span>爸爸</span>
+        <div class="son">
+            <span>儿子</span>
+        </div>
+        <div class="son2">
+            <span>二儿子</span>
+        </div>
+    </div>
+</div>
+<script src="../jquery-3.6.0.js"></script>
+<script>
+  $(function() {
+    console.log($('.son2').parent());
+    // parents 提取所有的父类
+    console.log($('.son2').parents());
+
+    // 提取所有的孩子节点
+    console.log($('.yeye').children());
+    // 提取所有孩子中的 .father 节点
+    console.log($('.yeye').children('.father'));
+
+    // console.log($('.yeye').find('.son').css('color', 'red'));
+
+    console.log($('.son2').siblings('.son').css('color', 'red'));
+
+  });
+</script>
+</body>
+</html>

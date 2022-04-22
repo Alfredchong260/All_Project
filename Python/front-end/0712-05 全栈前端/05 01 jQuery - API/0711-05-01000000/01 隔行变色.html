@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        li {
+            font: 22px/30px "simsun";
+            cursor: pointer;
+            margin: 5px;
+        }
+    </style>
+    <script src="../jquery-3.6.0.js"></script>
+    <script>
+        /*
+        * 作业需求：
+        *   1. 隔行变色，奇数行为 skyblue， 偶数行为 yellowgreen
+        *   2. 当鼠标移动到 li 标签上是，li进入高亮状态 red
+        * */
+      $(function() {
+        $('ul li:odd').css("color", 'skyblue')
+        $('ul li:even').css("color", 'yellowgreen')
+          $('ul li').hover(function() {
+            $(this).css('background-color', 'red')
+            $(this).siblings().css('background-color', 'white')
+          })
+        })
+
+    </script>
+</head>
+<body>
+<ul>
+    <li>我是一个没有用的li标签</li>
+    <li>我是一个没有用的li标签</li>
+    <li>我是一个没有用的li标签</li>
+    <li>我是一个没有用的li标签</li>
+    <li>我是一个没有用的li标签</li>
+    <li>我是一个没有用的li标签</li>
+    <li>我是一个没有用的li标签</li>
+    <li>我是一个没有用的li标签</li>
+    <li>我是一个没有用的li标签</li>
+    <li>我是一个没有用的li标签</li>
+    <li>我是一个没有用的li标签</li>
+    <li>我是一个没有用的li标签</li>
+    <li>我是一个没有用的li标签</li>
+    <li>我是一个没有用的li标签</li>
+</ul>
+</body>
+</html>

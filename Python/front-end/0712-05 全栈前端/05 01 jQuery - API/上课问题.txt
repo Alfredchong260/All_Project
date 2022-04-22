@@ -1,0 +1,9 @@
+全栈前端: 1 js 2 jq 3 layui (javascript)
+原生JavaScript: es5 es6 javascript 面向对象 dom bom 模块封装方式
+爬虫逆向:
++ JavaScript基础
++ JavaScript特殊语法
++ JavaScript的加密方式
++ JavaScript混淆
+
+正向开发与逆向开发

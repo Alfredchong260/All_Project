@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>惊喜不，意外不</div>
+<div>惊喜不，意外不</div>
+<div>惊喜不，意外不</div>
+<div>惊喜不，意外不</div>
+<ul>
+    <li>相同的操作</li>
+    <li>相同的操作</li>
+    <li>相同的操作</li>
+</ul>
+<script src="../jquery-3.6.0.js"></script>
+<script>
+  $(function() {
+    // let divs = document.querySelectorAll('div');
+    // for (let i = 0; i < divs.length; i++) {
+    //   divs[i].style.color = 'red';
+    // }
+
+    // 默认会操作所有的元素
+    $('div').css('color', 'red')
+    $('ul li').css('color', 'skyblue')
+
+  });
+</script>
+</body>
+</html>

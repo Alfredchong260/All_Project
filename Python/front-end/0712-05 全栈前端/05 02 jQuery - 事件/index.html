@@ -1,0 +1,1791 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.11">
+    
+    
+      
+        <title>06 jQuery 事件 - 青灯教育-前端开发 11 期</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.50e68009.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href=".." title="青灯教育-前端开发 11 期" class="md-header__button md-logo" aria-label="青灯教育-前端开发 11 期" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            青灯教育-前端开发 11 期
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              06 jQuery 事件
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../00%20%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D/%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D/" class="md-tabs__link">
+        课前注意
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../01%20HTML/" class="md-tabs__link md-tabs__link--active">
+        课程目录
+      </a>
+    </li>
+  
+
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="青灯教育-前端开发 11 期" class="md-nav__button md-logo" aria-label="青灯教育-前端开发 11 期" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    青灯教育-前端开发 11 期
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1">
+          课前注意
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="课前注意" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          课前注意
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../00%20%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D/%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D/" class="md-nav__link">
+        课程介绍
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../00%20%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D/%E4%BD%9C%E4%B8%9A%E6%8F%90%E4%BA%A4/" class="md-nav__link">
+        作业提交
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../00%20%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D/%E8%B5%84%E6%96%99%E4%B8%8B%E8%BD%BD/" class="md-nav__link">
+        资料下载
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          课程目录
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="课程目录" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          课程目录
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1">
+          01 HTML标签
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="01 HTML标签" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          01 HTML标签
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01%20HTML/" class="md-nav__link">
+        HTML标签
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01%20HTML/%E6%8B%93%E5%B1%95-emment%E8%AF%AD%E6%B3%95/" class="md-nav__link">
+        emment语法
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02%20CSS%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+        02 CSS基础
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3">
+          03 CSS盒子模型
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="03 CSS盒子模型" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          03 CSS盒子模型
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03%20CSS%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
+        CSS盒子模型
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03%20CSS%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/Flex%20%E5%B8%83%E5%B1%80/" class="md-nav__link">
+        Flex 布局
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_4">
+          04 JavaScript基础
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="04 JavaScript基础" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          04 JavaScript基础
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04%20JavaScript/04%2001%20JavaScript%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+        JS基础
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04%20JavaScript/04%2002%20JavaScript-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="md-nav__link">
+        数据类型
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04%20JavaScript/04%2003%20JavaScript-%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/" class="md-nav__link">
+        流程控制
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04%20JavaScript/04%2004%20JavaScript-%E5%87%BD%E6%95%B0%E4%B8%8E%E5%AF%B9%E8%B1%A1/" class="md-nav__link">
+        函数与对象
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05%2001%20jQuery%20-%20API/" class="md-nav__link">
+        05 jQuery API
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          06 jQuery 事件
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        06 jQuery 事件
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    事件
+  </a>
+  
+    <nav class="md-nav" aria-label="事件">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jquery" class="md-nav__link">
+    jQuery 事件注册
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jquery_1" class="md-nav__link">
+    jQuery 事件处理
+  </a>
+  
+    <nav class="md-nav" aria-label="jQuery 事件处理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#on" class="md-nav__link">
+    事件处理 on() 绑定事件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    案例：发布微博案例
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#off" class="md-nav__link">
+    事件处理 off() 解绑事件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trigger" class="md-nav__link">
+    事件处理 trigger() 自动触发事件
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jquery_2" class="md-nav__link">
+    jQuery 事件对象
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jquery_3" class="md-nav__link">
+    jQuery 拷贝对象
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ajax" class="md-nav__link">
+    Ajax
+  </a>
+  
+    <nav class="md-nav" aria-label="Ajax">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ajax_1" class="md-nav__link">
+    Ajax基础
+  </a>
+  
+    <nav class="md-nav" aria-label="Ajax基础">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    传统网站中存在的问题
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ajax_2" class="md-nav__link">
+    Ajax 概述
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ajax_3" class="md-nav__link">
+    Ajax 的应用场景
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ajax_4" class="md-nav__link">
+    Ajax的运行环境
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ajax_5" class="md-nav__link">
+    Ajax 运行原理
+  </a>
+  
+    <nav class="md-nav" aria-label="Ajax 运行原理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ajax_6" class="md-nav__link">
+    Ajax 的实现步骤
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    服务器端响应的数据格式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    请求参数传递
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    请求报文
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    请求参数的格式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    获取服务器端的响应
+  </a>
+  
+    <nav class="md-nav" aria-label="获取服务器端的响应">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ajax_7" class="md-nav__link">
+    Ajax 状态码
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ajax_8" class="md-nav__link">
+    Ajax 错误处理
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ajax_9" class="md-nav__link">
+    $.ajax()
+  </a>
+  
+    <nav class="md-nav" aria-label="$.ajax()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ajax_10" class="md-nav__link">
+    $.ajax() 方法概述
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#serialize" class="md-nav__link">
+    serialize方法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getpost" class="md-nav__link">
+    $.get()、$.post() 方法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    案例：省市区联动
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    附录
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    事件
+  </a>
+  
+    <nav class="md-nav" aria-label="事件">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jquery" class="md-nav__link">
+    jQuery 事件注册
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jquery_1" class="md-nav__link">
+    jQuery 事件处理
+  </a>
+  
+    <nav class="md-nav" aria-label="jQuery 事件处理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#on" class="md-nav__link">
+    事件处理 on() 绑定事件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    案例：发布微博案例
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#off" class="md-nav__link">
+    事件处理 off() 解绑事件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trigger" class="md-nav__link">
+    事件处理 trigger() 自动触发事件
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jquery_2" class="md-nav__link">
+    jQuery 事件对象
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jquery_3" class="md-nav__link">
+    jQuery 拷贝对象
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ajax" class="md-nav__link">
+    Ajax
+  </a>
+  
+    <nav class="md-nav" aria-label="Ajax">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ajax_1" class="md-nav__link">
+    Ajax基础
+  </a>
+  
+    <nav class="md-nav" aria-label="Ajax基础">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    传统网站中存在的问题
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ajax_2" class="md-nav__link">
+    Ajax 概述
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ajax_3" class="md-nav__link">
+    Ajax 的应用场景
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ajax_4" class="md-nav__link">
+    Ajax的运行环境
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ajax_5" class="md-nav__link">
+    Ajax 运行原理
+  </a>
+  
+    <nav class="md-nav" aria-label="Ajax 运行原理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ajax_6" class="md-nav__link">
+    Ajax 的实现步骤
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    服务器端响应的数据格式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    请求参数传递
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    请求报文
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    请求参数的格式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    获取服务器端的响应
+  </a>
+  
+    <nav class="md-nav" aria-label="获取服务器端的响应">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ajax_7" class="md-nav__link">
+    Ajax 状态码
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ajax_8" class="md-nav__link">
+    Ajax 错误处理
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ajax_9" class="md-nav__link">
+    $.ajax()
+  </a>
+  
+    <nav class="md-nav" aria-label="$.ajax()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ajax_10" class="md-nav__link">
+    $.ajax() 方法概述
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#serialize" class="md-nav__link">
+    serialize方法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getpost" class="md-nav__link">
+    $.get()、$.post() 方法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    案例：省市区联动
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    附录
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+  <h1>06 jQuery 事件</h1>
+
+<h2 id="_1">事件<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h3 id="jquery">jQuery 事件注册<a class="headerlink" href="#jquery" title="Permanent link">&para;</a></h3>
+<p>jQuery 为我们提供了方便的事件注册机制，是开发人员抑郁操作优缺点如下：</p>
+<ul>
+<li>优点: 操作简单，且不用担心事件覆盖等问题。</li>
+<li>缺点: 普通的事件注册不能做事件委托，且无法实现事件解绑，需要借助其他方法。</li>
+</ul>
+<p><strong>语法</strong> </p>
+<div class="highlight"><pre><span></span><code><span class="nx">element</span><span class="p">.</span><span class="nx">事件</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{})</span>
+
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span><span class="nx">事件处理程序</span> <span class="p">})</span>
+</code></pre></div>
+<p>其他事件和原生基本一致</p>
+<p>比如 mouseover、mouseout、 blur、 focus、change、 keydown、 keyup、resize、scroll 等</p>
+<p><strong>演示代码</strong> </p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+        <span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+            <span class="c1">// 1. 单个事件注册</span>
+            <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+                <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s2">&quot;background&quot;</span><span class="p">,</span> <span class="s2">&quot;purple&quot;</span><span class="p">);</span>
+            <span class="p">});</span>
+            <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">).</span><span class="nx">mouseenter</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+                <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s2">&quot;background&quot;</span><span class="p">,</span> <span class="s2">&quot;skyblue&quot;</span><span class="p">);</span>
+            <span class="p">});</span>
+        <span class="p">})</span>
+    <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</code></pre></div>
+<h3 id="jquery_1">jQuery 事件处理<a class="headerlink" href="#jquery_1" title="Permanent link">&para;</a></h3>
+<p>因为普通注册事件方法的不足，jQuery又开发了多个处理方法，重点讲解如下：</p>
+<ul>
+<li>on(): 用于事件绑定，目前最好用的事件绑定方法</li>
+<li>off(): 事件解绑</li>
+<li>trigger() / triggerHandler(): 事件触发</li>
+</ul>
+<h4 id="on">事件处理 on() 绑定事件<a class="headerlink" href="#on" title="Permanent link">&para;</a></h4>
+<p>因为普通注册事件方法的不足，jQuery又创建了多个新的事件绑定方法bind() / live() / delegate() / on()等，其中最好用的是: on()</p>
+<p><strong>语法</strong></p>
+<ul>
+<li>on() 方法优势1:</li>
+</ul>
+<p>可以绑定多个事件，多个处理事件处理</p>
+<div class="highlight"><pre><span></span><code><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">({</span>
+  <span class="nx">mouseover</span><span class="o">:</span> <span class="kd">function</span><span class="p">(){},</span>
+  <span class="nx">mouseout</span><span class="o">:</span> <span class="kd">function</span><span class="p">(){},</span>
+  <span class="nx">click</span><span class="o">:</span> <span class="nx">functioni</span> <span class="p">(){}</span>
+<span class="p">});</span>
+</code></pre></div>
+<p>如果事件处理程序相同</p>
+<div class="highlight"><pre><span></span><code>  <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;mouseover mouseout&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+      <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">toggleClass</span><span class="p">(</span><span class="s2">&quot;current&quot;</span><span class="p">);</span>
+  <span class="p">});</span>
+</code></pre></div>
+<ul>
+<li>on() 方法优势2:</li>
+</ul>
+<p>可以事件委派操作。事件委派定义是，把原来加给子元素身上的事件绑定在父元素身上，就是把事件委派给父元素。</p>
+<div class="highlight"><pre><span></span><code><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;ul&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="s2">&quot;li&quot;</span><span class="err">，</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">alert</span> <span class="p">(</span> <span class="s1">&#39;he1lo world!&#39;</span><span class="p">)</span> <span class="p">;</span>
+<span class="p">});</span>
+</code></pre></div>
+<p>在此之前有bind(), live(),delegate()等方法来处理事件绑定或者事件委派，最新版本的请用on替代他们。</p>
+<ul>
+<li>on() 方法优势3:</li>
+</ul>
+<p>动态创建的元素，click() 没有办法绑定事件。on()可以给动态生成的元素绑定事件</p>
+<div class="highlight"><pre><span></span><code><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;div&quot;</span> <span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="err">，</span><span class="s2">&quot;P&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span> 
+  <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;俺可以给动态生成的元素绑定事件&quot;</span><span class="p">)</span>
+<span class="p">})</span><span class="o">:</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>  <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;&lt;p&gt;我是动态创建的p&lt;/p&gt;&quot;</span><span class="p">));</span>
+</code></pre></div>
+<p><strong>演示代码</strong> </p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>我们都是好孩子<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>我们都是好孩子<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>我们都是好孩子<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">ol</span><span class="p">&gt;&lt;/</span><span class="nt">ol</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+        <span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+            <span class="c1">// (1) on可以绑定1个或者多个事件处理程序</span>
+            <span class="c1">// $(&quot;div&quot;).on({</span>
+            <span class="c1">//     mouseenter: function() {</span>
+            <span class="c1">//         $(this).css(&quot;background&quot;, &quot;skyblue&quot;);</span>
+            <span class="c1">//     },</span>
+            <span class="c1">//     click: function() {</span>
+            <span class="c1">//         $(this).css(&quot;background&quot;, &quot;purple&quot;);</span>
+            <span class="c1">//     }</span>
+            <span class="c1">// });</span>
+            <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;mouseenter mouseleave&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+                <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">toggleClass</span><span class="p">(</span><span class="s2">&quot;current&quot;</span><span class="p">);</span>
+            <span class="p">});</span>
+
+            <span class="c1">// (2) on可以实现事件委托（委派）</span>
+            <span class="c1">// click 是绑定在ul 身上的，但是 触发的对象是 ul 里面的小li</span>
+            <span class="c1">// $(&quot;ul li&quot;).click();</span>
+            <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;ul&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="s2">&quot;li&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+                <span class="nx">alert</span><span class="p">(</span><span class="mf">11</span><span class="p">);</span>
+            <span class="p">});</span>
+
+            <span class="c1">// (3) on可以给未来动态创建的元素绑定事件</span>
+            <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;ol&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="s2">&quot;li&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+                <span class="nx">alert</span><span class="p">(</span><span class="mf">11</span><span class="p">);</span>
+            <span class="p">})</span>
+            <span class="kd">var</span> <span class="nx">li</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;&lt;li&gt;我是后来创建的&lt;/li&gt;&quot;</span><span class="p">);</span>
+            <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;ol&quot;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="nx">li</span><span class="p">);</span>
+        <span class="p">})</span>
+    <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</code></pre></div>
+<h4 id="_2">案例：发布微博案例<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
+<ol>
+<li>点击发布按钮， 动态创建一个小li，放入文本框的内容和删除按钮， 并且添加到ul 中。</li>
+<li>点击的删除按钮，可以删除当前的微博留言。</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="o">*</span><span class="w"> </span><span class="p">{</span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">}</span><span class="w"></span>
+<span class="nt">ul</span><span class="w"> </span><span class="p">{</span><span class="k">list-style</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">}</span><span class="w"></span>
+<span class="p">.</span><span class="nc">box</span><span class="w"> </span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">600</span><span class="kt">px</span><span class="p">;</span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">px</span><span class="w"> </span><span class="kc">auto</span><span class="p">;</span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="mh">#000</span><span class="p">;</span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="kt">px</span><span class="p">;}</span><span class="w"></span>
+<span class="nt">textarea</span><span class="w"> </span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">450</span><span class="kt">px</span><span class="p">;</span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">160</span><span class="kt">px</span><span class="p">;</span><span class="k">outline</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;</span><span class="k">resize</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;}</span><span class="w"></span>
+<span class="nt">ul</span><span class="w"> </span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">450</span><span class="kt">px</span><span class="p">;</span><span class="k">padding-left</span><span class="p">:</span><span class="w"> </span><span class="mi">80</span><span class="kt">px</span><span class="p">;}</span><span class="w"></span>
+<span class="nt">ul</span><span class="w"> </span><span class="nt">li</span><span class="w"> </span><span class="p">{</span><span class="k">line-height</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="kt">px</span><span class="p">;</span><span class="k">border-bottom</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">px</span><span class="w"> </span><span class="kc">dashed</span><span class="w"> </span><span class="mh">#cccccc</span><span class="p">;</span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;}</span><span class="w"></span>
+<span class="nt">input</span><span class="w"> </span><span class="p">{</span><span class="k">float</span><span class="p">:</span><span class="w"> </span><span class="kc">right</span><span class="p">;}</span><span class="w"></span>
+<span class="nt">ul</span><span class="w"> </span><span class="nt">li</span><span class="w"> </span><span class="nt">a</span><span class="w"> </span><span class="p">{</span><span class="k">float</span><span class="p">:</span><span class="w"> </span><span class="kc">right</span><span class="p">;}</span><span class="w"></span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;box&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;weibo&quot;</span><span class="p">&gt;&lt;</span><span class="nt">span</span><span class="p">&gt;</span>微博发布<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span> 
+    <span class="p">&lt;</span><span class="nt">textarea</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;txt&quot;</span> <span class="na">cols</span><span class="o">=</span><span class="s">&quot;30&quot;</span> <span class="na">rows</span><span class="o">=</span><span class="s">&quot;10&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">textarea</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;btn&quot;</span><span class="p">&gt;</span>发布<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="nx">$</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// 1.点击发布按钮， 动态创建一个小li，放入文本框的内容和删除按钮， 并且添加到ul 中        </span>
+        <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;.btn&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+            <span class="kd">var</span> <span class="nx">li</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;&lt;li&gt;&lt;/li&gt;&quot;</span><span class="p">);</span>
+            <span class="nx">li</span><span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;.txt&quot;</span><span class="p">).</span><span class="nx">val</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot;&lt;a href=&#39;javascript:;&#39;&gt; 删除&lt;/a&gt;&quot;</span><span class="p">);</span>
+            <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;ul&quot;</span><span class="p">).</span><span class="nx">prepend</span><span class="p">(</span><span class="nx">li</span><span class="p">);</span>
+            <span class="nx">li</span><span class="p">.</span><span class="nx">slideDown</span><span class="p">();</span>
+            <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;.txt&quot;</span><span class="p">).</span><span class="nx">val</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">);</span>
+        <span class="p">});</span>
+        <span class="c1">// 2.点击的删除按钮，可以删除当前的微博留言li        </span>
+        <span class="c1">// $(&quot;ul a&quot;).click(function() {  </span>
+        <span class="c1">// 此时的click不能给动态创建的a添加事件        </span>
+        <span class="c1">//     alert(11);        </span>
+        <span class="c1">// })      </span>
+        <span class="c1">// on可以给动态创建的元素绑定事件            </span>
+        <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;ul&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+            <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">parent</span><span class="p">().</span><span class="nx">slideUp</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+                <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">remove</span><span class="p">();</span>
+            <span class="p">});</span>
+        <span class="p">});</span>
+    <span class="p">})</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</code></pre></div>
+<h4 id="off">事件处理 off() 解绑事件<a class="headerlink" href="#off" title="Permanent link">&para;</a></h4>
+<p>当某个事件上面的逻辑，在特定需求下不需要的时候，可以把该事件上的逻辑移除，这个过程我们称为事件解绑。jQuery 为我们提供 了多种事件解绑方法：die() / undelegate() / off() 等，甚至还有只触发一次的事件绑定方法 one()，在这里我们重点讲解一下 off() ;</p>
+<p><strong>语法</strong></p>
+<p>off(方法可以移除通过on0方法添加的事件处理程序。</p>
+<div class="highlight"><pre><span></span><code><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">off</span><span class="p">()</span> <span class="c1">// 解绑p元素所有事件处理程序</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">off</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">)</span> <span class="c1">// 解绑p元素上面的点击事件后面的foo是监听函数名</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;ul&quot;</span><span class="p">).</span><span class="nx">off</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="s2">&quot;li&quot;</span><span class="p">);</span> <span class="c1">// 解绑事件委托</span>
+</code></pre></div>
+<p>如果有的事件只想触发一次，可以使用one()来绑定事件。</p>
+<p><strong>演示代码</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>我们都是好孩子<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>我们都是好孩子<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>我们都是好孩子<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>我是一个P标签<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+        <span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+            <span class="c1">// 事件绑定</span>
+            <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">({</span>
+                <span class="nx">click</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+                    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;我点击了&quot;</span><span class="p">);</span>
+                <span class="p">},</span>
+                <span class="nx">mouseover</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+                    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;我鼠标经过了&#39;</span><span class="p">);</span>
+                <span class="p">}</span>
+            <span class="p">});</span>
+            <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;ul&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="s2">&quot;li&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+                <span class="nx">alert</span><span class="p">(</span><span class="mf">11</span><span class="p">);</span>
+            <span class="p">});</span>
+
+            <span class="c1">// 1. 事件解绑 off </span>
+            <span class="c1">// $(&quot;div&quot;).off();  // 这个是解除了div身上的所有事件</span>
+            <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">).</span><span class="nx">off</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">);</span> <span class="c1">// 这个是解除了div身上的点击事件</span>
+            <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;ul&quot;</span><span class="p">).</span><span class="nx">off</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="s2">&quot;li&quot;</span><span class="p">);</span>
+
+            <span class="c1">// 2. one() 但是它只能触发事件一次</span>
+            <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">one</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+                <span class="nx">alert</span><span class="p">(</span><span class="mf">11</span><span class="p">);</span>
+            <span class="p">})</span>
+        <span class="p">})</span>
+    <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</code></pre></div>
+<h4 id="trigger">事件处理 trigger() 自动触发事件<a class="headerlink" href="#trigger" title="Permanent link">&para;</a></h4>
+<p>有些时候，在某些特定的条件下，我们希望某些事件能够自动触发, 比如轮播图自动播放功能跟点击右侧按钮一致。可以利用定时器自动触发右侧按钮点击事件，不必鼠标点击触发。由此 jQuery 为我们提供了两个自动触发事件 trigger() 和 triggerHandler() ; </p>
+<p><strong>语法</strong></p>
+<ul>
+<li>第一种: trigger()</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="nx">element</span><span class="p">.</span><span class="nx">click</span><span class="p">()</span> <span class="c1">// 第一种简写形式</span>
+<span class="nx">element</span><span class="p">.</span><span class="nx">trigger</span><span class="p">(</span><span class="s2">&quot;type&quot;</span><span class="p">)</span> <span class="c1">//第二种自动触发模式</span>
+</code></pre></div>
+<ul>
+<li>第二种: triggerHandler()</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="nx">element</span><span class="p">.</span><span class="nx">triggerHandler</span><span class="p">(</span><span class="nx">type</span><span class="p">)</span> <span class="c1">// 第三种自动触发模式</span>
+</code></pre></div>
+<p>triggerHandler模式不会触发元素的默认行为，这是和前面两种的区别。</p>
+<p><strong>演示代码</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="c1">// 绑定事件</span>
+      <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="mf">11</span><span class="p">);</span>
+      <span class="p">});</span>
+
+      <span class="c1">// 自动触发事件</span>
+      <span class="c1">// 1. 元素.事件()</span>
+      <span class="c1">// $(&quot;div&quot;).click();会触发元素的默认行为</span>
+
+      <span class="c1">// 2. 元素.trigger(&quot;事件&quot;)</span>
+      <span class="c1">// $(&quot;div&quot;).trigger(&quot;click&quot;);会触发元素的默认行为</span>
+      <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;input&quot;</span><span class="p">).</span><span class="nx">trigger</span><span class="p">(</span><span class="s2">&quot;focus&quot;</span><span class="p">);</span>
+
+      <span class="c1">// 3. 元素.triggerHandler(&quot;事件&quot;) 就是不会触发元素的默认行为</span>
+      <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;input&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;focus&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">val</span><span class="p">(</span><span class="s2">&quot;你好吗&quot;</span><span class="p">);</span>
+      <span class="p">});</span>
+      <span class="c1">// 一个会获取焦点，一个不会</span>
+      <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">).</span><span class="nx">triggerHandler</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">);</span>
+      <span class="c1">// $(&quot;input&quot;).triggerHandler(&quot;focus&quot;);</span>
+    <span class="p">});</span>
+    <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</code></pre></div>
+<h3 id="jquery_2">jQuery 事件对象<a class="headerlink" href="#jquery_2" title="Permanent link">&para;</a></h3>
+<p>jQuery 对DOM中的事件对象 event 进行了封装，兼容性更好，获取更方便，使用变化不大。事件被触发，就会有事件对象的产生。</p>
+<p><strong>语法</strong></p>
+<div class="highlight"><pre><span></span><code><span class="nx">element</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="nx">events</span><span class="p">,</span> <span class="p">[</span><span class="nx">selector</span><span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{})</span>
+</code></pre></div>
+<p>阻止默认行为: event.preventDefault() 或者return false</p>
+<p>阻止冒泡: event.stopPropagation()</p>
+<p><strong>演示代码</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+        <span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+            <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+                <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;点击了document&quot;</span><span class="p">);</span>
+            <span class="p">})</span>
+            <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+                <span class="c1">// console.log(event);</span>
+                <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;点击了div&quot;</span><span class="p">);</span>
+                <span class="nx">event</span><span class="p">.</span><span class="nx">stopPropagation</span><span class="p">();</span>
+            <span class="p">})</span>
+        <span class="p">})</span>
+    <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>注意：jQuery中的 event 对象使用，可以借鉴 API 和 DOM 中的 event 。</p>
+<h3 id="jquery_3">jQuery 拷贝对象<a class="headerlink" href="#jquery_3" title="Permanent link">&para;</a></h3>
+<p>jQuery中分别为我们提供了两套快速获取和设置元素尺寸和位置的API，方便易用，内容如下。</p>
+<p><strong>语法</strong></p>
+<div class="highlight"><pre><span></span><code><span class="nx">$</span><span class="p">.</span><span class="nx">extend</span><span class="p">([</span><span class="nx">deep</span><span class="p">]</span><span class="err">，</span><span class="nx">target</span><span class="p">,</span> <span class="nx">object1</span><span class="err">，</span> <span class="p">[</span><span class="nx">objectN</span><span class="p">]</span> <span class="p">)</span>
+</code></pre></div>
+<ol>
+<li>deep:如果设为true为深拷贝，默认为false 浅拷贝</li>
+<li>target:要拷贝的目标对象</li>
+<li>object1:待拷贝到第一个对象的对象。</li>
+<li>objectN:待拷贝到第N个对象的对象。</li>
+<li>浅拷贝目标对象引用的被拷贝的对象地址，修改目标对象会影响被拷贝对象。</li>
+<li>深拷贝，前面加true，完全克隆， 修改目标对象不会影响被拷贝对象。</li>
+</ol>
+<p><strong>演示代码</strong> </p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// 1.合并数据</span>
+        <span class="kd">var</span> <span class="nx">targetObj</span> <span class="o">=</span> <span class="p">{};</span>
+        <span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="nx">id</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
+            <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;andy&quot;</span>
+        <span class="p">};</span>
+        <span class="c1">// $.extend(target, obj);</span>
+        <span class="nx">$</span><span class="p">.</span><span class="nx">extend</span><span class="p">(</span><span class="nx">targetObj</span><span class="p">,</span> <span class="nx">obj</span><span class="p">);</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">targetObj</span><span class="p">);</span>
+
+        <span class="c1">// 2. 会覆盖 targetObj 里面原来的数据</span>
+        <span class="kd">var</span> <span class="nx">targetObj</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="nx">id</span><span class="o">:</span> <span class="mf">0</span>
+        <span class="p">};</span>
+        <span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="nx">id</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
+            <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;andy&quot;</span>
+        <span class="p">};</span>
+        <span class="c1">// $.extend(target, obj);</span>
+        <span class="nx">$</span><span class="p">.</span><span class="nx">extend</span><span class="p">(</span><span class="nx">targetObj</span><span class="p">,</span> <span class="nx">obj</span><span class="p">);</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">targetObj</span><span class="p">);</span> 
+    <span class="p">})</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</code></pre></div>
+<h2 id="ajax">Ajax<a class="headerlink" href="#ajax" title="Permanent link">&para;</a></h2>
+<h3 id="ajax_1">Ajax基础<a class="headerlink" href="#ajax_1" title="Permanent link">&para;</a></h3>
+<h4 id="_3">传统网站中存在的问题<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
+<ul>
+<li>网速慢的情况下，页面加载时间长，用户只能等待</li>
+<li>表单提交后，如果一项内容不合格，需要重新填写所有表单内容</li>
+<li>页面跳转，重新加载页面，造成资源浪费，增加用户等待时间</li>
+</ul>
+<h4 id="ajax_2">Ajax 概述<a class="headerlink" href="#ajax_2" title="Permanent link">&para;</a></h4>
+<p>Ajax：标准读音 [ˈeɪˌdʒæks] ，中文音译：阿贾克斯</p>
+<p>它是浏览器提供的一套方法，可以实现页面无刷新更新数据，提高用户浏览网站应用的体验。</p>
+<p><img alt="image-20201109001648004" src="../assets/image-20201109001648004.png" /></p>
+<h4 id="ajax_3">Ajax 的应用场景<a class="headerlink" href="#ajax_3" title="Permanent link">&para;</a></h4>
+<ol>
+<li>页面上拉加载更多数据</li>
+<li>列表数据无刷新分页</li>
+<li>表单项离开焦点数据验证</li>
+<li>搜索框提示文字下拉列表</li>
+</ol>
+<p><img alt="image-20201109001735326" src="../assets/image-20201109001735326.png" /></p>
+<p><img alt="image-20201109001741445" src="../assets/image-20201109001741445.png" /></p>
+<h4 id="ajax_4">Ajax的运行环境<a class="headerlink" href="#ajax_4" title="Permanent link">&para;</a></h4>
+<p>Ajax 技术  <span style="color:red;">需要运行在网站环境中才能生效</span> ，当前课程会使用 Flask 创建的服务器作为网站服务器。</p>
+<h3 id="ajax_5">Ajax 运行原理<a class="headerlink" href="#ajax_5" title="Permanent link">&para;</a></h3>
+<p>Ajax 相当于浏览器发送请求与接收响应的代理人，以实现在不影响用户浏览页面的情况下，局部更新页面数据，从而提高用户体验。</p>
+<p><img alt="image-20201109001851935" src="../assets/image-20201109001851935.png" /></p>
+<h4 id="ajax_6">Ajax 的实现步骤<a class="headerlink" href="#ajax_6" title="Permanent link">&para;</a></h4>
+<ol>
+<li>创建 Ajax 对象</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">xhr</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
+</code></pre></div>
+<ol>
+<li>告诉 Ajax 请求地址以及请求方式</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s1">&#39;get&#39;</span><span class="p">,</span> <span class="s1">&#39;http://www.example.com&#39;</span><span class="p">);</span>
+</code></pre></div>
+<ol>
+<li>发送请求</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">();</span>
+</code></pre></div>
+<ol>
+<li>获取服务器端给与客户端的响应数据</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="nx">xhr</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">xhr</span><span class="p">.</span><span class="nx">responseText</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="_4">服务器端响应的数据格式<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
+<p>在真实的项目中，服务器端 <span style="color:red;" data-comp="版权所有，青灯教育">大多数情况下会以 JSON 对象作为响应数据的格式</span>  。当客户<span> </span> 端拿到响应数据时，要将 JSON 数据和 HTML 字符串进行拼接，然后将拼接的结果展示在页面中。</p>
+<p>在 http 请求与响应的过程中，无论是请求参数还是响应内容，如果是对象类型，最终都会被转换为对象字符串进行传输。</p>
+<div class="highlight"><pre><span></span><code><span class="nb">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">()</span>   <span class="c1">// 将 json 字符串转换为json对象</span>
+</code></pre></div>
+<h4 id="_5">请求参数传递<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<p>传统网站表单提交</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">form</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;get&quot;</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;http://www.example.com&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;username&quot;</span><span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;password&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;password&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+
+<span class="cp">&lt;!– http://www.example.com?username=zhangsan&amp;password=123456 --&gt;</span>
+</code></pre></div>
+<ul>
+<li>GET 请求方式</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s1">&#39;get&#39;</span><span class="p">,</span> <span class="s1">&#39;http://www.example.com?name=zhangsan&amp;age=20&#39;</span><span class="p">);</span>
+</code></pre></div>
+<ul>
+<li>POST 请求方式</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="s1">&#39;Content-Type&#39;</span><span class="p">,</span> <span class="s1">&#39;application/x-www-form-urlencoded&#39;</span><span class="p">)</span> <span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="s1">&#39;name=zhangsan&amp;age=20&#39;</span><span class="p">);</span>
+</code></pre></div>
+<h4 id="_6">请求报文<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
+<p>在 HTTP 请求和响应的过程中传递的数据块就叫报文，包括要传送的数据和一些附加信息，这些数据和信息要遵守规定好的格式。</p>
+<p><img alt="image-20201110141635781" src="../assets/image-20201110141635781.png" /></p>
+<h4 id="_7">请求参数的格式<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
+<ol>
+<li>application/x-www-form-urlencoded</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="nx">name</span><span class="o">=</span><span class="nx">zhangsan</span><span class="o">&amp;</span><span class="nx">age</span><span class="o">=</span><span class="mf">20</span><span class="o">&amp;</span><span class="nx">sex</span><span class="o">=</span><span class="nx">男</span>
+</code></pre></div>
+<ol>
+<li>application/json</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;zhangsan&#39;</span><span class="p">,</span> <span class="nx">age</span><span class="o">:</span> <span class="s1">&#39;20&#39;</span><span class="p">,</span> <span class="nx">sex</span><span class="o">:</span> <span class="s1">&#39;男&#39;</span><span class="p">}</span>
+</code></pre></div>
+<p>在请求头中指定 Content-Type 属性的值是 application/json，告诉服务器端当前请求参数的格式是 json。</p>
+<div class="highlight"><pre><span></span><code><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">()</span> <span class="c1">// 将json对象转换为json字符串</span>
+</code></pre></div>
+<p><span style="color:red;">注意：get 请求是不能提交 json 对象数据格式的，传统网站的表单提交也是不支持 json 对象数据格式的。
+</span> </p>
+<h4 id="_8">获取服务器端的响应<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
+<h5 id="ajax_7">Ajax 状态码<a class="headerlink" href="#ajax_7" title="Permanent link">&para;</a></h5>
+<p>在创建ajax对象，配置ajax对象，发送请求，以及接收完服务器端响应数据，这个过程中的每一个步骤都会对应一个数值，这个数值就是ajax状态码。</p>
+<p>0：请求未初始化(还没有调用open())
+1：请求已经建立，但是还没有发送(还没有调用send())
+2：请求已经发送
+3：请求正在处理中，通常响应中已经有部分数据可以用了
+4：响应已经完成，可以获取并使用服务器的响应了</p>
+<div class="highlight"><pre><span></span><code><span class="nx">xhr</span><span class="p">.</span><span class="nx">readyState</span> <span class="c1">// 获取Ajax状态码</span>
+</code></pre></div>
+<h5 id="ajax_8">Ajax 错误处理<a class="headerlink" href="#ajax_8" title="Permanent link">&para;</a></h5>
+<ol>
+<li>网络畅通，服务器端能接收到请求，服务器端返回的结果不是预期结果。
+   <span style="color:red;">可以判断服务器端返回的状态码，分别进行处理。xhr.status 获取http状态码</span> </li>
+<li>网络畅通，服务器端没有接收到请求，返回404状态码。
+   <span style="color:red;">检查请求地址是否错误。</span> </li>
+<li>网络畅通，服务器端能接收到请求，服务器端返回500状态码。
+   <span style="color:red;">服务器端错误，找后端程序员进行沟通。</span> </li>
+<li>网络中断，请求无法发送到服务器端。
+   <span style="color:red;">会触发xhr对象下面的onerror事件，在onerror事件处理函数中对错误进行处理。</span> </li>
+</ol>
+<h3 id="ajax_9">$.ajax()<a class="headerlink" href="#ajax_9" title="Permanent link">&para;</a></h3>
+<h4 id="ajax_10">$.ajax() 方法概述<a class="headerlink" href="#ajax_10" title="Permanent link">&para;</a></h4>
+<p>作用：发送Ajax请求。</p>
+<div class="highlight"><pre><span></span><code><span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+    <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;get&#39;</span><span class="p">,</span>
+    <span class="nx">url</span><span class="o">:</span> <span class="s1">&#39;http://www.example.com&#39;</span><span class="p">,</span>
+    <span class="nx">data</span><span class="o">:</span> <span class="p">{</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;zhangsan&#39;</span><span class="p">,</span> <span class="nx">age</span><span class="o">:</span> <span class="s1">&#39;20&#39;</span> <span class="p">},</span>
+    <span class="nx">contentType</span><span class="o">:</span> <span class="s1">&#39;application/x-www-form-urlencoded&#39;</span><span class="p">,</span>
+    <span class="nx">beforeSend</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span> 
+        <span class="k">return</span> <span class="kc">false</span>
+    <span class="p">},</span>
+    <span class="nx">success</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{},</span>
+    <span class="nx">error</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">xhr</span><span class="p">)</span> <span class="p">{}</span>
+<span class="p">});</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="nx">data</span><span class="o">:</span> <span class="s1">&#39;name=zhangsan&amp;age=20&#39;</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="nx">contentType</span><span class="o">:</span> <span class="s1">&#39;application/json&#39;</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span><span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;zhangsan&#39;</span><span class="p">,</span> <span class="nx">age</span><span class="o">:</span> <span class="s1">&#39;20&#39;</span><span class="p">})</span>
+</code></pre></div>
+<h4 id="serialize">serialize方法<a class="headerlink" href="#serialize" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">form</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;form&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;username&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;password&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;password&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;提交&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="p">&gt;</span>
+    <span class="c1">// 将表单内容拼接成字符串类型的参数</span>
+    <span class="kd">var</span> <span class="nx">params</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#form&#39;</span><span class="p">).</span><span class="nx">serialize</span><span class="p">()</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">params</span><span class="p">)</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</code></pre></div>
+<h4 id="getpost"><code>$.get()</code>、<code>$.post()</code> 方法<a class="headerlink" href="#getpost" title="Permanent link">&para;</a></h4>
+<p>作用：<span class="arithmatex"><span class="MathJax_Preview">.get方法用于发送get请求，</span><script type="math/tex">.get方法用于发送get请求，</script></span>.post方法用于发送post请求。</p>
+<div class="highlight"><pre><span></span><code><span class="nx">$</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;http://www.example.com&#39;</span><span class="p">,</span> <span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;zhangsan&#39;</span><span class="p">,</span> <span class="nx">age</span><span class="o">:</span> <span class="mf">30</span><span class="p">},</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{})</span> 
+<span class="nx">$</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s1">&#39;http://www.example.com&#39;</span><span class="p">,</span> <span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;lisi&#39;</span><span class="p">,</span> <span class="nx">age</span><span class="o">:</span> <span class="mf">22</span><span class="p">},</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{})</span>
+</code></pre></div>
+<h4 id="_9">案例：省市区联动<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;bootstrap.min.css&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">style</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span><span class="p">&gt;</span><span class="w"></span>
+<span class="w">    </span><span class="p">.</span><span class="nc">container</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">padding-top</span><span class="p">:</span><span class="w"> </span><span class="mi">150</span><span class="kt">px</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;container&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;form-inline&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;form-group&quot;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">select</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;form-control&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;province&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">select</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;form-group&quot;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">select</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;form-control&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;city&quot;</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">option</span><span class="p">&gt;</span>请选择城市<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">select</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;form-group&quot;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">select</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;form-control&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;area&quot;</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">option</span><span class="p">&gt;</span>请选择县城<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">select</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;ajax.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="c1">// 获取省市区下拉框元素</span>
+    <span class="kd">var</span> <span class="nx">province</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;province&#39;</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">city</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;city&#39;</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">area</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;area&#39;</span><span class="p">);</span>
+    <span class="c1">// 获取省份信息</span>
+    <span class="nx">ajax</span><span class="p">({</span>
+        <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;get&#39;</span><span class="p">,</span>
+        <span class="nx">url</span><span class="o">:</span> <span class="s1">&#39;http://localhost:5000/province&#39;</span><span class="p">,</span>
+        <span class="nx">success</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// 将服务器端返回的数据和html进行拼接</span>
+            <span class="c1">// {#var html = template(&#39;provinceTpl&#39;, {province: data});#}</span>
+            <span class="nx">html</span> <span class="o">=</span> <span class="s2">&quot;&lt;option&gt;请选择省份&lt;/option&gt;&quot;</span>
+            <span class="nx">data</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">item</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">html</span> <span class="o">+=</span> <span class="s2">&quot;&lt;option value=&quot;</span> <span class="o">+</span> <span class="nx">item</span><span class="p">.</span><span class="nx">id</span> <span class="o">+</span> <span class="s2">&quot;&gt;&quot;</span> <span class="o">+</span> <span class="nx">item</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="s2">&quot;&lt;/option&gt;&quot;</span>
+            <span class="p">})</span>
+            <span class="c1">// 将拼接好的html字符串显示在页面中</span>
+            <span class="nx">province</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">html</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+
+    <span class="c1">// 为省份的下拉框添加值改变事件</span>
+    <span class="nx">province</span><span class="p">.</span><span class="nx">onchange</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// 获取省份id</span>
+        <span class="kd">var</span> <span class="nx">pid</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+
+        <span class="c1">// 清空县城下拉框中的数据</span>
+        <span class="kd">var</span> <span class="nx">html</span> <span class="o">=</span> <span class="s2">&quot;&lt;option&gt;请选择县城&lt;/option&gt;&quot;</span><span class="p">;</span>
+        <span class="nx">area</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">html</span><span class="p">;</span>
+
+        <span class="c1">// 根据省份id获取城市信息</span>
+        <span class="nx">ajax</span><span class="p">({</span>
+            <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;get&#39;</span><span class="p">,</span>
+            <span class="nx">url</span><span class="o">:</span> <span class="s1">&#39;http://127.0.0.1:5000/cities&#39;</span><span class="p">,</span>
+            <span class="nx">data</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">id</span><span class="o">:</span> <span class="nx">pid</span>
+            <span class="p">},</span>
+            <span class="nx">success</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+                <span class="kd">var</span> <span class="nx">html</span> <span class="o">=</span> <span class="s2">&quot;&lt;option&gt;请选择县城&lt;/option&gt;&quot;</span>
+                <span class="nx">data</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">item</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nx">html</span> <span class="o">+=</span> <span class="s1">&#39;&lt;option value=&quot;&#39;</span><span class="o">+</span><span class="nx">item</span><span class="p">.</span><span class="nx">id</span><span class="o">+</span><span class="s1">&#39;&quot;&gt;&#39;</span><span class="o">+</span><span class="nx">item</span><span class="p">.</span><span class="nx">name</span><span class="o">+</span><span class="s1">&#39;&lt;/option&gt;&#39;</span>
+                <span class="p">})</span>
+                <span class="nx">city</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">html</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">})</span>
+    <span class="p">};</span>
+    <span class="c1">// 当用户选择城市的时候</span>
+    <span class="nx">city</span><span class="p">.</span><span class="nx">onchange</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// 获取城市id</span>
+        <span class="kd">var</span> <span class="nx">cid</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+        <span class="c1">// 根据城市id获取县城信息</span>
+        <span class="nx">ajax</span><span class="p">({</span>
+            <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;get&#39;</span><span class="p">,</span>
+            <span class="nx">url</span><span class="o">:</span> <span class="s1">&#39;http://localhost:5000/areas&#39;</span><span class="p">,</span>
+            <span class="nx">data</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">id</span><span class="o">:</span> <span class="nx">cid</span>
+            <span class="p">},</span>
+            <span class="nx">success</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+                <span class="kd">var</span> <span class="nx">html</span> <span class="o">=</span> <span class="s1">&#39;&lt;option&gt;请选择县城&lt;/option&gt;&#39;</span><span class="p">;</span>
+                <span class="nx">data</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">item</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nx">html</span> <span class="o">+=</span> <span class="s1">&#39;&lt;option value=&quot;&#39;</span><span class="o">+</span><span class="nx">item</span><span class="p">.</span><span class="nx">id</span><span class="o">+</span><span class="s1">&#39;&quot;&gt;&#39;</span><span class="o">+</span><span class="nx">item</span><span class="p">.</span><span class="nx">name</span><span class="o">+</span><span class="s1">&#39;&lt;/option&gt;&#39;</span>
+                <span class="p">})</span>
+                <span class="nx">area</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">html</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">})</span>
+    <span class="p">}</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</code></pre></div>
+<h2 id="_10">附录<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<p>restful 风格指南：<a href="http://www.ruanyifeng.com/blog/2014/05/restful_api.html">http://www.ruanyifeng.com/blog/2014/05/restful_api.html</a></p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="页脚">
+      
+        
+        <a href="../05%2001%20jQuery%20-%20API/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 05 jQuery API" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              05 jQuery API
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "search": "../assets/javascripts/workers/search.092fa1f6.min.js"}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.5a9542cf.min.js"></script>
+      
+    
+  </body>
+</html>

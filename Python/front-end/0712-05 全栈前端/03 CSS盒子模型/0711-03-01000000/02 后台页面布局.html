@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*
+            参照: https://bootstrapdoc.com/docs/5.0/examples/dashboard/index.html
+            实现: '02布局内容.png'
+            尽量实现布局与文字/标签即可,字体元素/图表实现不了没关系
+        */
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            background-color: cyan;
+            height: 60px;
+            display: flex;
+        }
+
+        .header .name{
+            width: 200px;
+            background-color: pink;
+        }
+        .header .search{
+            width: 280px;
+            background-color: skyblue;
+        }
+        .main {
+            display: flex;
+            background-color: pink;
+            min-height: 500px;
+        }
+
+
+        .left {
+            width: 200px;
+            background-color: purple;
+        }
+
+        .right {
+            background-color: skyblue;
+            width: 60%;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+<!--        #header-->
+        <div class="name">#name</div>
+        <div class="search">#search</div>
+        <div class="sign">#sign</div>
+    </div>
+    <div class="main">
+        <div class="left">#left</div>
+        <div class="right">#right</div>
+    </div>
+
+</div>
+</body>
+</html>

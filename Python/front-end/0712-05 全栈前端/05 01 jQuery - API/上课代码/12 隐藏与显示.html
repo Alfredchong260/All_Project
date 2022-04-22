@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: cyan;
+        }
+    </style>
+</head>
+<body>
+<button>显示</button>
+<button>隐藏</button>
+<button>切换</button>
+<div></div>
+<script src="../jquery-3.6.0.js"></script>
+<script>
+  $(function() {
+    $('button').eq(0).click(function() {
+      $('div').show(1000, function() {
+        console.log('显示动画演示完毕');
+      });
+    });
+    $('button').eq(1).click(function() {
+      $('div').hide(1000, function() {
+        console.log('影藏动画演示完毕');
+      });
+    });
+    $('button').eq(2).click(function() {
+      $('div').toggle(1000);
+      console.log('切换动画演示完毕');
+    });
+    // 一般情况下，我们都不加参数直接显示隐藏就可以了
+  });
+</script>
+</body>
+</html>

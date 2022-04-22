@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li>赵</li>
+    <li>钱</li>
+    <li class="item">孙</li>
+    <li>李</li>
+    <li>周</li>
+</ul>
+<ol>
+    <li>赵</li>
+    <li>钱</li>
+    <li>孙</li>
+    <li>李</li>
+    <li>周</li>
+</ol>
+<script src="../jquery-3.6.0.js"></script>
+<script>
+  $(function() {
+    console.log($('.item').siblings());
+    console.log($('.item').siblings().css('color', 'red'));
+
+    // eq
+    let index = 2;
+    // $('ol li:eq(' + index + ')').css('color', 'red');
+    $('ol li').eq(index).css('color', 'red');
+    console.log($('ol li').eq(index).nextAll().text());
+    console.log($('ol li').eq(index).prevAll().text());
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,1574 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.11">
+    
+    
+      
+        <title>函数与对象 - 青灯教育-前端开发 11 期</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.50e68009.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="青灯教育-前端开发 11 期" class="md-header__button md-logo" aria-label="青灯教育-前端开发 11 期" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            青灯教育-前端开发 11 期
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              函数与对象
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../00%20%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D/%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D/" class="md-tabs__link">
+        课前注意
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../01%20HTML/" class="md-tabs__link md-tabs__link--active">
+        课程目录
+      </a>
+    </li>
+  
+
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="青灯教育-前端开发 11 期" class="md-nav__button md-logo" aria-label="青灯教育-前端开发 11 期" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    青灯教育-前端开发 11 期
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1">
+          课前注意
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="课前注意" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          课前注意
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00%20%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D/%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D/" class="md-nav__link">
+        课程介绍
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00%20%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D/%E4%BD%9C%E4%B8%9A%E6%8F%90%E4%BA%A4/" class="md-nav__link">
+        作业提交
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00%20%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D/%E8%B5%84%E6%96%99%E4%B8%8B%E8%BD%BD/" class="md-nav__link">
+        资料下载
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          课程目录
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="课程目录" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          课程目录
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1">
+          01 HTML标签
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="01 HTML标签" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          01 HTML标签
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01%20HTML/" class="md-nav__link">
+        HTML标签
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01%20HTML/%E6%8B%93%E5%B1%95-emment%E8%AF%AD%E6%B3%95/" class="md-nav__link">
+        emment语法
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02%20CSS%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+        02 CSS基础
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3">
+          03 CSS盒子模型
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="03 CSS盒子模型" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          03 CSS盒子模型
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03%20CSS%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
+        CSS盒子模型
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03%20CSS%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/Flex%20%E5%B8%83%E5%B1%80/" class="md-nav__link">
+        Flex 布局
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_4">
+          04 JavaScript基础
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="04 JavaScript基础" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          04 JavaScript基础
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04%2001%20JavaScript%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+        JS基础
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04%2002%20JavaScript-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="md-nav__link">
+        数据类型
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04%2003%20JavaScript-%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/" class="md-nav__link">
+        流程控制
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          函数与对象
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        函数与对象
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    函数与对象
+  </a>
+  
+    <nav class="md-nav" aria-label="函数与对象">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    数组
+  </a>
+  
+    <nav class="md-nav" aria-label="数组">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    创建数组
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    获取数组中的元素
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    遍历数组
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    数组中新增元素
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    函数
+  </a>
+  
+    <nav class="md-nav" aria-label="函数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    函数的使用
+  </a>
+  
+    <nav class="md-nav" aria-label="函数的使用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    声明函数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    调用函数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    函数的封装
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    函数的参数
+  </a>
+  
+    <nav class="md-nav" aria-label="函数的参数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    函数参数语法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    函数形参和实参数量不匹配时
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    函数的返回值
+  </a>
+  
+    <nav class="md-nav" aria-label="函数的返回值">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#return" class="md-nav__link">
+    return 语句
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#break-continue-return" class="md-nav__link">
+    break ,continue ,return 的区别
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    函数的两种声明方式
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    对象
+  </a>
+  
+    <nav class="md-nav" aria-label="对象">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    对象的使用
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    遍历对象
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    作用域
+  </a>
+  
+    <nav class="md-nav" aria-label="作用域">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    作用域概述
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    全局作用域
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    局部作用域
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#js" class="md-nav__link">
+    JS没有块级作用域
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    变量的作用域
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05%2001%20jQuery%20-%20API/" class="md-nav__link">
+        05 jQuery API
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05%2002%20jQuery%20-%20%E4%BA%8B%E4%BB%B6/" class="md-nav__link">
+        06 jQuery 事件
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    函数与对象
+  </a>
+  
+    <nav class="md-nav" aria-label="函数与对象">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    数组
+  </a>
+  
+    <nav class="md-nav" aria-label="数组">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    创建数组
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    获取数组中的元素
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    遍历数组
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    数组中新增元素
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    函数
+  </a>
+  
+    <nav class="md-nav" aria-label="函数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    函数的使用
+  </a>
+  
+    <nav class="md-nav" aria-label="函数的使用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    声明函数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    调用函数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    函数的封装
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    函数的参数
+  </a>
+  
+    <nav class="md-nav" aria-label="函数的参数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    函数参数语法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    函数形参和实参数量不匹配时
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    函数的返回值
+  </a>
+  
+    <nav class="md-nav" aria-label="函数的返回值">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#return" class="md-nav__link">
+    return 语句
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#break-continue-return" class="md-nav__link">
+    break ,continue ,return 的区别
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    函数的两种声明方式
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    对象
+  </a>
+  
+    <nav class="md-nav" aria-label="对象">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    对象的使用
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    遍历对象
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    作用域
+  </a>
+  
+    <nav class="md-nav" aria-label="作用域">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    作用域概述
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    全局作用域
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    局部作用域
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#js" class="md-nav__link">
+    JS没有块级作用域
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    变量的作用域
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+  <h1>函数与对象</h1>
+
+<h2 id="_1">函数与对象<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h3 id="_2">数组<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<h4 id="_3">创建数组<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
+<p>JS 中创建数组有两种方式：</p>
+<ul>
+<li>利用  new 创建数组  </li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">数组名</span> <span class="o">=</span> <span class="ow">new</span> <span class="nb">Array</span><span class="p">()</span> <span class="err">；</span>
+<span class="kd">var</span> <span class="nx">arr</span> <span class="o">=</span> <span class="ow">new</span> <span class="nb">Array</span><span class="p">();</span>   <span class="c1">// 创建一个新的空数组</span>
+</code></pre></div>
+<p>注意 Array () ，A 要大写    </p>
+<ul>
+<li>利用数组字面量创建数组</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c1">//1. 使用数组字面量方式创建空的数组</span>
+<span class="kd">var</span>  <span class="nx">数组名</span> <span class="o">=</span> <span class="p">[]</span><span class="err">；</span>
+<span class="c1">//2. 使用数组字面量方式创建带初始值的数组</span>
+<span class="kd">var</span>  <span class="nx">数组名</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;小白&#39;</span><span class="p">,</span><span class="s1">&#39;小黑&#39;</span><span class="p">,</span><span class="s1">&#39;大黄&#39;</span><span class="p">,</span><span class="s1">&#39;瑞奇&#39;</span><span class="p">];</span>
+</code></pre></div>
+<ul>
+<li>数组的字面量是方括号 [ ] </li>
+<li>声明数组并赋值称为数组的初始化</li>
+<li>
+<p>这种字面量方式也是我们以后最多使用的方式</p>
+</li>
+<li>
+<p>数组元素的类型</p>
+</li>
+</ul>
+<p>数组中可以存放任意类型的数据，例如字符串，数字，布尔值等。</p>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">arrStus</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;小白&#39;</span><span class="p">,</span><span class="mf">12</span><span class="p">,</span><span class="kc">true</span><span class="p">,</span><span class="mf">28.9</span><span class="p">];</span>
+</code></pre></div>
+<h4 id="_4">获取数组中的元素<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
+<p>索引 (下标) ：用来访问数组元素的序号（数组下标从 0 开始）。</p>
+<p>数组可以通过索引来访问、设置、修改对应的数组元素，可以通过“数组名[索引]”的形式来获取数组中的元素。</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// 定义数组</span>
+<span class="kd">var</span> <span class="nx">arrStus</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="mf">2</span><span class="p">,</span><span class="mf">3</span><span class="p">];</span>
+<span class="c1">// 获取数组中的第2个元素</span>
+<span class="nx">alert</span><span class="p">(</span><span class="nx">arrStus</span><span class="p">[</span><span class="mf">1</span><span class="p">]);</span>    
+</code></pre></div>
+<p>注意：如果访问时数组没有和索引值对应的元素，则得到的值是undefined</p>
+<h4 id="_5">遍历数组<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<ul>
+<li>数组遍历</li>
+</ul>
+<p>把数组中的每个元素从头到尾都访问一次（类似学生的点名），可以通过 for 循环索引遍历数组中的每一项</p>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="s1">&#39;blue&#39;</span><span class="p">];</span>
+<span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arrStus</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+<span class="p">}</span>
+</code></pre></div>
+<ul>
+<li>数组的长度</li>
+</ul>
+<p>数组的长度：默认情况下表示数组中元素的个数</p>
+<p>使用“数组名.length”可以访问数组元素的数量（数组长度）。</p>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">arrStus</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="mf">2</span><span class="p">,</span><span class="mf">3</span><span class="p">];</span>
+<span class="nx">alert</span><span class="p">(</span><span class="nx">arrStus</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>  <span class="c1">// 3</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>**注意**：
+</code></pre></div>
+
+<ul>
+<li>
+<p>此处数组的长度是数组元素的个数 ，不要和数组的索引号混淆。</p>
+</li>
+<li>
+<p>当我们数组里面的元素个数发生了变化，这个 length 属性跟着一起变化</p>
+</li>
+<li>
+<p>数组的length属性可以被修改：</p>
+</li>
+<li>
+<p>如果设置的length属性值大于数组的元素个数，则会在数组末尾出现空白元素；</p>
+</li>
+<li>
+<p>如果设置的length属性值小于数组的元素个数，则会把超过该值的数组元素删除</p>
+</li>
+</ul>
+<h4 id="_6">数组中新增元素<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
+<p>数组中可以通过以下方式在数组的末尾插入新元素：</p>
+<div class="highlight"><pre><span></span><code><span class="nx">数组</span><span class="p">[</span> <span class="nx">数组</span><span class="p">.</span><span class="nx">length</span> <span class="p">]</span> <span class="o">=</span> <span class="nx">新数据</span><span class="p">;</span>
+</code></pre></div>
+<h3 id="_7">函数<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<h4 id="_8">函数的使用<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
+<h5 id="_9">声明函数<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code><span class="c1">// 声明函数</span>
+<span class="kd">function</span> <span class="nx">函数名</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">//函数体代码</span>
+<span class="p">}</span>
+</code></pre></div>
+<ul>
+<li>
+<p>function 是声明函数的关键字,必须小写</p>
+</li>
+<li>
+<p>由于函数一般是为了实现某个功能才定义的， 所以通常我们将函数名命名为动词，比如 getSum</p>
+</li>
+</ul>
+<h5 id="_10">调用函数<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code><span class="c1">// 调用函数</span>
+<span class="nx">函数名</span><span class="p">();</span>  <span class="c1">// 通过调用函数名来执行函数体代码</span>
+</code></pre></div>
+<ul>
+<li>
+<p>调用的时候千万不要忘记添加小括号</p>
+</li>
+<li>
+<p>口诀：函数不调用，自己不执行</p>
+</li>
+</ul>
+<p>注意：声明函数本身并不会执行代码，只有调用函数时才会执行函数体代码。</p>
+<h5 id="_11">函数的封装<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h5>
+<p>函数的封装是把一个或者多个功能通过函数的方式封装起来，对外只提供一个简单的函数接口</p>
+<p>例子：封装计算1-100累加和</p>
+<div class="highlight"><pre><span></span><code><span class="cm">/* </span>
+<span class="cm">   计算1-100之间值的函数</span>
+<span class="cm">*/</span>
+<span class="c1">// 声明函数</span>
+<span class="kd">function</span> <span class="nx">getSum</span><span class="p">(){</span>
+  <span class="kd">var</span> <span class="nx">sumNum</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span><span class="c1">// 准备一个变量，保存数字和</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mf">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="mf">100</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">sumNum</span> <span class="o">+=</span> <span class="nx">i</span><span class="p">;</span><span class="c1">// 把每个数值 都累加 到变量中</span>
+  <span class="p">}</span>
+  <span class="nx">alert</span><span class="p">(</span><span class="nx">sumNum</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="c1">// 调用函数</span>
+<span class="nx">getSum</span><span class="p">();</span>
+</code></pre></div>
+<h4 id="_12">函数的参数<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h4>
+<h5 id="_13">函数参数语法<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h5>
+<ul>
+<li>
+<p>形参：函数定义时设置接收调用时传入</p>
+</li>
+<li>
+<p>实参：函数调用时传入小括号内的真实数据</p>
+</li>
+</ul>
+<p><img alt="" src="../../assets/%E5%9B%BE%E7%89%873-1594236662522.png" /></p>
+<p>参数的作用 : 在函数内部某些值不能固定，我们可以通过参数在调用函数时传递不同的值进去。</p>
+<p>函数参数的运用：</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// 带参数的函数声明</span>
+<span class="kd">function</span> <span class="nx">函数名</span><span class="p">(</span><span class="nx">形参1</span><span class="p">,</span> <span class="nx">形参2</span> <span class="p">,</span> <span class="nx">形参3</span><span class="p">...)</span> <span class="p">{</span> <span class="c1">// 可以定义任意多的参数，用逗号分隔</span>
+  <span class="c1">// 函数体</span>
+<span class="p">}</span>
+<span class="c1">// 带参数的函数调用</span>
+<span class="nx">函数名</span><span class="p">(</span><span class="nx">实参1</span><span class="p">,</span> <span class="nx">实参2</span><span class="p">,</span> <span class="nx">实参3</span><span class="p">...);</span> 
+</code></pre></div>
+<ol>
+<li>调用的时候实参值是传递给形参的</li>
+<li>形参简单理解为：不用声明的变量</li>
+<li>实参和形参的多个参数之间用逗号（,）分隔</li>
+</ol>
+<h5 id="_14">函数形参和实参数量不匹配时<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h5>
+<p><img alt="" src="../../assets/%E5%9B%BE%E7%89%874-1594236662522.png" /></p>
+<p>注意：在JavaScript中，形参的默认值是undefined。</p>
+<p>小结：</p>
+<ul>
+<li>函数可以带参数也可以不带参数</li>
+<li>声明函数的时候，函数名括号里面的是形参，形参的默认值为 undefined</li>
+<li>调用函数的时候，函数名括号里面的是实参</li>
+<li>多个参数中间用逗号分隔</li>
+<li>形参的个数可以和实参个数不匹配，但是结果不可预计，我们尽量要匹配</li>
+</ul>
+<h4 id="_15">函数的返回值<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h4>
+<h5 id="return">return 语句<a class="headerlink" href="#return" title="Permanent link">&para;</a></h5>
+<div class="codehilite"><pre><span></span><code>返回值：函数调用整体代表的数据；函数执行完成后可以通过return语句将指定数据返回 。
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1">// 声明函数</span>
+<span class="kd">function</span> <span class="nx">函数名</span><span class="err">（）</span><span class="p">{</span>
+    <span class="p">...</span>
+    <span class="k">return</span>  <span class="nx">需要返回的值</span><span class="err">；</span>
+<span class="p">}</span>
+<span class="c1">// 调用函数</span>
+<span class="nx">函数名</span><span class="p">();</span>    <span class="c1">// 此时调用函数就可以得到函数体内return 后面的值</span>
+</code></pre></div>
+<ul>
+<li>在使用 return 语句时，函数会停止执行，并返回指定的值</li>
+<li>如果函数没有 return ，返回的值是 undefined</li>
+</ul>
+<h5 id="break-continue-return">break ,continue ,return 的区别<a class="headerlink" href="#break-continue-return" title="Permanent link">&para;</a></h5>
+<ul>
+<li>break ：结束当前的循环体（如 for、while）</li>
+<li>continue ：跳出本次循环，继续执行下次循环（如 for、while）</li>
+<li>return ：不仅可以退出循环，还能够返回 return 语句中的值，同时还可以结束当前的函数体内的代码</li>
+</ul>
+<h4 id="_16">函数的两种声明方式<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h4>
+<ul>
+<li>自定义函数方式(命名函数)</li>
+</ul>
+<p>利用函数关键字 function 自定义函数方式</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// 声明定义方式</span>
+<span class="kd">function</span> <span class="nx">fn</span><span class="p">()</span> <span class="p">{...}</span>
+<span class="c1">// 调用  </span>
+<span class="nx">fn</span><span class="p">();</span>  
+</code></pre></div>
+<ul>
+<li>因为有名字，所以也被称为命名函数</li>
+<li>
+<p>调用函数的代码既可以放到声明函数的前面，也可以放在声明函数的后面</p>
+</li>
+<li>
+<p>函数表达式方式(匿名函数）</p>
+</li>
+</ul>
+<p>利用函数表达式方式的写法如下： </p>
+<div class="highlight"><pre><span></span><code><span class="c1">// 这是函数表达式写法，匿名函数后面跟分号结束</span>
+<span class="kd">var</span> <span class="nx">fn</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){...}</span><span class="err">；</span>
+<span class="c1">// 调用的方式，函数调用必须写到函数体下面</span>
+<span class="nx">fn</span><span class="p">();</span>
+</code></pre></div>
+<ul>
+<li>因为函数没有名字，所以也被称为匿名函数</li>
+<li>这个fn 里面存储的是一个函数  </li>
+<li>函数表达式方式原理跟声明变量方式是一致的</li>
+<li>函数调用的代码必须写到函数体后面</li>
+</ul>
+<h3 id="_17">对象<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
+<p>就是花括号 { } 里面包含了表达这个具体事物（对象）的属性和方法；{ } 里面采取键值对的形式表示 </p>
+<ul>
+<li>
+<p>键：相当于属性名</p>
+</li>
+<li>
+<p>值：相当于属性值，可以是任意类型的值（数字类型、字符串类型、布尔类型，函数类型等）</p>
+</li>
+</ul>
+<p>代码如下：</p>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">star</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">name</span> <span class="o">:</span> <span class="s1">&#39;张三&#39;</span><span class="p">,</span>
+    <span class="nx">age</span> <span class="o">:</span> <span class="mf">18</span><span class="p">,</span>
+    <span class="nx">sex</span> <span class="o">:</span> <span class="s1">&#39;男&#39;</span><span class="p">,</span>
+    <span class="nx">sayHi</span> <span class="o">:</span> <span class="kd">function</span><span class="p">(){</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;大家好啊~&#39;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div>
+<p>上述代码中 star即是创建的对象。</p>
+<h4 id="_18">对象的使用<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>对象的属性</p>
+</li>
+<li>
+<p>对象中存储**具体数据**的 "键值对"中的 "键"称为对象的属性，即对象中存储具体数据的项</p>
+</li>
+<li>
+<p>对象的方法</p>
+</li>
+<li>
+<p>对象中存储**函数**的 "键值对"中的 "键"称为对象的方法，即对象中存储函数的项</p>
+</li>
+<li>
+<p>访问对象的属性</p>
+</li>
+<li>
+<p>对象里面的属性调用 : 对象.属性名 ，这个小点 . 就理解为“ 的 ”  </p>
+</li>
+<li>
+<p>对象里面属性的另一种调用方式 : 对象[‘属性名’]，注意方括号里面的属性必须加引号      </p>
+<p>示例代码如下：</p>
+<div class="highlight"><pre><span></span><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">star</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span>     <span class="c1">// 调用名字属性</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">star</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">])</span>  <span class="c1">// 调用名字属性</span>
+</code></pre></div>
+</li>
+<li>
+<p>调用对象的方法</p>
+</li>
+<li>
+<p>对象里面的方法调用：对象.方法名() ，注意这个方法名字后面一定加括号 </p>
+<p>示例代码如下：</p>
+<div class="highlight"><pre><span></span><code><span class="nx">star</span><span class="p">.</span><span class="nx">sayHi</span><span class="p">();</span>              <span class="c1">// 调用 sayHi 方法,注意，一定不要忘记带后面的括号</span>
+</code></pre></div>
+</li>
+<li>
+<p>变量、属性、函数、方法总结</p>
+</li>
+</ul>
+<p>属性是对象的一部分，而变量不是对象的一部分，变量是单独存储数据的容器</p>
+<ul>
+<li>变量：单独声明赋值，单独存在</li>
+<li>
+<p>属性：对象里面的变量称为属性，不需要声明，用来描述该对象的特征</p>
+</li>
+<li>
+<p>方法是对象的一部分，函数不是对象的一部分，函数是单独封装操作的容器</p>
+</li>
+<li>函数：单独存在的，通过“函数名()”的方式就可以调用</li>
+<li>方法：对象里面的函数称为方法，方法不需要声明，使用“对象.方法名()”的方式就可以调用，方法用来描述该对象的行为和功能。 </li>
+</ul>
+<h4 id="_19">遍历对象<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h4>
+<p>for... in 语句用于对数组或者对象的属性进行循环操作。</p>
+<p>其语法如下：</p>
+<p><code>js
+for (变量 in 对象名字) {
+    // 在此执行代码
+}</code></p>
+<p>语法中的变量是自定义的，它需要符合命名规范，通常我们会将这个变量写为 k 或者 key。</p>
+<p><code>js
+for (var k in obj) {
+    console.log(k);      // 这里的 k 是属性名
+    console.log(obj[k]); // 这里的 obj[k] 是属性值
+}</code></p>
+<h3 id="_20">作用域<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h3>
+<h4 id="_21">作用域概述<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h4>
+<p>通常来说，一段程序代码中所用到的名字并不总是有效和可用的，而限定这个名字的可用性的代码范围就是这个名字的作用域。作用域的使用提高了程序逻辑的局部性，增强了程序的可靠性，减少了名字冲突。</p>
+<p>JavaScript（es6前）中的作用域有两种：</p>
+<ul>
+<li>全局作用域</li>
+<li>局部作用域（函数作用域）  </li>
+</ul>
+<h4 id="_22">全局作用域<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h4>
+<p>作用于所有代码执行的环境(整个 script 标签内部)或者一个独立的 js 文件。</p>
+<h4 id="_23">局部作用域<a class="headerlink" href="#_23" title="Permanent link">&para;</a></h4>
+<p>作用于函数内的代码环境，就是局部作用域。 因为跟函数有关系，所以也称为函数作用域。</p>
+<h4 id="js">JS没有块级作用域<a class="headerlink" href="#js" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>块作用域由 { } 包括。</p>
+</li>
+<li>
+<p>在其他编程语言中（如 java、c#等），在 if 语句、循环语句中创建的变量，仅仅只能在本 if 语句、本循环语句中使用，如下面的Java代码： </p>
+</li>
+</ul>
+<p>java有块级作用域：</p>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="p">(</span><span class="kc">true</span><span class="p">){</span>
+  <span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">123</span><span class="p">;</span>
+  <span class="n">system</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">num</span><span class="p">);</span>  <span class="c1">// 123</span>
+<span class="p">}</span>
+<span class="n">system</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">num</span><span class="p">);</span>    <span class="c1">// 报错</span>
+</code></pre></div>
+<p>以上java代码会报错，是因为代码中 { } 即一块作用域，其中声明的变量 num，在 “{ }” 之外不能使用；</p>
+<p>而与之类似的JavaScript代码，则不会报错：</p>
+<p>Js中没有块级作用域（在ES6之前）</p>
+<p>```js
+if(true){
+  var num = 123;
+  console.log(num); //123
+}
+console.log(num);   //123</p>
+<p>```</p>
+<h3 id="_24">变量的作用域<a class="headerlink" href="#_24" title="Permanent link">&para;</a></h3>
+<p>在JavaScript中，根据作用域的不同，变量可以分为两种：</p>
+<ul>
+<li>全局变量</li>
+<li>局部变量</li>
+</ul>
+<p><strong>全局变量</strong></p>
+<p>在全局作用域下声明的变量叫做全局变量（在函数外部定义的变量）。</p>
+<ul>
+<li>全局变量在代码的任何位置都可以使用</li>
+<li>在全局作用域下 var 声明的变量 是全局变量</li>
+<li>特殊情况下，在函数内不使用 var 声明的变量也是全局变量（不建议使用）</li>
+</ul>
+<p><strong>局部变量</strong></p>
+<p>在局部作用域下声明的变量叫做局部变量（在函数内部定义的变量）</p>
+<ul>
+<li>局部变量只能在该函数内部使用</li>
+<li>在函数内部 var 声明的变量是局部变量</li>
+<li>函数的形参实际上就是局部变量</li>
+</ul>
+<p><strong>全局变量和局部变量的区别</strong></p>
+<ul>
+<li>全局变量：在任何一个地方都可以使用，只有在浏览器关闭时才会被销毁，因此比较占内存</li>
+<li>局部变量：只在函数内部使用，当其所在的代码块被执行时，会被初始化；当代码块运行结束后，就会被销毁，因此更节省内存空间</li>
+</ul>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="页脚">
+      
+        
+        <a href="../04%2003%20JavaScript-%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 流程控制" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              流程控制
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../05%2001%20jQuery%20-%20API/" class="md-footer__link md-footer__link--next" aria-label="下一页: 05 jQuery API" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              05 jQuery API
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "search": "../../assets/javascripts/workers/search.092fa1f6.min.js"}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.5a9542cf.min.js"></script>
+      
+    
+  </body>
+</html>
