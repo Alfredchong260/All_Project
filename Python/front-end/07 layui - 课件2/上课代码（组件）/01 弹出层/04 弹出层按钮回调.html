@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../layui/css/layui.css">
+</head>
+<body>
+
+<div style="width: 200px;height: 200px;padding: 50px">
+    <span id="span">#span</span>
+</div>
+<script src="../../layui/layui.js"></script>
+<script>
+  layui.use(function() {
+    let $ = layui.$;
+    //eg2
+    layer.open({
+      content: 'test'
+      , btn: ['按钮一', '按钮二', '按钮三']
+      , yes: function(index, layero) {
+        //按钮【按钮一】的回调
+        console.log(index, layero);
+      }
+      , btn2: function(index, layero) {
+        //按钮【按钮二】的回调
+        console.log(index, layero);
+
+        //return false 开启该代码可禁止点击该按钮关闭
+      }
+      , btn3: function(index, layero) {
+        //按钮【按钮三】的回调
+        console.log(index, layero);
+        //return false 开启该代码可禁止点击该按钮关闭
+      }
+      , cancel: function() {
+        //右上角关闭回调
+
+        console.log(index, layero);
+        //return false 开启该代码可禁止点击该按钮关闭
+      },
+    });
+
+    // layer.close(index)
+  });
+</script>
+
+</body>
+</html>

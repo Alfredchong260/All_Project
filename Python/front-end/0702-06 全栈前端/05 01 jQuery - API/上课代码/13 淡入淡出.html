@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: cyan;
+        }
+    </style>
+</head>
+<body>
+<button>下拉滑动</button>
+<button>上拉滑动</button>
+<button>切换滑动</button>
+<div></div>
+<script src="../jquery-3.6.0.js"></script>
+<script>
+  $(function() {
+    $('button').eq(0).click(function() {
+      // 下滑动 slideDown()
+      $('div').slideDown();
+    });
+    $('button').eq(1).click(function() {
+      // 上滑动 slideUp()
+      $('div').slideUp(500);
+    });
+    $('button').eq(2).click(function() {
+      // 滑动切换 slideToggle()
+      $('div').slideToggle(500);
+    });
+
+  });
+</script>
+</body>
+</html>

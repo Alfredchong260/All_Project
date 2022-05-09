@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        li {
+            background-color: red;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li>我们都是好孩子 1</li>
+    <li>我们都是好孩子 2</li>
+    <li>我们都是好孩子 3</li>
+    <!--    <li>我们都是好孩子 4</li>-->
+</ul>
+<script src="../jquery-3.6.0.js"></script>
+<script>
+  $(function() {
+
+    // 先绑定的事件
+    // $('ul li').on({
+    //   mouseover: function() {
+    //     console.log($(this).text());
+    //   },
+    // });
+
+    // 把孩子的事件绑定到父元素身上
+    $('ul').on('mouseover', 'li', function() {
+      console.log($(this).text());
+    });
+
+    $('ul').append(`<li>我们都是好孩子 4</li>`);
+    // 取消绑定的事件
+    // $("ul").off("mouseover", "li"); // 解绑事件委托
+  });
+</script>
+</body>
+</html>

@@ -27,3 +27,4 @@ console.log(Array);
 // Undo the delete for first info by replace a new info by unshift()
 Array.unshift("Happy");
 console.log(Array);
+

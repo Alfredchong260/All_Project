@@ -37,6 +37,15 @@
             display: block;
             border: 0;
         }
+
+        .active {
+          opacity: 1;
+        }
+
+        .non-active {
+          opacity: 0.4;
+        }
+
     </style>
     <script src="../jquery-3.6.0.js"></script>
     <script>
@@ -48,8 +57,7 @@
         * */
         $(function() {
           $('.wrap li').hover(function() {
-            $(this).css('opacity', '1')
-            $(this).siblings().css('opacity', '0.4')
+            $(this).siblings().toggleClass('non-active')
           })
         })
 
@@ -58,12 +66,12 @@
 <body>
 <div class="wrap">
     <ul>
-        <li><a href="#"><img src="images/01.jpg" alt=""/></a></li>
-        <li><a href="#"><img src="images/02.jpg" alt=""/></a></li>
-        <li><a href="#"><img src="images/03.jpg" alt=""/></a></li>
-        <li><a href="#"><img src="images/04.jpg" alt=""/></a></li>
-        <li><a href="#"><img src="images/05.jpg" alt=""/></a></li>
-        <li><a href="#"><img src="images/06.jpg" alt=""/></a></li>
+        <li class="active"><a href="#"><img src="images/01.jpg" alt=""/></a></li>
+        <li class="active"><a href="#"><img src="images/02.jpg" alt=""/></a></li>
+        <li class="active"><a href="#"><img src="images/03.jpg" alt=""/></a></li>
+        <li class="active"><a href="#"><img src="images/04.jpg" alt=""/></a></li>
+        <li class="active"><a href="#"><img src="images/05.jpg" alt=""/></a></li>
+        <li class="active"><a href="#"><img src="images/06.jpg" alt=""/></a></li>
     </ul>
 </div>
 

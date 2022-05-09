@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<input type="text">
+<script src="../jquery-3.6.0.js"></script>
+<script>
+  $(function() {
+    // 1. 单个事件注册
+    // $('div').click(function() {
+    //   $(this).css('background', 'purple');
+    // });
+    // $('div').mouseenter(function() {
+    //   $(this).css('background', 'skyblue');
+    // });
+
+    $('div').on({
+      mouseover: function() {
+        console.log('mouseover');
+      },
+      mouseout: function() {
+        console.log('mouseout');
+      },
+      click: function() {
+        console.log('click');
+      },
+    });
+  });
+</script>
+</body>
+</html>

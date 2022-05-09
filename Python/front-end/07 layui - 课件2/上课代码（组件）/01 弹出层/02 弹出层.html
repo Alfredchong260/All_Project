@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../layui/css/layui.css">
+</head>
+<body>
+
+<div style="width: 200px;height: 200px;padding: 50px">
+    <span id="span">#span</span>
+</div>
+<script src="../../layui/layui.js"></script>
+<script>
+  layui.use( function() {
+    // 弹出层组件
+    let layer = layui.layer;
+    let $ = layui.jquery
+
+    // layer.open({
+    //   type: 0, // 0 表示为信息框
+    //   title: ['系统消息', 'font-size: 18px;color:red'],
+    //   content: 'hello layer !',
+    //   area: ['100px', '100px'],
+    // });
+
+    // layer.msg('你愿意和我做朋友么？', {
+    //   time: 0, //不自动关闭
+    //   btn: ['当然愿意', '狠心拒绝'], // [按钮1,按钮2]
+    //
+    //   // 按钮1的回调函数
+    //   yes: function(index) {
+    //     layer.close(index); // 关闭当前弹出框
+    //     layer.msg('新朋友，你好！', {
+    //       icon: 6, // 图标
+    //       btn: ['开心', '快乐'],
+    //     });
+    //   },
+    //
+    //   // 按钮2的回调函数
+    //   btn2: function(index) {
+    //     layer.close(index); // 关闭当前弹出框
+    //     layer.msg('好吧,再见!', {
+    //       icon: 5,
+    //       btn: '88',
+    //     });
+    //   },
+    // });
+
+    // /* 页面层 */
+    // layer.open({
+    //   type: 1,
+    //   title: '系统消息',
+    //   // content可以传入任意的文本或html
+    //   content: '<div style=\'height:200px;width:400px\'>Hello</div>',
+    // });
+
+    //  在一个页面里面开新的页面
+    // /* iframe层 */
+    // layer.open({
+    //   type: 2,
+    //   title: '系统消息',
+    //   // content是一个URL，如果你不想让iframe出现滚动条，你还可以content: ['url', 'no']
+    //   content: 'demo.html',
+    //   // content:["http://www.baidu.com",'no'],
+    //   // area: '500px' ,// 设置宽度，高度自适应Q
+    //   area: ['500px', '400px'], // 设置宽高
+    // });
+
+    $('#span').click(function() {
+      layer.open({
+        type: 4,
+        content: ['内容', '#span'], //数组第二项即吸附元素选择器或者DOM
+      });
+    });
+  });
+</script>
+</body>
+</html>

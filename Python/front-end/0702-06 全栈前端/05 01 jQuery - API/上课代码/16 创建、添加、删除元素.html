@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            font-size: 34px;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li style="color: red">原先的 li</li>
+</ul>
+<div style="color: red" class="div">原先的 div</div>
+<script src="../jquery-3.6.0.js"></script>
+<script>
+  $(function() {
+    // text 获取文本内容
+
+    let li1 = `<li>我是后来创建的 li</li>`;
+    let li2 = `<li>我是后来插队创建的 li</li>`;
+
+    let div1 = `<div>我是后来创建的 div1</div>`;
+    let div2 = `<div>我是后来插队创建的 div2</div>`;
+    // 在内部进行添加
+    $('ul').append(li1);
+    $('ul').prepend(li2);
+
+    // 外部添加
+    $('.div').after(div1);
+    $('.div').before(div2);
+
+    $('li:last').before(div2)
+    // 插在哪一个元素的中间,或者是前面
+
+    // $('ul div').remove()
+    // $('ul div').empty()
+    // $('ul div').html('')
+  });
+</script>
+</body>
+</html>

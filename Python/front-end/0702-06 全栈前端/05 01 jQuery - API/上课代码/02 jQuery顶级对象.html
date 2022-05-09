@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+<div class="box">#box</div>
+<script src="../jquery-3.6.0.js"></script>
+<script>
+  // jQuery 顶级对象 $
+  console.dir(document.querySelector('.box'));
+  console.dir($('.box'));
+
+  // 在 $ 里面定义一个函数,然后再进行写代码
+  $(function() {
+    console.dir(document.querySelector('.box'));
+    console.dir($('.box'));
+  });
+
+</script>
+</body>
+</html>

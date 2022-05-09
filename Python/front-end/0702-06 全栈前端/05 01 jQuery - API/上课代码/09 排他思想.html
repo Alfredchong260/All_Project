@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            font-size: 34px;
+        }
+    </style>
+</head>
+<body>
+<button>选择一</button>
+<button>选择二</button>
+<button>选择三</button>
+<button>选择四</button>
+<button>选择五</button>
+<script src="../jquery-3.6.0.js"></script>
+<script>
+  $(function() {
+    // let divs = document.querySelectorAll('button');
+    // for (let i = 0; i < divs.length; i++) {
+    //   divs[i].onclick = function() {
+    //     $(this).css('background-color', 'red');
+    //   };
+    // }
+    // 排他思想
+    $('button').click(function() {
+      // $(this).css('background-color', 'red');
+      // $(this).siblings().css('background-color', '');
+
+      // 链式调用 的时候一定要注意调用的对象
+      $(this).css('background-color', 'red').siblings().css('background-color', '');
+      // 先给自己设置颜色,再给兄弟设置颜色
+      // 先给兄弟设置颜色(--> 操作对象变成了兄弟),再给自己设置颜色
+    });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/index" method="post" id="form">
+    <div>
+        <label>用户名
+            <input type="text" name="username">
+        </label>
+    </div>
+    <div>
+        <label>密码
+            <input type="password" name="pwd">
+        </label>
+    </div>
+    <div>
+        <label>
+            <input id='submit' type="button" value="提交">
+        </label>
+    </div>
+</form>
+<script src="../jquery-3.6.0.js"></script>
+<script>
+  $(function() {
+    $('#submit').click(function() {
+      console.log('点击了提交按钮');
+      // let username = $('[name="username"]').val();
+      // let pwd = $('[name="pwd"]').val();
+      // let user_data = {username: username, pwd: pwd};
+      // console.log(user_data);
+    // 将表单内容拼接成字符串类型的参数
+      let user_data = $('#form').serialize();
+
+      $.ajax({
+        type: 'post',
+        url: '/login',
+        data: JSON.stringify(user_data),
+        // request.json
+        contentType: 'application/json',
+        beforeSend: function() {
+          console.log('请求之前可以进行数据校验');
+          // if 判断逻辑
+          return true;
+        },
+        success: function(response) {
+          console.log('请求成功', response);
+        },
+        error: function(xhr) {
+          console.log('请求失败', xhr.message);
+        },
+      });
+    });
+  });
+</script>
+</body>
+</html>

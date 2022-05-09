@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../layui/css/layui.css">
+</head>
+<body>
+
+<div id="page"></div>
+
+<script src="../layui/layui.js"></script>
+<script>
+  layui.use(function() {
+    var laypage = layui.laypage
+        , layer = layui.layer;
+    // 加载 laypage 实例
+    laypage.render({
+      elem: 'page', // elem属性绑定的是容器的ID属性值，不需要加#
+      count: 100, // 总数量，一般是从服务器获取
+      limit: 10,
+      curr: 4,
+      groups: 3,
+      layout: ['prev', 'page', 'next', 'limit'],
+      limits: [10, 20, 30, 40, 50],
+      jump: function(obj, first) {
+        //obj包含了当前分页的所有参数，比如：
+        console.log(obj.curr); //得到当前页，以便向服务端请求对应页的数据。
+        console.log(obj.limit); //得到每页显示的条数
+
+        //首次不执行
+        if (!first) {
+          //do something
+          // 请求后端，获取服务器的数据，然后刷新整个页面
+        }
+      },
+    });
+
+    // page(第几页) pre_page(每一页多少天数据) count(总共有多少条数据)
+  });
+</script>
+</body>
+</html>

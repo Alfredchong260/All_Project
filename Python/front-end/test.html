@@ -4,30 +4,21 @@
 <head>
   <meta charset="utf-8">
   <title>Title</title>
-  <style>
-    div {
-      width: 200px;
-      height: 200px;
-      background-color: pink;
-    }
-  </style>
+  <link rel="stylesheet" href="./07 layui - 课件/layui/css/layui.css">
 </head>
 
 <body>
-  <div class="box">
-    #div
-  </div>
-  <script src="./jquery.js"></script>
+
+  <script src="07 layui - 课件/layui/layui.js"></script>
   <script>
-    //jQuery 顶级对象 $
-    // 在$里面定义一个函数,然后再进行处理
-    $(function() {
-      $('div').css({
-        'background-color': 'red',
-        'width': '500px',
-        'height': '500px'
+    layui.use(function () {
+      let layer = layui.layer;
+      layer.open({
+        type: 0, //0 表示为信息框
+        title: '系统消息',
+        content: 'Hello layer!'
       })
-    });
+    })
   </script>
 </body>
 

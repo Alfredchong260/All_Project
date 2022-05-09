@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>layout 管理系统大布局 - Layui</title>
+  <link rel="stylesheet" href="../layui/css/layui.css">
+</head>
+
+<body>
+  <form class="layui-form">
+    <!-- 提示：如果你不想用form，你可以换成div等任何一个普通元素 -->
+    <div class="layui-form-item">
+      <label class="layui-form-label">姓名</label>
+      <div class="layui-input-block">
+        <input type="text" name="" placeholder="请输入" autocomplete="off" class="layui-input">
+      </div>
+    </div>
+    <div class="layui-form-item">
+      <div class="layui-input-block">
+        <button class="layui-btn" lay-submit lay-filter="*">立即提交</button>
+        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+      </div>
+    </div>
+    <!-- 更多表单结构排版请移步文档左侧【页面元素-表单】一项阅览 -->
+  </form>
+  <!--
+    实现一个录入表单，需要录入学生的
+    + 姓名
+    + 学号（例如: 07110000）
+    + 语文成绩
+    + 数学成绩
+    + 英语成绩
+    + 录入事件
+-->
+
+  <script src="../layui/layui.js"></script>
+  <script>
+    //JS
+    layui.use(function () {
+      var form = layui.form;
+      table.render({
+        elem: '#student_table',
+        url: 'student.json',
+        cellMinWidth: 80,
+        count: 43,
+        page: true,
+        cols: [[
+          {field: 'stu_id', width: 80, title: '姓名'}
+          , {field: 'name', width: 110, title: '学号'}
+          , {field: 'chi_res', width: 110, title: '语文成绩', sort: true}
+          , {field: 'math_res', width: 110, title: '数学成绩', sort: true}
+          , {field: 'eng_res', title: '英语成绩', width: 110, sort: true}
+        ]]
+      })
+    });
+  </script>
+</body>
+
+</html>

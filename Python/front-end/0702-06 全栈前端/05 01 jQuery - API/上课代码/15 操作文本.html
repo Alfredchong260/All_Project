@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            font-size: 34px;
+        }
+    </style>
+</head>
+<body>
+<div>正心老师</div>
+<input type="text" name="username" placeholder="请输入名字" value="青灯教育-正心">
+<script src="../jquery-3.6.0.js"></script>
+<script>
+  $(function() {
+    // text 获取文本内容
+    console.log('div.text():', $('div').text());
+    $('div').text('青灯教育-正心');
+    console.log('div.text():', $('div').text());
+
+    let span = `<span style="color: red">青灯教育-正心</span>`;
+    // $('div').text(span)
+    $('div').html(span);
+
+    // console.log($('[name="username"]').val());
+    // [] 属性提取器
+    $('[name="username"]').change(function() {
+      console.log($(this).val());
+      $('span').text($(this).val())
+    });
+
+  });
+</script>
+</body>
+</html>

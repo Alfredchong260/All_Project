@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>类选择器口诀：</title>
+    <style>
+        /*通配符选择器*/
+        /** {*/
+        /*    font-size: 100px;*/
+        /*}*/
+
+        span {
+            font-size: 100px;
+        }
+        /*使用多个选择器组合一起选择内容叫做组合选择器*/
+        span.blue#demo {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+<span class="blue">G</span>
+<span class="red">o</span>
+<span class="orange">o</span>
+<span class="blue" id="demo">g</span>
+<span class="green">l</span>
+<span class="red">e</span>
+
+<div class="blue" style="font-size: 100px">蓝色</div>
+
+<p>文字</p>
+</body>
+</html>

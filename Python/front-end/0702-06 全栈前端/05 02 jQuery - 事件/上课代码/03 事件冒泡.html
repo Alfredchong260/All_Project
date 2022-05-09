@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .father {
+            width: 500px;
+            height: 500px;
+            background-color: red;
+        }
+
+        .son {
+            width: 200px;
+            height: 200px;
+            background-color: purple;
+        }
+    </style>
+</head>
+<body>
+<div class="father">
+    <div class="son">
+
+    </div>
+</div>
+<script src="../jquery-3.6.0.js"></script>
+<script>
+  $(function() {
+    // 事件冒泡
+    $('.son').click(function(event) {
+      console.log('儿子被点击了');
+      event.stopPropagation();// 停止向上冒泡
+    });
+
+    $('.father').click(function(event) {
+      console.log('爸爸被点击了');
+      event.stopPropagation();// 停止向上冒泡
+    });
+
+    $('body').click(function() {
+      console.log('body被点击了');
+    });
+
+  });
+</script>
+</body>
+</html>

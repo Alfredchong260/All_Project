@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>layout 管理系统大布局 - Layui</title>
+  <link rel="stylesheet" href="../layui/css/layui.css">
+</head>
+
+<body>
+  <table id="demo" lay-filter="tables"></table>
+  <!--
+    将 students.json 显示到 layui 的表格中，字段与事件可以尽量给
+-->
+
+
+  <script src="../layui/layui.js"></script>
+  <script>
+    //JS
+    layui.use('table', function () {
+      var table = layui.table;
+
+      //第一个实例
+      table.render({
+        elem: '#demo'
+        , height: 312
+        , url: 'students.json' //数据接口
+        , page: true //开启分页
+        , cols: [[ //表头
+          {field: 'id', title: 'ID', width: 80, sort: true, fixed: 'left'}
+          , {field: 'name', title: '用户名', width: 80}
+          , {field: 'gender', title: '性别', width: 80, sort: true}
+          , {field: 'birth', title: '出生日期', width: 80}
+          , {field: 'phone', title: '电话号码', width: 177}
+          , {field: 'email', title: '邮箱地址', width: 80, sort: true}
+          , {field: 'address', title: '家庭住址', width: 80, sort: true}
+          , {field: 'id_card', title: '身份证号码', width: 80}
+        ]]
+      });
+    }); 
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+<div class="box">#box</div>
+<script src="../jquery-3.6.0.js"></script>
+<script>
+  // let div = document.querySelector('.box');
+  // console.dir(div);
+  // div.onclick = function() {
+  //   div.style.display = 'none';
+  // };
+</script>
+<script>
+  // console.log(jQuery);
+  $('.box').click(function() {
+    $(this).hide()
+  })
+</script>
+</body>
+</html>

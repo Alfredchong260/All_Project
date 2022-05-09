@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="./jquery.js"></script>
+  <script>
+    /*
+    * 前置操作： pip install flask ,然后运行app.py文件
+    *
+    * 1. 输入用户名 正心 之后请求 http://127.0.0.1:5000/verify_username 检验用户名
+    *   把错误信息 alert() 出来，然后修改名字之后再次进行校验
+    * 2. 输入邮箱之后 请求 http://127.0.0.1:5000/verify_email 进行校验
+    *    错误信息或者合法信息都 alert() 出来
+    * 3. 点击注册之后 携带参数请求 http://127.0.0.1:5000//register 进行注册，然后将结果打印出来
+    * */
+  </script>
+</head>
+
+<body>
+  <table width="600" align="center" border="0">
+    <caption>
+      <h2>青春不常在，抓紧谈恋爱</h2>
+    </caption>
+    <tr>
+      <td>姓名</td>
+      <td>
+        <label><input type="text" name="username" class="username"></label>
+      </td>
+    </tr>
+    <tr>
+      <td>性别</td>
+      <td>
+        <input type="radio" name="gender" value="1" id="man"><label for="man"><img src="images/man.jpg" alt="">男</label>
+        <input type="radio" name="gender" value="1" id="woman"><label for="woman"><img src="images/women.jpg"
+            alt="">女</label>
+      </td>
+    </tr>
+    <!--    生日-->
+    <tr>
+      <td>生日</td>
+      <td>
+        <select name="year" id="year">
+          <option value="2017">2017</option>
+          <option value="2018">2018</option>
+          <option value="2019">2019</option>
+        </select>
+        <select name="month" id="month">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+        </select>
+        <select name="day" id="day" style="width: 50px">
+          <option value="1">1号</option>
+          <option value="2">2号</option>
+          <option value="3">3号</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>地区</td>
+      <td><input type="text" name="city" id="city"></td>
+    </tr>
+    <tr>
+      <td>婚姻状况</td>
+      <td>
+        <label><input type="radio" value="1" id="married" name="wed">已婚</label>
+        <label><input type="radio" value="2" id="single" name="wed">未婚</label>
+        <label><input type="radio" value="3" id="divorce" name="wed">离婚</label>
+      </td>
+    </tr>
+    <!--学历-->
+    <tr>
+      <td>学历</td>
+      <td>
+        <input type="text" value="幼儿园" name="edu">
+      </td>
+    </tr>
+    <!--月薪-->
+    <tr>
+      <td><label for="salary">月薪</label></td>
+      <td>
+        <input type="text" placeholder="10000-20000" name="salary" id="salary">
+      </td>
+    </tr>
+    <!--学历-->
+    <tr>
+      <td>手机号码</td>
+      <td>
+        <input type="text" value="" name="phone">
+      </td>
+    </tr>
+    <!--昵称-->
+    <tr>
+      <td>昵称</td>
+      <td>
+        <input type="text" value="" name="nickname">
+      </td>
+    </tr>
+    <!--爱好-->
+    <tr>
+      <td>爱好</td>
+      <td>
+        <label><input type="checkbox" value="吃肉" name="hobby" checked>吃肉</label>
+        <label><input type="checkbox" value="喝酒" name="hobby">喝酒</label>
+        <label><input type="checkbox" value="游完" name="hobby">游完</label>
+        <label><input type="checkbox" value="找乐子" name="hobby">找乐子</label>
+      </td>
+    </tr>
+    <tr>
+      <td>自我介绍</td>
+      <td>
+        <textarea name="info"></textarea>
+      </td>
+    </tr>
+    <tr>
+      <td>自我介绍</td>
+      <td>
+        <!---->
+        <input type="image" src='images/btn.png' id="register">
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        <label><input type="checkbox" name="agree">我同意注册条款</label>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        <a href="/login">我是会员，立即登录</a>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        <h3>我承诺</h3>
+        <ul>
+          <li>年满18</li>
+          <li>抱着严肃的态度</li>
+          <li>真诚寻找另一半</li>
+        </ul>
+      </td>
+    </tr>
+  </table>
+  <script>
+    // $('.username').on('keyup', function () {
+    //   function sendAjax() {
+    //     let username = $('.username').val()
+    //     console.log(username)
+    //     $.ajax({
+    //       type: 'get',
+    //       url: 'http://127.0.0.1:5000/verify_username',
+    //       data: {username: username},
+    //       success: function (response) {
+    //         console.log(response);
+    //       },
+    //       error: function (xhr) {
+    //         alert(xhr.responseJSON.message)
+    //       }
+    //     })
+    //   }
+    //   setTimeout(sendAjax, 3000)
+    // })
+
+    // OR
+
+    $(function() {
+      $('[name="username"]').change(function() {
+        $.ajax({
+          url: 'http://127.0.0.1:5000/verify_username',
+          data: {username: username},
+          success: function(response) {
+            console.log(response)
+          },
+          error: function(xhr) {
+            console.log(xhr)
+          }
+        })
+      })
+    })
+
+  </script>
+
+  <script>
+    $('#register').click(function () {
+
+      let username = $('.username').val();
+      let gender = $('input[name=gender]:checked').attr('id');
+      let birthday = $('#year option:selected').text() + '/' + $('#month option:selected').text() + '/' + $('#day option:selected').text()[0];
+      let area = $('#city').val();
+      let wedding = $('input[name=wed]:checked').attr('id');
+      let educational = $('input[name=edu]').val();
+      let salary = $('#salary').val();
+      let phone_num = $('input[name=phone]').val();
+      let nickname = $('input[name=nickname]').val();
+      let hobby_list = $('input[name=hobby]:checked').map(function () {
+        return this.value
+      }).get();
+      let hobby = hobby_list.join(',');
+      let info = $('textarea[name=info]').val()
+
+      if ($('input[name=agree]')) {
+        $.ajax({
+          type: 'post',
+          url: 'http://127.0.0.1:5000//register',
+          data: {username: username, gender: gender, birthday: birthday, city: area, wedding: wedding, educational: educational, salary: salary, phone_num: phone_num, nickname: nickname, hobby: hobby, info: info},
+          success: function (response) {
+            alert('注册成功')
+            window.location.href('/site')
+          },
+          error: function (xhr) {
+            console.log(xhr)
+          }
+        })
+      } else {
+        alert('请勾选同意条款')
+      }
+    })
+
+
+  </script>
+</body>
+
+</html>

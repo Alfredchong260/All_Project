@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  /*
+def func():
+  pass
+* */
+
+  // 普通函数
+  // function say_hello(name) {
+  //   return `hello ${name} !`;
+  // }
+
+  // 匿名函数 匿名函数名字只是一个变量
+  const say_hello = function(name) {
+    return `hello ${name} !`;
+  };
+
+  // es6 的尖括号函数
+  // const say_hello = (name) => {
+  //   return `hello ${name} !`;
+  // };
+
+  // 调用方式是一样的
+  console.log(say_hello('正心'));
+  console.log(say_hello('丸子'));
+
+  // 自调用函数 只会运行一次
+  (function(name) {
+    window.msg = `hello ${name} !`;
+    console.log(msg);
+  })('正心');
+</script>
+</body>
+</html>

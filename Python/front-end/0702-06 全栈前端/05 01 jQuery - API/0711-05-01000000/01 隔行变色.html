@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        li {
+            font: 22px/30px "simsun";
+            cursor: pointer;
+            margin: 5px;
+        }
+    </style>
+
+</head>
+<body>
+<ul>
+    <li>我是一个没有用的li标签</li>
+    <li>我是一个没有用的li标签</li>
+    <li>我是一个没有用的li标签</li>
+    <li>我是一个没有用的li标签</li>
+    <li>我是一个没有用的li标签</li>
+    <li>我是一个没有用的li标签</li>
+    <li>我是一个没有用的li标签</li>
+    <li>我是一个没有用的li标签</li>
+    <li>我是一个没有用的li标签</li>
+    <li>我是一个没有用的li标签</li>
+    <li>我是一个没有用的li标签</li>
+    <li>我是一个没有用的li标签</li>
+    <li>我是一个没有用的li标签</li>
+    <li>我是一个没有用的li标签</li>
+</ul>
+<script src="../jquery-3.6.0.js"></script>
+<script>
+  /*
+  * 作业需求：
+  *   1. 隔行变色，奇数行为 skyblue， 偶数行为 yellowgreen
+  *   2. 当鼠标移动到 li 标签上是，li进入高亮状态 red
+  * */
+
+  $(function() {
+    change_bg();
+
+    function change_bg() {
+      $('ul li:odd').css('background-color', 'skyblue');
+      $('ul li:even').css('background-color', 'yellowgreen');
+      $('ul li').css('color', '#000000');
+    }
+
+    $('ul li').mouseover(function() {
+      $(this).css('color', 'red');
+    });
+
+    $('ul li').mouseout(function() {
+      change_bg();
+    });
+  });
+</script>
+</body>
+</html>
