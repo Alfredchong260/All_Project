@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>layui 案例</title>
+    <link rel="stylesheet" href="/static/layui/css/layui.css">
+</head>
+<body>
+
+<div class="layui-container" style="margin-top: 50px;">
+    <form class="layui-form" action="">
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">学号</label>
+                <div class="layui-input-inline">
+                    <input type="tel" name="no" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">姓名</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="name" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">邮箱</label>
+                <div class="layui-input-inline">
+                    <input type="tel" name="email" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">单选框</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="radio" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item" style="text-align: center">
+            <button class="layui-btn layui-btn-sm" lay-submit="" lay-filter="form-query">
+                <i class="layui-icon layui-icon-release"></i>
+                查询</button>
+            <button class="layui-btn layui-bg-blue layui-btn-sm" type="reset" lay-reset lay-filter="demo2">
+                <i class="layui-icon  layui-icon-refresh-3"></i>
+                &nbsp;重置</button>
+        </div>
+    </form>
+</div>
+<div class="layui-container">
+    <table id="tables" lay-filter="tables"></table>
+</div>
+
+<script type="text/html" id="toolbar">
+    <div class="layui-btn-container">
+        <button class="layui-btn layui-btn-sm" lay-event="toolbar-add">添加</button>
+        <button class="layui-btn layui-btn-sm" lay-event="toolbar-del">批量删除</button>
+    </div>
+</script>
+
+<script type="text/html" id="tool">
+    <div class="layui-btn-container">
+        <button class="layui-btn layui-btn-sm" lay-event="tool-edit">编辑</button>
+        <button class="layui-btn layui-btn-sm layui-btn-danger" lay-event="tool-del">删除</button>
+    </div>
+</script>
+{#
+    1. 在当前页面定义一个看不到的表单,然后写添加逻辑
+    2. 写一个新的页面,添加数据
+#}
+
+
+<form class="layui-form" lay-filter="editFrom" id="editFrom"
+      style="display: none">
+    <div class="layui-form-item" style="display: none">
+        <label class="layui-form-label">ID</label>
+        <div class="layui-input-block">
+            <input type="text" name="id"
+                   required
+                   lay-verify="required"
+                   placeholder="请输入标题"
+                   autocomplete="off"
+                   class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">姓名</label>
+        <div class="layui-input-block">
+            <input type="text" name="name"
+                   required
+                   lay-verify="required"
+                   placeholder="请输入标题"
+                   autocomplete="off"
+                   class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">学号</label>
+        <div class="layui-input-block">
+            <input type="text" name="no"
+                   required
+                   lay-verify="required"
+                   placeholder="请输入标题"
+                   autocomplete="off"
+                   class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">邮箱</label>
+        <div class="layui-input-block">
+            <input type="text" name="email"
+                   required
+                   lay-verify="required"
+                   placeholder="请输入标题"
+                   autocomplete="off"
+                   class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">性别</label>
+        <div class="layui-input-block">
+            <input type="text" name="gender"
+                   required
+                   lay-verify="required"
+                   placeholder="请输入标题"
+                   autocomplete="off"
+                   class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">城市</label>
+        <div class="layui-input-block">
+            <input type="text" name="city"
+                   required
+                   lay-verify="required"
+                   placeholder="请输入标题"
+                   autocomplete="off"
+                   class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button class="layui-btn" lay-submit lay-filter="edit-commit">立即提交</button>
+            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+        </div>
+    </div>
+</form>
+<script src="/static/layui/layui.js"></script>
+<script>
+  layui.use('table', function() {
+    var form = layui.form;
+    var table = layui.table;
+    var $ = layui.$;
+
+    //第一个实例
+    table.render({
+      elem: '#tables'
+      , height: 500
+      , url: '/students' //数据接口
+      , page: true //开启分页
+      , toolbar: '#toolbar'
+      , cols: [
+        [ //表头
+          {type: 'checkbox', fixed: 'left'}
+          , {field: 'id', title: 'ID', width: 80, sort: true, hide: true}
+          , {field: 'no', title: '学号', width: 80, sort: true}
+          , {field: 'city', title: '城市'}
+          , {field: 'email', title: '邮箱', sort: true}
+          , {field: 'gender', title: '性别'}
+          , {field: 'name', title: '名字', sort: true}
+          , {fixed: 'right', title: '操作', sort: true, toolbar: '#tool'},
+
+        ]],
+    });
+
+    //触发事件
+    table.on('toolbar(tables)', function(obj) {
+      switch (obj.event) {
+        case 'toolbar-add':
+          layer.open({
+            type: 2,
+            title: '新增数据页',
+            shadeClose: true,
+            shade: 0.8,
+            area: ['50%', '80%'],
+            content: '/student_add', //iframe的url
+          });
+          break;
+        case 'toolbar-del':
+          layer.msg('删除');
+          var checkStatus = table.checkStatus(obj.config.id);
+          console.log(checkStatus);
+          break;
+      }
+    });
+    //监听行工具事件
+    table.on('tool(tables)', function(obj) {
+      var data = obj.data;
+      console.log(obj);
+      if (obj.event === 'tool-del') {
+        layer.confirm('真的删除行么', function(index) {
+          obj.del();
+          {#obj.data.id#}
+          $.ajax({
+            url: '/student/' + obj.data['id'],
+            type: 'DELETE',
+            dataType: 'json',
+            contentType: 'application/json',
+            success: function(response) {
+              let return_code = response.code;
+              if (return_code === 1) {
+                layer.msg('删除成功', {icon: 6});
+                setTimeout(function() {
+                  table.reload('tables');
+                }, 1000);
+              }
+            },
+          });
+          layer.close(index);
+        });
+      } else if (obj.event === 'tool-edit') {
+        console.log('编辑');
+        console.log(obj.data);
+
+        layer.open({
+          type: 1,
+          title: '修改用户',
+          content: $('#editFrom'),
+          area: ['800px', '400px'],
+          success: function() {
+            form.val('editFrom', obj.data);
+          },
+        });
+      }
+    });
+
+    //监听提交
+    form.on('submit(edit-commit)', function(data) {
+      console.log(JSON.stringify(data.field));
+      $.ajax({
+        url: '/student/' + data.field['id'],
+        type: 'PUT',
+        dataType: 'json',
+        contentType: 'application/json',
+        data: JSON.stringify(data.field),
+        error: function(xhr) {
+          console.log(xhr);
+          return false;
+        },
+        success: function(response) {
+          console.log(response);
+          layer.closeAll(); // 关闭所有弹窗
+          // 重新刷新父页面的 table 表格
+          layui.table.reload('tables');
+        },
+      });
+      return false;
+    });
+
+    // 查询表单提交
+    form.on('submit(form-query)', function(obj) {
+      console.log(obj);
+      table.reload('tables', {where: obj.field}); //只重载数据
+      // 执行表单查询
+      return false;
+    });
+  });
+</script>
+</body>
+</html>

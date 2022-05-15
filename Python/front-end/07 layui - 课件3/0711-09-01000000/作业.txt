@@ -1,0 +1,1 @@
+将 layui_parctice 下的 index_add.html 文件删除,将里面的逻辑写到 index.html 页面里面去

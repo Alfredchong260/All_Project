@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../layui/css/layui.css">
+</head>
+<body>
+
+<button type="button" class="layui-btn">一个标准的按钮</button>
+<a href="http://www.layuion.com" class="layui-btn">一个可跳转的按钮</a>
+<hr>
+<div><a href="http://www.layuion.com" class="layui-btn layui-btn-primary">一个可跳转的按钮</a></div>
+<div><a href="http://www.layuion.com" class="layui-btn  layui-btn-sm layui-btn-fluid">一个可跳转的按钮</a></div>
+<div><a href="http://www.layuion.com" class="layui-btn layui-btn-normal">一个可跳转的按钮</a></div>
+<div><a href="http://www.layuion.com" class="layui-btn layui-btn-warm">一个可跳转的按钮</a></div>
+<div><a href="http://www.layuion.com" class="layui-btn layui-btn-danger">一个可跳转的按钮</a></div>
+<br>
+<br>
+<div>
+    <a href="http://www.layuion.com"
+       class="layui-btn layui-btn-disabled">一个可跳转的按钮</a></div>
+
+
+<br>
+<button type="button" class="layui-btn">
+  <i class="layui-icon layui-icon-down layui-font-12"></i>
+</button>
+
+<button type="button" class="layui-btn layui-btn-sm layui-btn-primary">
+  <i class="layui-icon layui-icon-left"></i>
+</button>
+
+
+<div class="layui-btn-group">
+  <button type="button" class="layui-btn layui-btn-sm">
+    <i class="layui-icon">&#xe654;</i>
+  </button>
+  <button type="button" class="layui-btn layui-btn-sm">
+    <i class="layui-icon">&#xe642;</i>
+  </button>
+  <button type="button" class="layui-btn layui-btn-sm">
+    <i class="layui-icon">&#xe640;</i>
+  </button>
+  <button type="button" class="layui-btn layui-btn-sm">
+    <i class="layui-icon">&#xe602;</i>
+  </button>
+</div>
+<!--字体文字无法解释为中文汉字,所以就会乱码-->
+<script src="../layui/layui.js"></script>
+<script>
+  //Demo
+  layui.use(function() {
+    let button = layui.button
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../layui/css/layui.css">
+</head>
+<body>
+
+<div style="width: 200px;height: 200px;padding: 50px">
+    <span id="span">#span</span>
+</div>
+<script src="../../layui/layui.js"></script>
+<script>
+  layui.use(function() {
+    let $ = layui.$;
+    //eg1
+    // layer.confirm('is not?', {icon: 3, title: '提示'},
+    //     function(index) {
+    //       //do something
+    //       console.log(index);
+    //       layer.close(index);
+    //     });
+//eg1
+//     var index = layer.load();
+//eg2
+    var index = layer.load(1); //换了种风格
+//eg3
+//     var index = layer.load(2, {time: 10 * 1000}); //又换了种风格，并且设定最长等待10秒
+//关闭
+    layer.close(index);
+  });
+</script>
+
+</body>
+</html>

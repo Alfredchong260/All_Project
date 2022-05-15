@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/static/layui/css/layui.css">
+</head>
+<body>
+
+<div style="margin-top: 50px">
+    <form class="layui-form" action="" method="post" lay-filter="dataFrm" id="dataFrm">
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">学号</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="no" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">姓名</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="name" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">邮箱</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="email" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">城市</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="city" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">性别</label>
+            <div class="layui-input-block">
+                <input type="radio" name="gender" value="男" title="男" checked="">
+                <input type="radio" name="gender" value="女" title="女">
+            </div>
+        </div>
+
+        <div class="layui-form-item" style="text-align: center;">
+            <div class="layui-input-block">
+                <button type="button" class="layui-btn layui-btn-sm layui-icon layui-icon-release"
+                        id="submit" lay-submit lay-filter="submit">&nbsp;提交
+                </button>
+                <button type="reset" class="layui-btn layui-btn-sm layui-icon layui-icon-refresh"
+                        id="doclose" lay-submit="" lay-filter="doclose" lay-event="doclose">&nbsp;重置
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+<script src="/static/layui/layui.js"></script>
+<script>
+  layui.use(function() {
+    let form = layui.form;
+    let $ = layui.$;
+
+    form.on('submit(submit)', function(message) {
+      $.ajax({
+        url: '/student/',
+        type: 'POST',
+        dataType: 'json',
+        contentType: 'application/json',
+        data: JSON.stringify(message.field),
+        beforeSend: function() {
+          layer.load({
+            shade: [0.1, '#fff'], // 0.1透明度的白色背景
+          });
+        },
+        success: function(res) {
+          let returnCode = res.code;
+          if (returnCode === 1) {
+            layer.closeAll('loading');
+            layer.msg('修改成功', {icon: 6});
+            parent.layer.close(parent.layer.getFrameIndex(window.name))//关闭当前页
+            parent.layui.table.reload('userTable')
+          } else {
+            layer.closeAll('loading');
+            layer.msg('修改失败', {icon: 5});
+            parent.layui.table.reload('userTable')
+          }
+        },
+      });
+      return false;
+    });
+  });
+</script>
+</body>
+</html>
