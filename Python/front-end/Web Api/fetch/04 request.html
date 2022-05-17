@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  // let r = new Request('https://foo.com');
+  // console.log(r);
+
+  console.log(new Request(''));
+
+  let r = new Request('https://www.baidu.com', {method: 'POST', body: 'foobar'});
+  fetch(r);
+</script>
+</body>
+</html>

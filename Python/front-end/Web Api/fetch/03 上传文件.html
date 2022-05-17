@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="file">
+<input type="button" value="上传" id="upload">
+<script>
+  let upload = document.querySelector('#upload');
+
+  upload.onclick = function() {
+    let imageFormData = new FormData();
+    let imageInput = document.querySelector('input[type=\'file\']');
+
+    imageFormData.append('image', imageInput.files[0]);
+
+    fetch('/img-upload', {
+      method: 'POST',
+      body: imageFormData,
+    });
+  };
+</script>
+</body>
+</html>

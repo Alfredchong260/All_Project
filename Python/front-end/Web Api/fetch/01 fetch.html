@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  // 分派请求
+  let r = fetch('/bar');
+
+  console.log(r); // Promise <pending>
+
+  fetch('bar.txt').then((response) => {
+    console.log(response);
+  });
+
+  // 读取响应
+  fetch('bar.txt').then((response) => {
+    response.text().then((data) => {
+      console.log(data);
+    });
+  });
+
+  // 内容的结构通常是打平的
+  fetch('bar.txt').then((response) => response.text()).then((data) => console.log(data));
+
+  // 处理状态码和请求失败
+  fetch('bar.txt').then((response) => {
+    console.log(response.status); // 200
+    console.log(response.statusText); // OK
+  });
+
+  fetch('/does-not-exist').then((response) => {
+    console.log(response.status); // 404
+    console.log(response.statusText); // Not Found
+  });
+
+  fetch('/throw-server-error').then((response) => {
+    console.log(response.status); // 500
+    console.log(response.statusText); // Internal Server Error
+  });
+
+</script>
+</body>
+</html>
