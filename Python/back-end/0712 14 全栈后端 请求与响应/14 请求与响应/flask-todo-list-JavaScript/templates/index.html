@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>flask todo list</title>
+    <link rel="stylesheet" href="/static/css/bootstrap.css">
+    <script src="/static/js/bootstrap.bundle.js"></script>
+</head>
+<body>
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-6 m-auto">
+            <form action="JavaScript:;" method="post">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="请输入任务" name="todo">
+                    <button type="submit" class="btn btn-primary add">添加事项</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6 m-auto">
+            <ul class="list-group  mb-3">
+                {#                <li class="list-group-item">#}
+                {#                    <input class="form-check-input me-1 todo-input" type="checkbox"#}
+                {#                           checked value="1">#}
+                {#                    <span class="text-muted">去菜市场买菜</span>#}
+                {#                    <a class="text-decoration-none float-end" href="JavaScript:;">删除</a>#}
+                {#                </li>#}
+                {#                <li class="list-group-item">#}
+                {#                    <input class="form-check-input me-1 todo-input" type="checkbox"#}
+                {#                           checked value="1">#}
+                {#                    <span class="text-muted">约朋友吃饭</span>#}
+                {#                    <a class="text-decoration-none float-end todo-delete" href="JavaScript:;">删除</a>#}
+                {#                </li>#}
+            </ul>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6 m-auto d-flex justify-content-between">
+            <button type="button" class="todo-count btn text-decoration-none" disabled><em>10</em> 条剩余</button>
+
+            <div class="btn-group">
+                <a href="JavaScript:;" class="btn btn-outline-primary active">全部</a>
+                {#                <a href="JavaScript:;" class="btn btn-outline-primary">未完成</a>#}
+                {#                <a href="JavaScript:;" class="btn btn-outline-primary">已完成</a>#}
+            </div>
+
+            <a href="JavaScript:;" class="btn btn-link text-decoration-none">清除已完成</a>
+        </div>
+    </div>
+</div>
+<script src="/static/jquery-3.6.0.min.js"></script>
+<script>
+  $(function() {
+    update_data();
+
+    function update_data() {
+      fetch('/todo', {method: 'GET'}).then(function(response) {
+        return response.json();
+      }).then(function(data) {
+        update_html(data);
+      });
+    }
+
+    // 渲染加载操作
+    function update_html(data) {
+      // 遍历之前清空 ol，ul 里面的元素内容
+      $('.list-group').empty();
+      $.each(data, function(index, value) {
+        console.log(value);
+        let temp = `
+        <label class="list-group-item">
+            <input class="form-check-input me-1 todo-input" type="checkbox"
+                   ${!value.done ? '' : 'checked'} value="1">
+            <span class="text-muted">${value.title}</span>
+            <a class="text-decoration-none float-end" href="JavaScript:;" id=${value.id}>删除</a>
+        </label>`;
+        $('.list-group').append(temp);
+      });
+      $('.todo-count em').html(data.length);
+    }
+
+    // 按下回车键添加事项
+    $('[name="todo"]').on('keyup', function(e) {
+      if (e.keyCode === 13) {
+        if ($(this).val() === '') return alert('请输入待办事项！');
+        // 把 local 数组进行更新数据，把最新的数据追加给 local 数组
+        fetch('/todo', {
+          method: 'POST',
+          body: JSON.stringify({title: $(this).val(), done: false}),
+          headers: {'Content-Type': 'application/json'},
+        }).then(function(response) {
+          return response.json();
+        }).then(function(data) {
+          $(this).val('');
+          update_data();
+        });
+      }
+    });
+
+    //  删除操作
+    $('ol,ul').on('click', 'a', function() {
+      // 获取本地存储
+      // 修改数据
+      let index = $(this).prop('id');
+      fetch(`/todo/${index}`, {method: 'DELETE', body: JSON.stringify({id: index})}).
+          then(function(response) {
+            return response.json();
+          }).
+          then(function(data) {
+            console.log(data);
+            update_data();
+          });
+    });
+
+    // 正在进行和已完成选项操作
+    $('ol,ul').on('click', 'input', function() {
+      // 修改数据
+      let index = $(this).siblings('a').prop('id');
+      let title = $(this).siblings('.text-muted').text();
+
+      fetch(`/todo/${index}`, {method: 'PUT', body: JSON.stringify({title: title, id: index})}).
+          then(function(response) {
+            return response.json();
+          }).
+          then(function(data) {
+            console.log(data);
+            update_data();
+          });
+    });
+  });
+</script>
+</body>
+</html>

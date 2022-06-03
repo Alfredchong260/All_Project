@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>循环</title>
+    <link rel="stylesheet" href="/static/css/layui.css">
+</head>
+<body>
+<form class="layui-form" action="">
+    <div class="layui-form-item">
+        <label class="layui-form-label">用户名</label>
+        <div class="layui-input-block">
+            <input type="text" name="name" required
+                   lay-verify="required" placeholder="请输入用户名"
+                   autocomplete="off" class="layui-input"
+                   value="{{ student.name }}"
+            >
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">年级</label>
+        <div class="layui-input-block">
+            <select name="level" lay-verify="required">
+{#                <option value="1">一年级</option>#}
+{#                <option value="2">二年级</option>#}
+{#                <option value="3">三年级</option>#}
+                {% for l in level %}
+                    <option value="{{ l.id }}">{{ l.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">班级</label>
+        <div class="layui-input-block">
+{#            <input type="radio" name="class" value="1" title="1班">#}
+{#            <input type="radio" name="class" value="2" title="2班">#}
+{#            <input type="radio" name="class" value="3" title="3班">#}
+            {% for c in _class %}
+            <input type="radio" name="class" value="{{ c.id }}" title="{{ c.name }}">
+            {% endfor %}
+
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">数学</label>
+        <div class="layui-input-block">
+            <input type="text" name="math" required
+                   lay-verify="required" placeholder="请输入数学成绩"
+                   autocomplete="off" class="layui-input"
+                   value="{{ student.math }}"
+            >
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">语文</label>
+        <div class="layui-input-block">
+            <input type="text" name="math" required
+                   lay-verify="required" placeholder="请输入语文成绩"
+                   autocomplete="off" class="layui-input"
+                   value="{{ student.chinese }}"
+            >
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">英语</label>
+        <div class="layui-input-block">
+            <input type="text" name="math" required
+                   lay-verify="required" placeholder="请输入英语成绩"
+                   autocomplete="off" class="layui-input"
+                   value="{{ student.english }}"
+            >
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+        </div>
+    </div>
+</form>
+
+<script src="/static/layui.js"></script>
+<script>
+  layui.use(function() {
+    var form = layui.form;
+
+    // 监听提交
+    form.on('submit(formDemo)', function(data) {
+      layer.msg(JSON.stringify(data.field));
+      return false;
+    });
+
+    /*
+    * 如果要将后端的数据加载到页面上
+    * 方法1: 前端请求后端接口,拿到数据,使用 jquery 动态显示到页面
+    * 方法2: 直接在后端使用 jinja2 进行渲染
+    * */
+  });
+</script>
+</body>
+</html>

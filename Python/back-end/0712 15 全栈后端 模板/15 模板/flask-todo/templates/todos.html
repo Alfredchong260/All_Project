@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flask ToDo List</title>
+    <link rel="stylesheet" href="../static/css/bootstrap.css">
+    <script src="../static/js/bootstrap.bundle.js"></script>
+</head>
+<body>
+<div class="container mt-3">
+    <div class="row ">
+        <div class="col-6 m-auto">
+            {#  默认的表单提交 #}
+            <form action="/add_todo" method="post">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="请输入任务" name="info">
+                    <button type="submit" class="btn btn-primary">添加事项</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6 m-auto">
+            <div class="list-group  mb-3">
+                {% for todo in todo_list %}
+                    <label class="list-group-item">
+                        <input class="form-check-input me-1 todo-input" type="checkbox" {% if todo.done %}
+                               checked {% endif %} value="{{ todo.id }}">
+                        <span class="text-muted">{{ todo.info }}</span>
+                        <a class="text-decoration-none float-end" href="/clear_todo?id={{ todo.id }}">删除</a>
+                    </label>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6 m-auto d-flex justify-content-between">
+            <button type="button" class="btn text-decoration-none" disabled>{{ undone_count }}条剩余</button>
+
+            <div class="btn-group">
+                <a href="/?key=all" class="btn btn-outline-primary {% if key=='all' %}active{% endif %}">全部</a>
+                <a href="/?key=undone" class="btn btn-outline-primary {% if key=='undone' %}active{% endif %}">未完成</a>
+                <a href="/?key=done" class="btn btn-outline-primary {% if key=='done' %}active{% endif %}">已完成</a>
+            </div>
+
+            <a href="/clear_done?key=done" class="btn btn-link text-decoration-none">清除已完成</a>
+        </div>
+    </div>
+</div>
+
+<script>
+  [...document.querySelectorAll('.todo-input')].forEach(function(item) {
+    item.addEventListener('change', function() {
+      console.log(item.checked);
+      console.log(item.value);
+      fetch('/change_todo',
+          {
+            method: 'PUT',
+            body: JSON.stringify({id: item.value, done: item.checked}),
+            headers: {
+              'Content-Type': 'application/json',
+            },
+          },
+      ).then(function(response) {
+        return response.json();
+      }).then(function(myJson) {
+        console.log(myJson);
+      });
+
+    });
+  });
+</script>
+</body>
+</html>

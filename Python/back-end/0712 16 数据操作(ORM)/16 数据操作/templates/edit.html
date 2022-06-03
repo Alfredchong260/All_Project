@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/static/layui/css/layui.css">
+</head>
+<body>
+<!-- 添加和修改的弹出层开始 -->
+<form class="layui-form " action="" lay-filter="dataFrm" id="dataFrm">
+    <div class="layui-form-item" style="display: none">
+        <div class="layui-inline">
+            <label class="layui-form-label">用户id:</label>
+            <div class="layui-input-inline">
+                <input type="text" name="id"
+                       lay-verify="required" autocomplete="off"
+                       class="layui-input"
+                       value="{{ stu.id }}">
+            </div>
+        </div>
+    </div>
+    <div class="layui-form-item" style="margin-top: 20px">
+        <div class="layui-inline">
+            <label class="layui-form-label">用户名:</label>
+            <div class="layui-input-inline">
+                <input type="text" name="username"
+                       lay-verify="required" autocomplete="off"
+                       value="{{ stu.username }}"
+                       class="layui-input">
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label">性别</label>
+            <div class="layui-input-inline">
+                <input type="radio" name="gender" value="男" title="男" {% if stu.gender=='男' %} checked {% endif %}>
+                <input type="radio" name="gender" value="女" title="女" {% if stu.gender=='女' %} checked {% endif %}>
+            </div>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">出生日:</label>
+            <div class="layui-input-inline">
+                <input type="text" name="birth"
+                       lay-verify="required"
+                       value="{{ stu.birth }}"
+                       autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label">电话号码:</label>
+            <div class="layui-input-inline">
+                <input type="text" name="phone"
+                       lay-verify="required"
+                       value="{{ stu.phone }}"
+                       autocomplete="off" class="layui-input">
+            </div>
+        </div>
+    </div>
+
+
+    <div class="layui-form-item" style="text-align: center;">
+        <div class="layui-input-block">
+            <button type="button" class="layui-btn layui-btn-normal layui-btn-sm layui-icon layui-icon-release"
+                    lay-filter="dept-save" lay-submit=""> 提交
+            </button>
+            <button type="reset" class="layui-btn layui-btn-warm layui-btn-sm layui-icon layui-icon-refresh"> 重置
+            </button>
+        </div>
+    </div>
+</form>
+<script src="/static/layui/layui.js"></script>
+<script>
+  let user_id = 1
+  layui.use(function () {
+    // 保存
+    let $ = layui.$
+    let form = layui.form
+
+    form.on('submit(dept-save)', function (data) {
+      $.ajax({
+        url: '/user/{{ stu.id }}',
+        data: JSON.stringify(data.field),
+        dataType: 'json',
+        contentType: 'application/json',
+        type: 'put',
+        success: function (result) {
+          if (result.success) {
+            layer.msg(result.message, { icon: 1, time: 1000 }, function () {
+              parent.layer.close(parent.layer.getFrameIndex(window.name))
+              parent.layui.table.reload('tables')
+            })
+          } else {
+            layer.msg(result.message, { icon: 2, time: 1000 })
+          }
+        },
+      })
+      return false
+    })
+  })
+</script>
+
+</body>
+</html>

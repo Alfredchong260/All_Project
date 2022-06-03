@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>过滤器</title>
+</head>
+<body>
+<h3>普通过滤器</h3>
+<div>my_str: {{ my_str }}</div>
+<div>title(标题): {{ my_str|title }}</div>
+<div>upper(全部大写): {{ my_str|upper }}</div>
+<div>reverse(逆序输出): {{ my_str|reverse }}</div>
+<h3>链式调用</h3>
+<div>my_str: {{ my_str|upper|reverse }}</div>
+
+<h3>字符串操作</h3>
+<div>默认转义: {{ user_name }}</div>
+<div>safe(禁止转义): {{ user_name|safe }}</div>
+<div>message: {{ message }}</div>
+<div>message: {{ message|truncate(50) }}</div>
+</body>
+</html>

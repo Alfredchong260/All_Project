@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+<div id="counter">
+    {# '{{ counter }}' 被当做字符串进行处理了, 可以正常的在vue中使用 #}
+    Counter: {{ '{{ counter }}' }}   <!--vue的-->
+    <ul id="array-rendering">
+        <li v-for="item in items">
+            {{ '{{ item.message }}' }}
+        </li>
+    </ul>
+</div>
+<script>
+  const Counter = {
+    data() {
+      return {
+        counter: 0,
+        items: {{ items|safe }}
+      };
+    },
+    mounted() {
+      setInterval(() => {
+        this.counter++;
+      }, 1000);
+    },
+  };
+
+  Vue.createApp(Counter).mount('#counter');
+</script>
+</body>
+</html>

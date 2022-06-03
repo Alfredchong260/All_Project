@@ -1,0 +1,29 @@
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    {% if username %}#}
+{#        <title>个人主页 - {{ username }}</title>#}
+{#    {% else %}#}
+{#        <title>欢迎来到个人主页</title>#}
+{#    {% endif %}#}
+{#</head>#}
+{#<body>#}
+{#个人首页#}
+{#</body>#}
+{#</html>#}
+
+{# 继承 0500index.html 模板 #}
+{% extends '0500base.html' %}
+
+{# 什么都不给,就是覆盖父类 #}
+{#{% block title %}#}
+{#{% endblock %}#}
+
+
+{# 子类可以覆盖父类 #}
+{% block content %}
+    个人首页
+
+    {% include '0603footer.html' %}
+{% endblock %}
+

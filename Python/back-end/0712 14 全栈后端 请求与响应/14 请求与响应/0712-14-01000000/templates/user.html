@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>用户信息</title>
+  <link rel="stylesheet" href="/static/css/layui.css">
+</head>
+
+<body>
+  <form class="layui-form" action="" style="width: 500px;margin: 100px auto;">
+    <div class="layui-form-item">
+      <label class="layui-form-label">用户名</label>
+      <div class="layui-input-block">
+        <input type="text" name="username" required lay-verify="required" placeholder="请输入用户名" autocomplete="off"
+          class="layui-input">
+      </div>
+    </div>
+    <div class="layui-form-item">
+      <label class="layui-form-label">语文成绩</label>
+      <div class="layui-input-inline">
+        <input type="text" name="chinese" required lay-verify="" placeholder="请输入语文成绩" autocomplete="off"
+          class="layui-input">
+      </div>
+    </div>
+
+    <div class="layui-form-item">
+      <label class="layui-form-label">数学成绩</label>
+      <div class="layui-input-inline">
+        <input type="text" name="math" required lay-verify="" placeholder="请输入数学成绩" autocomplete="off"
+          class="layui-input">
+      </div>
+    </div>
+    <div class="layui-form-item">
+      <label class="layui-form-label">英语成绩</label>
+      <div class="layui-input-inline">
+        <input type="text" name="english" required lay-verify="" placeholder="请输入英语成绩" autocomplete="off"
+          class="layui-input">
+      </div>
+    </div>
+    <div class="layui-form-item">
+      <div class="layui-input-block">
+        <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+      </div>
+    </div>
+  </form>
+
+  <script src="/static/layui.js"></script>
+  <script>
+    //Demo
+    layui.use('form', function () {
+      var form = layui.form,
+        $ = layui.$
+
+      //监听提交
+      form.on('submit(formDemo)', function (data) {
+        layer.msg(JSON.stringify(data.field))
+        // 利用 ajax 将数据传输到服务器
+        $.ajax({
+          url: '/user',
+          type: 'POST',
+          dataType: 'json',
+          contentType: 'application/json',
+          data: JSON.stringify(data.field),
+          error: function (xhr) {
+            console.log('失败', xhr)
+          },
+          success: function (response) {
+            console.log('成功', response)
+          }
+        })
+        return false
+      })
+    })
+  </script>
+
+</body>
+
+</html>

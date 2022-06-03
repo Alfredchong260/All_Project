@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模板变量</title>
+</head>
+<body>
+<h3>我的模板变量</h3>
+<div>str:{{ my_str }}</div>
+<div>int:{{ my_int }}</div>
+<div>arr:{{ my_arr }}</div>
+<div>dict:{{ my_dict }} -- {{ my_dict.name }} -- {{ my_dict['age'] }}</div>
+<hr>
+<h3>相关运算</h3>
+<div>str + str: {{ my_str + ' world ' }}!</div>
+<div>int + int: {{ my_int + 100 }} $</div>
+<div>arr[1]: {{ my_arr[1] }} ------ my_arr[1:]:{{ my_arr[1:] }}</div>
+<div>dic: {{ my_dict.items() }} }}</div>
+</body>
+</html>

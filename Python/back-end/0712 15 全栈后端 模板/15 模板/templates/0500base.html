@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block title %}
+        <title>青灯教育</title>
+        <link rel="stylesheet" href="/static/css/layui.css">
+        {#        {% if username %}#}
+        {#            <title>个人主页 - {{ username }}</title>#}
+        {#        {% else %}#}
+        {#            <title>欢迎来到个人主页</title>#}
+        {#        {% endif %}#}
+    {% endblock %}
+</head>
+<body>
+{% block content %}
+    内容块
+{% endblock %}
+</body>
+</html>

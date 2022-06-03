@@ -1,0 +1,33 @@
+{# 宏 是 jinja2 定义 html 生的函数 #}
+{% import '0402macro_lib.html' as func %}
+{% from '0402macro_lib.html' import label_input2 %}
+
+{% macro label_input(label, type, name, id) %}
+    <div><label for="{{ id }}">{{ label }}</label><input type="{{ type }}" name="{{ name }}" id="{{ id }}"></div>
+{% endmacro %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="">
+    <label>用户名：</label><input type="text" name="username"><br/>
+    <label>身份证号：</label><input type="text" name="idcard"><br/>
+    <label>密码：</label><input type="password" name="password"><br/>
+    <label>确认密码：</label><input type="password" name="password2"><br/>
+    <input type="submit" value="注册">
+</form>
+<hr>
+<form>
+    {{ label_input('用户名：', 'text', 'username', 'username') }}
+    {{ label_input('身份证号：', 'text', 'idcard', 'idcard') }}
+    {{ label_input2('密码：', 'password', 'password', 'password') }}
+    {{ func.label_input2('确认密码：', 'password', 'password2', 'pwd2') }}
+    <input type="submit" value="注册">
+</form>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>列表取值</h3>
+<div>我喜欢吃 {{ arr[0] }}</div>
+<div>我喜欢吃 {{ arr[1] }}</div>
+<div>我喜欢吃 {{ arr[2] }}</div>
+<h3>循环遍历</h3>
+{% for item in arr %}
+    <div>{{ loop.index }} 我喜欢吃 {{ item }}</div>
+{% endfor %}
+</body>
+</html>

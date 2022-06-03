@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {#   生成静态文件 URL #}
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<h2>
+    {#    添加图片#}
+    <img class="user_ico" src="/static/a.jpg">
+    正心-语录
+</h2>
+<p>{{ messages|length }}条留言</p>
+<ul class="message-list">
+    {% for msg in messages %}
+        <li>{{ msg['title'] }}</li>
+    {% endfor %}
+</ul>
+</body>
+</html>
