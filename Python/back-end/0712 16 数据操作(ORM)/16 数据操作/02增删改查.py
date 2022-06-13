@@ -90,6 +90,7 @@ def update():
 
 @app.cli.command()
 def delete():
+    """数据删除"""
     student: [Student] = Student.query.all()
     for stu in student:
         db.session.delete(stu)

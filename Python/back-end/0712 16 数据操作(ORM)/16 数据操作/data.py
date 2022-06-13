@@ -83,3 +83,6 @@ students = [
      "email": "598202702@qq.com", "address": "四川省成都市武侯区一环路南一段27号", "id_card": "340824199805210616"},
     {"id": 40, "username": "卢宇", "gender": "男", "birth": "1998/8/12", "phone": "14410145467",
      "email": "512101504@qq.com", "address": "广州市海珠区新港西路138号", "id_card": "340824199811275010"}]
+
+for stu in students:
+    print(stu)
