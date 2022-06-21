@@ -1,4 +1,6 @@
 import click
+from flask_migrate import Migrate
+
 """
     1. 新建一个数据库 python
     2. 使用数据迁移生成数据表
@@ -23,8 +25,10 @@ class Config:
 app.config.from_object(Config)
 
 db = SQLAlchemy()
+migrate = Migrate()
 
 db.init_app(app)
+migrate.init_app(app, db)
 
 
 class Student(db.Model):
@@ -64,3 +68,19 @@ def delete(user_id):
     db.session.delete(Student.query.get(user_id))
     db.session.commit()
     return redirect('/')
+
+
+@app.route('/change', methods=['POST'])
+def change():
+    data = request.form
+    print(data)
+    stu = Student.query.get(-1)
+    print(stu)
+    return render_template('/', old_stu=stu)
+
+
+@app.cli.command()
+def create():
+    """新建数据表格"""
+    db.drop_all()
+    db.create_all()

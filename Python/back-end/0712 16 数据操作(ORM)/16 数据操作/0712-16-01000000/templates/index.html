@@ -24,7 +24,7 @@
                     <td>{{ student.chinese }}</td>
                     <td>{{ student.math }}</td>
                     <td>{{ student.english }}</td>
-{#                    删除数据 修改数据#}
+                    {#                    删除数据 修改数据#}
                     <td><a href="/delete/{{ student.id }}">删除</a></td>
                 </tr>
             {% endfor %}
@@ -51,11 +51,12 @@
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
-{#修改 table 的数据加载到#}
+    {#修改 table 的数据加载到#}
     <hr>
-<h3>修改数据</h3>
+    <h3>修改数据</h3>
     <div class="row">
         <form action="/change" method="post">
+            {% if not old_stu %}
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">用户名</label>
                 <input type="text" class="form-control" id="username" name="username">
@@ -72,6 +73,24 @@
                 <label for="exampleInputPassword1" class="form-label">英语</label>
                 <input type="text" class="form-control" id="english" name="english">
             </div>
+            {% else %}
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">用户名</label>
+                <input type="text" class="form-control" id="username" name="username" value="{{ old_stu.name }}">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">语文</label>
+                <input type="text" class="form-control" id="chinese" name="chinese" value="{{ old_stu.chinese }}">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">数学</label>
+                <input type="text" class="form-control" id="math" name="math" value="{{ old_stu.math }}">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">英语</label>
+                <input type="text" class="form-control" id="english" name="english" value="{{ old_stu.english }}">
+            </div>
+            {% endif %}
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
