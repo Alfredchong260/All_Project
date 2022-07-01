@@ -1,0 +1,42 @@
+---
+driver=<class 'textual.drivers.linux_driver.LinuxDriver'>
+Load() >>> MyApp(title='Textual')
+Mount() >>> MyApp(title='Code Viewer')
+Mount() >>> DockView(name='DockView#1')
+Mount() >>> Header('')
+Mount() >>> ScrollView(name='ScrollView#2')
+Mount() >>> ScrollView(name='ScrollView#2')
+Mount() >>> ScrollView(name='ScrollView#1')
+Mount() >>> ScrollView(name='ScrollView#1')
+Mount() >>> WindowView(name='WindowView#2')
+Mount() >>> WindowView(name='WindowView#1')
+Mount() >>> DirectoryTree(name='code')
+TRANSLATING layout
+WindowChange(WindowView(name='WindowView#2')) >>> ScrollView(name='ScrollView#2')
+WindowChange(WindowView(name='WindowView#1')) >>> ScrollView(name='ScrollView#1')
+WindowChange(WindowView(name='WindowView#2')) >>> ScrollView(name='ScrollView#2')
+view.forwarded Key(key='j')
+Key(key='j') >>> MyApp(title='Code Viewer')
+ACTION MyApp(title='Code Viewer') move_up
+view.forwarded Key(key='j')
+Key(key='j') >>> MyApp(title='Code Viewer')
+ACTION MyApp(title='Code Viewer') move_up
+view.forwarded Key(key='j')
+Key(key='j') >>> MyApp(title='Code Viewer')
+ACTION MyApp(title='Code Viewer') move_up
+view.forwarded Key(key='j')
+Key(key='j') >>> MyApp(title='Code Viewer')
+ACTION MyApp(title='Code Viewer') move_up
+view.forwarded Key(key='j')
+Key(key='j') >>> MyApp(title='Code Viewer')
+ACTION MyApp(title='Code Viewer') move_up
+view.forwarded Key(key='j')
+Key(key='j') >>> MyApp(title='Code Viewer')
+ACTION MyApp(title='Code Viewer') move_up
+view.forwarded Key(key='j')
+Key(key='j') >>> MyApp(title='Code Viewer')
+ACTION MyApp(title='Code Viewer') move_up
+WindowChange(WindowView(name='WindowView#1')) >>> ScrollView(name='ScrollView#1')
+WindowChange(WindowView(name='WindowView#1')) >>> ScrollView(name='ScrollView#1')
+WindowChange(WindowView(name='WindowView#2')) >>> ScrollView(name='ScrollView#2')
+WindowChange(WindowView(name='WindowView#1')) >>> ScrollView(name='ScrollView#1')
