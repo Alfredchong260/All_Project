@@ -17,234 +17,210 @@ WindowChange(WindowView(name='WindowView#1')) >>> ScrollView(name='ScrollView#1'
 WindowChange(WindowView(name='WindowView#2')) >>> ScrollView(name='ScrollView#2')
 view.forwarded Key(key='j')
 Key(key='j') >>> MyApp(title='Code Viewer')
-ACTION MyApp(title='Code Viewer') move_up
-TRANSLATING layout
-TRANSLATING layout
-TRANSLATING layout
-TRANSLATING layout
-TRANSLATING layout
-TRANSLATING layout
-TRANSLATING layout
-TRANSLATING layout
-TRANSLATING layout
-TRANSLATING layout
-TRANSLATING layout
-TRANSLATING layout
-TRANSLATING layout
-TRANSLATING layout
-TRANSLATING layout
-TRANSLATING layout
-TRANSLATING layout
-TRANSLATING layout
-TRANSLATING layout
-TRANSLATING layout
-TRANSLATING layout
+ACTION MyApp(title='Code Viewer') key_up
+view.forwarded Key(key='k')
+Key(key='k') >>> MyApp(title='Code Viewer')
+ACTION MyApp(title='Code Viewer') key_down
+view.forwarded Key(key='j')
+Key(key='j') >>> MyApp(title='Code Viewer')
+ACTION MyApp(title='Code Viewer') key_up
+view.forwarded Key(key='k')
+Key(key='k') >>> MyApp(title='Code Viewer')
+ACTION MyApp(title='Code Viewer') key_down
+view.forwarded Key(key='j')
+Key(key='j') >>> MyApp(title='Code Viewer')
+ACTION MyApp(title='Code Viewer') key_up
+view.forwarded Key(key='k')
+Key(key='k') >>> MyApp(title='Code Viewer')
+ACTION MyApp(title='Code Viewer') key_down
+view.forwarded Key(key='j')
+Key(key='j') >>> MyApp(title='Code Viewer')
+ACTION MyApp(title='Code Viewer') key_up
+view.forwarded Key(key='down')
+Key(key='down') >>> MyApp(title='Code Viewer')
+view.forwarded Key(key='down')
+Key(key='down') >>> MyApp(title='Code Viewer')
+view.forwarded Key(key='down')
+Key(key='down') >>> MyApp(title='Code Viewer')
+view.forwarded Key(key='down')
+Key(key='down') >>> MyApp(title='Code Viewer')
+view.forwarded Key(key='down')
+Key(key='down') >>> MyApp(title='Code Viewer')
+view.forwarded Key(key='up')
+Key(key='up') >>> MyApp(title='Code Viewer')
 TRANSLATING layout
 set_focus DirectoryTree(name='code')
 Focus() >>> DirectoryTree(name='code')
-MouseDown(x=12, y=19, screen_y=22, button=1) >>> DirectoryTree(name='code')
+MouseDown(x=36, y=12, screen_y=15, button=1) >>> DirectoryTree(name='code')
 WindowChange(WindowView(name='WindowView#2')) >>> ScrollView(name='ScrollView#2')
-MouseUp(x=12, y=19, screen_y=22, button=1) >>> DirectoryTree(name='code')
-Click(x=12, y=19, screen_y=22, button=1) >>> DirectoryTree(name='code')
-ACTION DirectoryTree(name='code') click_label
-TreeClick(node=TreeNode(id=18, label='test.py', data=DirEntry(path='/home/cms/.Project/Python/test.py', is_dir=False))) >>> DirectoryTree(name='code')
+MouseUp(x=36, y=12, screen_y=15, button=1) >>> DirectoryTree(name='code')
+Click(x=36, y=12, screen_y=15, button=1) >>> DirectoryTree(name='code')
 TRANSLATING layout
-CursorMove(DirectoryTree(name='code')) >>> ScrollView(name='ScrollView#2')
-FileClick(DirectoryTree(name='code')) >>> MyApp(title='Code Viewer')
-WindowChange(WindowView(name='WindowView#1')) >>> ScrollView(name='ScrollView#1')
-WindowChange(WindowView(name='WindowView#1')) >>> ScrollView(name='ScrollView#1')
 TRANSLATING layout
-WindowChange(WindowView(name='WindowView#1')) >>> ScrollView(name='ScrollView#1')
+TRANSLATING layout
+TRANSLATING layout
+TRANSLATING layout
+TRANSLATING layout
+TRANSLATING layout
+TRANSLATING layout
+TRANSLATING layout
+TRANSLATING layout
+TRANSLATING layout
 set_focus DirectoryTree(name='code')
-MouseDown(x=12, y=19, screen_y=22, button=1) >>> DirectoryTree(name='code')
-MouseUp(x=12, y=19, screen_y=22, button=1) >>> DirectoryTree(name='code')
-Click(x=12, y=19, screen_y=22, button=1) >>> DirectoryTree(name='code')
+MouseDown(x=8, y=1, screen_y=4, button=1) >>> DirectoryTree(name='code')
+MouseUp(x=8, y=1, screen_y=4, button=1) >>> DirectoryTree(name='code')
+Click(x=8, y=1, screen_y=4, button=1) >>> DirectoryTree(name='code')
 ACTION DirectoryTree(name='code') click_label
-TreeClick(node=TreeNode(id=18, label='test.py', data=DirEntry(path='/home/cms/.Project/Python/test.py', is_dir=False))) >>> DirectoryTree(name='code')
+TreeClick(node=TreeNode(id=0, label='Python', data=DirEntry(path='/home/cms/.Project/Python', is_dir=True))) >>> DirectoryTree(name='code')
+TRANSLATING layout
+TRANSLATING layout
+CursorMove(DirectoryTree(name='code')) >>> ScrollView(name='ScrollView#2')
+WindowChange(WindowView(name='WindowView#2')) >>> ScrollView(name='ScrollView#2')
+Key(key='enter') >>> DirectoryTree(name='code')
+TreeClick(node=TreeNode(id=0, label='Python', data=DirEntry(path='/home/cms/.Project/Python', is_dir=True))) >>> DirectoryTree(name='code')
+TRANSLATING layout
+WindowChange(WindowView(name='WindowView#2')) >>> ScrollView(name='ScrollView#2')
+Key(key='j') >>> DirectoryTree(name='code')
+Key(key='j') >>> ScrollView(name='ScrollView#2')
+Key(key='j') >>> MyApp(title='Code Viewer')
+ACTION MyApp(title='Code Viewer') key_up
+Key(key='j') >>> DirectoryTree(name='code')
+Key(key='j') >>> ScrollView(name='ScrollView#2')
+Key(key='j') >>> MyApp(title='Code Viewer')
+ACTION MyApp(title='Code Viewer') key_up
+Key(key='down') >>> DirectoryTree(name='code')
+TRANSLATING layout
+CursorMove(DirectoryTree(name='code')) >>> ScrollView(name='ScrollView#2')
+Key(key='down') >>> DirectoryTree(name='code')
+TRANSLATING layout
+CursorMove(DirectoryTree(name='code')) >>> ScrollView(name='ScrollView#2')
+Key(key='down') >>> DirectoryTree(name='code')
+TRANSLATING layout
+CursorMove(DirectoryTree(name='code')) >>> ScrollView(name='ScrollView#2')
+Key(key='down') >>> DirectoryTree(name='code')
+TRANSLATING layout
+CursorMove(DirectoryTree(name='code')) >>> ScrollView(name='ScrollView#2')
+Key(key='down') >>> DirectoryTree(name='code')
+TRANSLATING layout
+CursorMove(DirectoryTree(name='code')) >>> ScrollView(name='ScrollView#2')
+Key(key='down') >>> DirectoryTree(name='code')
+TRANSLATING layout
+CursorMove(DirectoryTree(name='code')) >>> ScrollView(name='ScrollView#2')
+Key(key='down') >>> DirectoryTree(name='code')
+TRANSLATING layout
+CursorMove(DirectoryTree(name='code')) >>> ScrollView(name='ScrollView#2')
+Key(key='down') >>> DirectoryTree(name='code')
+TRANSLATING layout
+CursorMove(DirectoryTree(name='code')) >>> ScrollView(name='ScrollView#2')
+Key(key='down') >>> DirectoryTree(name='code')
+TRANSLATING layout
+CursorMove(DirectoryTree(name='code')) >>> ScrollView(name='ScrollView#2')
+Key(key='down') >>> DirectoryTree(name='code')
+TRANSLATING layout
+CursorMove(DirectoryTree(name='code')) >>> ScrollView(name='ScrollView#2')
+Key(key='enter') >>> DirectoryTree(name='code')
+TreeClick(node=TreeNode(id=9, label='sources', data=DirEntry(path='/home/cms/.Project/Python/sources', is_dir=True))) >>> DirectoryTree(name='code')
+TRANSLATING layout
+WindowChange(WindowView(name='WindowView#2')) >>> ScrollView(name='ScrollView#2')
+Key(key='down') >>> DirectoryTree(name='code')
+TRANSLATING layout
+CursorMove(DirectoryTree(name='code')) >>> ScrollView(name='ScrollView#2')
+Key(key='enter') >>> DirectoryTree(name='code')
+TreeClick(node=TreeNode(id=14, label='sound', data=DirEntry(path='/home/cms/.Project/Python/sources/sound', is_dir=True))) >>> DirectoryTree(name='code')
+TRANSLATING layout
+WindowChange(WindowView(name='WindowView#2')) >>> ScrollView(name='ScrollView#2')
+Key(key='down') >>> DirectoryTree(name='code')
+TRANSLATING layout
+CursorMove(DirectoryTree(name='code')) >>> ScrollView(name='ScrollView#2')
+Key(key='down') >>> DirectoryTree(name='code')
+TRANSLATING layout
+CursorMove(DirectoryTree(name='code')) >>> ScrollView(name='ScrollView#2')
+Key(key='down') >>> DirectoryTree(name='code')
+TRANSLATING layout
+CursorMove(DirectoryTree(name='code')) >>> ScrollView(name='ScrollView#2')
+Key(key='down') >>> DirectoryTree(name='code')
+TRANSLATING layout
+CursorMove(DirectoryTree(name='code')) >>> ScrollView(name='ScrollView#2')
+Key(key='down') >>> DirectoryTree(name='code')
+TRANSLATING layout
+CursorMove(DirectoryTree(name='code')) >>> ScrollView(name='ScrollView#2')
+Key(key='up') >>> DirectoryTree(name='code')
+TRANSLATING layout
+CursorMove(DirectoryTree(name='code')) >>> ScrollView(name='ScrollView#2')
+Key(key='up') >>> DirectoryTree(name='code')
+TRANSLATING layout
+CursorMove(DirectoryTree(name='code')) >>> ScrollView(name='ScrollView#2')
+Key(key='up') >>> DirectoryTree(name='code')
+TRANSLATING layout
+CursorMove(DirectoryTree(name='code')) >>> ScrollView(name='ScrollView#2')
+Key(key='up') >>> DirectoryTree(name='code')
+TRANSLATING layout
+CursorMove(DirectoryTree(name='code')) >>> ScrollView(name='ScrollView#2')
+Key(key='up') >>> DirectoryTree(name='code')
+TRANSLATING layout
+CursorMove(DirectoryTree(name='code')) >>> ScrollView(name='ScrollView#2')
+Key(key='up') >>> DirectoryTree(name='code')
+TRANSLATING layout
+CursorMove(DirectoryTree(name='code')) >>> ScrollView(name='ScrollView#2')
+Key(key='enter') >>> DirectoryTree(name='code')
+TreeClick(node=TreeNode(id=9, label='sources', data=DirEntry(path='/home/cms/.Project/Python/sources', is_dir=True))) >>> DirectoryTree(name='code')
+TRANSLATING layout
+WindowChange(WindowView(name='WindowView#2')) >>> ScrollView(name='ScrollView#2')
+Key(key='up') >>> DirectoryTree(name='code')
+TRANSLATING layout
+CursorMove(DirectoryTree(name='code')) >>> ScrollView(name='ScrollView#2')
+Key(key='enter') >>> DirectoryTree(name='code')
+TreeClick(node=TreeNode(id=8, label='own', data=DirEntry(path='/home/cms/.Project/Python/own', is_dir=True))) >>> DirectoryTree(name='code')
+TRANSLATING layout
+WindowChange(WindowView(name='WindowView#2')) >>> ScrollView(name='ScrollView#2')
+Key(key='down') >>> DirectoryTree(name='code')
+TRANSLATING layout
+CursorMove(DirectoryTree(name='code')) >>> ScrollView(name='ScrollView#2')
+Key(key='down') >>> DirectoryTree(name='code')
+TRANSLATING layout
+CursorMove(DirectoryTree(name='code')) >>> ScrollView(name='ScrollView#2')
+Key(key='down') >>> DirectoryTree(name='code')
+TRANSLATING layout
+CursorMove(DirectoryTree(name='code')) >>> ScrollView(name='ScrollView#2')
+Key(key='down') >>> DirectoryTree(name='code')
+TRANSLATING layout
+CursorMove(DirectoryTree(name='code')) >>> ScrollView(name='ScrollView#2')
+Key(key='down') >>> DirectoryTree(name='code')
+TRANSLATING layout
+CursorMove(DirectoryTree(name='code')) >>> ScrollView(name='ScrollView#2')
+Key(key='down') >>> DirectoryTree(name='code')
+TRANSLATING layout
+CursorMove(DirectoryTree(name='code')) >>> ScrollView(name='ScrollView#2')
+Key(key='down') >>> DirectoryTree(name='code')
+TRANSLATING layout
+CursorMove(DirectoryTree(name='code')) >>> ScrollView(name='ScrollView#2')
+Key(key='down') >>> DirectoryTree(name='code')
+TRANSLATING layout
+CursorMove(DirectoryTree(name='code')) >>> ScrollView(name='ScrollView#2')
+Key(key='down') >>> DirectoryTree(name='code')
+TRANSLATING layout
+CursorMove(DirectoryTree(name='code')) >>> ScrollView(name='ScrollView#2')
+Key(key='down') >>> DirectoryTree(name='code')
+TRANSLATING layout
+CursorMove(DirectoryTree(name='code')) >>> ScrollView(name='ScrollView#2')
+Key(key='enter') >>> DirectoryTree(name='code')
+TreeClick(node=TreeNode(id=31, label='main.py', data=DirEntry(path='/home/cms/.Project/Python/own/main.py', is_dir=False))) >>> DirectoryTree(name='code')
 FileClick(DirectoryTree(name='code')) >>> MyApp(title='Code Viewer')
 WindowChange(WindowView(name='WindowView#1')) >>> ScrollView(name='ScrollView#1')
 WindowChange(WindowView(name='WindowView#1')) >>> ScrollView(name='ScrollView#1')
-Key(key='ctrl+k') >>> DirectoryTree(name='code')
-Key(key='ctrl+k') >>> ScrollView(name='ScrollView#2')
-Key(key='ctrl+k') >>> MyApp(title='Code Viewer')
-Key(key='j') >>> DirectoryTree(name='code')
-Key(key='j') >>> ScrollView(name='ScrollView#2')
-Key(key='j') >>> MyApp(title='Code Viewer')
-ACTION MyApp(title='Code Viewer') move_up
-Key(key='j') >>> DirectoryTree(name='code')
-Key(key='j') >>> ScrollView(name='ScrollView#2')
-Key(key='j') >>> MyApp(title='Code Viewer')
-ACTION MyApp(title='Code Viewer') move_up
-Key(key='j') >>> DirectoryTree(name='code')
-Key(key='j') >>> ScrollView(name='ScrollView#2')
-Key(key='j') >>> MyApp(title='Code Viewer')
-ACTION MyApp(title='Code Viewer') move_up
-Key(key='ctrl+k') >>> DirectoryTree(name='code')
-Key(key='ctrl+k') >>> ScrollView(name='ScrollView#2')
-Key(key='ctrl+k') >>> MyApp(title='Code Viewer')
-Key(key='j') >>> DirectoryTree(name='code')
-Key(key='j') >>> ScrollView(name='ScrollView#2')
-Key(key='j') >>> MyApp(title='Code Viewer')
-ACTION MyApp(title='Code Viewer') move_up
-Key(key='k') >>> DirectoryTree(name='code')
-Key(key='k') >>> ScrollView(name='ScrollView#2')
-Key(key='k') >>> MyApp(title='Code Viewer')
-ACTION MyApp(title='Code Viewer') move_down
-Key(key='j') >>> DirectoryTree(name='code')
-Key(key='j') >>> ScrollView(name='ScrollView#2')
-Key(key='j') >>> MyApp(title='Code Viewer')
-ACTION MyApp(title='Code Viewer') move_up
-Key(key='k') >>> DirectoryTree(name='code')
-Key(key='k') >>> ScrollView(name='ScrollView#2')
-Key(key='k') >>> MyApp(title='Code Viewer')
-ACTION MyApp(title='Code Viewer') move_down
-Key(key='j') >>> DirectoryTree(name='code')
-Key(key='j') >>> ScrollView(name='ScrollView#2')
-Key(key='j') >>> MyApp(title='Code Viewer')
-ACTION MyApp(title='Code Viewer') move_up
-Key(key='b') >>> DirectoryTree(name='code')
-Key(key='b') >>> ScrollView(name='ScrollView#2')
-Key(key='b') >>> MyApp(title='Code Viewer')
-ACTION DockView(name='DockView#1') toggle
-WindowChange(WindowView(name='WindowView#1')) >>> ScrollView(name='ScrollView#1')
-WindowChange(WindowView(name='WindowView#1')) >>> ScrollView(name='ScrollView#1')
-WindowChange(WindowView(name='WindowView#1')) >>> ScrollView(name='ScrollView#1')
-Key(key='j') >>> DirectoryTree(name='code')
-Key(key='j') >>> ScrollView(name='ScrollView#2')
-Key(key='j') >>> MyApp(title='Code Viewer')
-ACTION MyApp(title='Code Viewer') move_up
-Key(key='j') >>> DirectoryTree(name='code')
-Key(key='j') >>> ScrollView(name='ScrollView#2')
-Key(key='j') >>> MyApp(title='Code Viewer')
-ACTION MyApp(title='Code Viewer') move_up
-Key(key='down') >>> DirectoryTree(name='code')
 TRANSLATING layout
-CursorMove(DirectoryTree(name='code')) >>> ScrollView(name='ScrollView#2')
-Key(key='down') >>> DirectoryTree(name='code')
-TRANSLATING layout
-CursorMove(DirectoryTree(name='code')) >>> ScrollView(name='ScrollView#2')
-Key(key='down') >>> DirectoryTree(name='code')
-set_focus Static(name='Static#3')
-Blur() >>> DirectoryTree(name='code')
-MouseDown(x=11, y=19, screen_y=22, button=1) >>> Static(name='Static#3')
-WindowChange(WindowView(name='WindowView#2')) >>> ScrollView(name='ScrollView#2')
-MouseUp(x=11, y=19, screen_y=22, button=1) >>> Static(name='Static#3')
-Click(x=11, y=19, screen_y=22, button=1) >>> Static(name='Static#3')
-Key(key='down') >>> ScrollView(name='ScrollView#1')
-Key(key='down') >>> MyApp(title='Code Viewer')
-Key(key='down') >>> ScrollView(name='ScrollView#1')
-Key(key='down') >>> MyApp(title='Code Viewer')
-Key(key='down') >>> ScrollView(name='ScrollView#1')
-Key(key='down') >>> MyApp(title='Code Viewer')
-Key(key='down') >>> ScrollView(name='ScrollView#1')
-Key(key='down') >>> MyApp(title='Code Viewer')
-Key(key='down') >>> ScrollView(name='ScrollView#1')
-Key(key='down') >>> MyApp(title='Code Viewer')
-Key(key='down') >>> ScrollView(name='ScrollView#1')
-Key(key='down') >>> MyApp(title='Code Viewer')
-Key(key='down') >>> ScrollView(name='ScrollView#1')
-Key(key='down') >>> MyApp(title='Code Viewer')
-Key(key='down') >>> ScrollView(name='ScrollView#1')
-Key(key='down') >>> MyApp(title='Code Viewer')
-Key(key='down') >>> ScrollView(name='ScrollView#1')
-Key(key='down') >>> MyApp(title='Code Viewer')
-Key(key='down') >>> ScrollView(name='ScrollView#1')
-Key(key='down') >>> MyApp(title='Code Viewer')
-Key(key='down') >>> ScrollView(name='ScrollView#1')
-Key(key='down') >>> MyApp(title='Code Viewer')
-Key(key='down') >>> ScrollView(name='ScrollView#1')
-Key(key='down') >>> MyApp(title='Code Viewer')
-Key(key='down') >>> ScrollView(name='ScrollView#1')
-Key(key='down') >>> MyApp(title='Code Viewer')
-Key(key='down') >>> ScrollView(name='ScrollView#1')
-Key(key='down') >>> MyApp(title='Code Viewer')
-Key(key='down') >>> ScrollView(name='ScrollView#1')
-Key(key='down') >>> MyApp(title='Code Viewer')
-Key(key='down') >>> ScrollView(name='ScrollView#1')
-Key(key='down') >>> MyApp(title='Code Viewer')
-Key(key='down') >>> ScrollView(name='ScrollView#1')
-Key(key='down') >>> MyApp(title='Code Viewer')
-Key(key='down') >>> ScrollView(name='ScrollView#1')
-Key(key='down') >>> MyApp(title='Code Viewer')
-Key(key='down') >>> ScrollView(name='ScrollView#1')
-Key(key='down') >>> MyApp(title='Code Viewer')
-Key(key='up') >>> ScrollView(name='ScrollView#1')
-Key(key='up') >>> MyApp(title='Code Viewer')
-Key(key='down') >>> ScrollView(name='ScrollView#1')
-Key(key='down') >>> MyApp(title='Code Viewer')
-Key(key='up') >>> ScrollView(name='ScrollView#1')
-Key(key='up') >>> MyApp(title='Code Viewer')
-Key(key='up') >>> ScrollView(name='ScrollView#1')
-Key(key='up') >>> MyApp(title='Code Viewer')
-Key(key='up') >>> ScrollView(name='ScrollView#1')
-Key(key='up') >>> MyApp(title='Code Viewer')
-Key(key='up') >>> ScrollView(name='ScrollView#1')
-Key(key='up') >>> MyApp(title='Code Viewer')
-Key(key='up') >>> ScrollView(name='ScrollView#1')
-Key(key='up') >>> MyApp(title='Code Viewer')
-Key(key='up') >>> ScrollView(name='ScrollView#1')
-Key(key='up') >>> MyApp(title='Code Viewer')
-Key(key='up') >>> ScrollView(name='ScrollView#1')
-Key(key='up') >>> MyApp(title='Code Viewer')
-Key(key='up') >>> ScrollView(name='ScrollView#1')
-Key(key='up') >>> MyApp(title='Code Viewer')
-Key(key='up') >>> ScrollView(name='ScrollView#1')
-Key(key='up') >>> MyApp(title='Code Viewer')
-Key(key='up') >>> ScrollView(name='ScrollView#1')
-Key(key='up') >>> MyApp(title='Code Viewer')
-Key(key='up') >>> ScrollView(name='ScrollView#1')
-Key(key='up') >>> MyApp(title='Code Viewer')
-Key(key='up') >>> ScrollView(name='ScrollView#1')
-Key(key='up') >>> MyApp(title='Code Viewer')
-Key(key='up') >>> ScrollView(name='ScrollView#1')
-Key(key='up') >>> MyApp(title='Code Viewer')
-Key(key='down') >>> ScrollView(name='ScrollView#1')
-Key(key='down') >>> MyApp(title='Code Viewer')
-Key(key='down') >>> ScrollView(name='ScrollView#1')
-Key(key='down') >>> MyApp(title='Code Viewer')
-Key(key='down') >>> ScrollView(name='ScrollView#1')
-Key(key='down') >>> MyApp(title='Code Viewer')
-Key(key='down') >>> ScrollView(name='ScrollView#1')
-Key(key='down') >>> MyApp(title='Code Viewer')
-Key(key='down') >>> ScrollView(name='ScrollView#1')
-Key(key='down') >>> MyApp(title='Code Viewer')
-Key(key='down') >>> ScrollView(name='ScrollView#1')
-Key(key='down') >>> MyApp(title='Code Viewer')
-Key(key='down') >>> ScrollView(name='ScrollView#1')
-Key(key='down') >>> MyApp(title='Code Viewer')
-Key(key='down') >>> ScrollView(name='ScrollView#1')
-Key(key='down') >>> MyApp(title='Code Viewer')
-Key(key='down') >>> ScrollView(name='ScrollView#1')
-Key(key='down') >>> MyApp(title='Code Viewer')
-Key(key='down') >>> ScrollView(name='ScrollView#1')
-Key(key='down') >>> MyApp(title='Code Viewer')
-Key(key='down') >>> ScrollView(name='ScrollView#1')
-Key(key='down') >>> MyApp(title='Code Viewer')
-Key(key='down') >>> ScrollView(name='ScrollView#1')
-Key(key='down') >>> MyApp(title='Code Viewer')
-Key(key='down') >>> ScrollView(name='ScrollView#1')
-Key(key='down') >>> MyApp(title='Code Viewer')
-Key(key='up') >>> ScrollView(name='ScrollView#1')
-Key(key='up') >>> MyApp(title='Code Viewer')
-Key(key='down') >>> ScrollView(name='ScrollView#1')
-Key(key='down') >>> MyApp(title='Code Viewer')
-Key(key='up') >>> ScrollView(name='ScrollView#1')
-Key(key='up') >>> MyApp(title='Code Viewer')
-Key(key='up') >>> ScrollView(name='ScrollView#1')
-Key(key='up') >>> MyApp(title='Code Viewer')
-Key(key='up') >>> ScrollView(name='ScrollView#1')
-Key(key='up') >>> MyApp(title='Code Viewer')
-Key(key='up') >>> ScrollView(name='ScrollView#1')
-Key(key='up') >>> MyApp(title='Code Viewer')
-Key(key='q') >>> ScrollView(name='ScrollView#1')
+WindowChange(WindowView(name='WindowView#1')) >>> ScrollView(name='ScrollView#1')
+Key(key='q') >>> DirectoryTree(name='code')
+Key(key='q') >>> ScrollView(name='ScrollView#2')
 Key(key='q') >>> MyApp(title='Code Viewer')
 ACTION MyApp(title='Code Viewer') quit
 CLOSED MyApp(title='Code Viewer')
 PROCESS END
-CLOSED ScrollBar(virtual_size=48, window_size=48, position=0)
+CLOSED Static(name='Static#2')
 CLOSED Static(name='Static#1')
-CLOSED Static(name='Static#3')
+CLOSED ScrollBar(virtual_size=48, window_size=48, position=0)
+CLOSED ScrollBar(virtual_size=190, window_size=29, position=0)
+CLOSED WindowView(name='WindowView#2')
 CLOSED Footer(keys=[])
 CLOSED ScrollView(name='ScrollView#2')
-CLOSED ScrollView(name='ScrollView#1')
 CLOSED Header('Code Viewer')

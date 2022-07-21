@@ -90,8 +90,8 @@ class MyApp(App):
         # Bind the keybindings
         await self.bind('b', 'view.toggle("sidebar")', 'Toggle sidebar')
         await self.bind("q", "quit", 'Quit')
-        await self.bind("j", "move_up", 'Move up')
-        await self.bind("k", "move_down", 'Move down')
+        await self.bind("j", "key_up", 'Move up')
+        await self.bind("k", "key_down", 'Move down')
 
         # Get the path to show
         try:
