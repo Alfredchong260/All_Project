@@ -1,12 +1,17 @@
 package main
 
 import (
-  "fmt"
-  "log"
-  "net/http"
-  )
+	"net/http"
+	"github.com/gin-gonic/gin"
+)
 
 func main()  {
-  fileServer := http.FileServer(http.Dir("./static"))
-  http.Handle("/", fileServer)
+  r := gin.Default()
+
+  r.GET("/login", func(ctx *gin.Context) {
+    ctx.JSON(http.StatusOK, gin.H{
+      "message": "ok",
+    })
+  })
+  r.Run()
 }
