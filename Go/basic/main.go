@@ -3,8 +3,8 @@ package main
 import (
 	"fmt"
 	"strings"
+	"sync"
 	"time"
-  "sync"
 )
 
 const conferenceTicket int = 50
@@ -35,8 +35,8 @@ func main() {
 
 			bookTicket(userTickets, firstName, lastName, email)
 
-      wg.Add(1)
-      go sendTicket(userTickets, firstName, lastName, email)
+			wg.Add(1)
+			go sendTicket(userTickets, firstName, lastName, email)
 			firstNames := printFirstNames()
 
 			fmt.Printf("The first name of bookings are : %v\n\n", firstNames)
@@ -61,7 +61,7 @@ func main() {
 		}
 
 	}
-  wg.Wait()
+	wg.Wait()
 }
 
 func greetUsers() {
@@ -132,13 +132,12 @@ func validateUserInput(firstName string, lastName string, email string, userTick
 	return isValidName, isValidEmail, isValidTicketNum
 }
 
+func sendTicket(userTickets uint, firstName string, lastName string, email string) {
+	var ticket = fmt.Sprintf("%v tickets for %v %v", userTickets, firstName, lastName)
+	time.Sleep(10 * time.Second)
+	fmt.Println("####################")
+	fmt.Printf("Sending ticket:\n %v to email address %v\n", ticket, email)
+	fmt.Println("####################")
 
-func sendTicket(userTickets uint, firstName string, lastName string, email string)  {
-  var ticket = fmt.Sprintf("%v tickets for %v %v", userTickets, firstName, lastName)
-  time.Sleep(10 * time.Second)
-  fmt.Println("####################")
-  fmt.Printf("Sending ticket:\n %v to email address %v\n", ticket, email)
-  fmt.Println("####################")
-
-  wg.Done()
+	wg.Done()
 }
