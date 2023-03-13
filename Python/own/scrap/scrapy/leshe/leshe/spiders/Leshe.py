@@ -5,8 +5,8 @@ import time
 
 class LesheSpider(scrapy.Spider):
     name = 'Leshe'
-    allowed_domains = ['leshe.org']
-    start_urls = ['https://www.leshe.org/xz/page/1']
+    allowed_domains = ['www.leshetu.top']
+    start_urls = ['https://www.leshetu.top/xz/page/1']
 
     def parse_detail(self, response):
         item = LesheItem()
